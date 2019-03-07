@@ -4390,7 +4390,7 @@ input[type=submit].btn-block {
 
 .custom-select {
     display: inline-block;
-    width: 100%;
+    width: 50%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem 1.75rem .375rem .75rem;
     font-size: 1rem;
