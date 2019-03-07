@@ -19,6 +19,7 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
+  <link href="css/loadScreen.css" rel="stylesheet">
   
   <link rel="icon" type="image/png" href="img/favicon.png" />
 
@@ -56,6 +57,7 @@
                         <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
+                      <p id="error-desc"></p>
                     </div>
                     <a id="login" class="btn btn-primary btn-user btn-block text-white">
                       Login
@@ -72,6 +74,12 @@
     </div>
 
   </div>
+
+<!--CSS Spinner-->
+<div class="spinner-wrapper">
+  <div class="spinner"></div>
+  </div>
+
 
   <!--Firebase Core + Dependent Scripts (must be on all pages)-->
   <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
