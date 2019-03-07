@@ -17,6 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 
@@ -324,11 +325,43 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+
         <div class="container-fluid">
+          <div class="card mb-3">
+            <div class="card-header text-white bg-primary">
+                <i class="fas fa-map text-white"></i>
+                Map Report History</div>  
+                            
+                <div class="container-fluid">
+                  Date: <input type="date" class="date-dropdown" onchange="initMap()" id="date" ></input>
+                  
+                  Category: <select id="category" class="custom-dropdown" onchange="initMap()">
+                    <img src="../img/logo.png" width="100" height="50">
+                    <option class="form-control-user" value="--">--</option>
+                    <option value="Clean and Green">Clean and Green</option>
+                    <option value="Peace and Order">Peace and Order</option>
+                    <option value="Peace and Order (Neighborhood)">Neighborhood</option>
+                    <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
+                    <option value="Peace and Order (Robbery)">Robbery</option>
+                    <option value="Clean and Green (Waste)">Waste</option>
+                    <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
+                    <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
+                    <option value="Others">Others</option>
+                  </select>
+                
+                
+              <div class="card-body">
+                <div id="map" style="width:100%;height:400px;"></div>
+                
+              </div>
 
-
-
-
+              <b>Legend: </b>
+              <p>1. Pending Reports: <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"></p>
+              <p>2. Responding Reports: <img src="http://maps.google.com/mapfiles/ms/icons/orange-dot.png"></p>
+              <p>3. Responded Reports: <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"></p>
+              
+            </div>
+            </div>
         </div>
         <!-- /.container-fluid -->
 
@@ -391,12 +424,11 @@
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="../vendor/chart.js/Chart.min.js"></script>
-
   <!-- Page level custom scripts -->
-  <script src="../js/demo/chart-area-demo.js"></script>
-  <script src="../js/demo/chart-pie-demo.js"></script>
+  <script 
+  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9jb6--NfLfSn3SCresxshyhfwKMi_34&callback=initMap">
+  </script>
+  <script src="../js/homeMaps.js"></script>
 
 </body>
 
