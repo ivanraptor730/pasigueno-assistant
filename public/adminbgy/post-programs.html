@@ -331,31 +331,31 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <h1>Post Barangay Programs</h1>
                     <hr>
-
                     <div class="container-fluid">
+                        <form method="POST" action="createCard.php">
+                            Title: &nbsp; <input type="text" id="what"><br><br>
+                            Where: <input type="text" id="where"><br><br>
+                            When: &nbsp;<input type="date" id="when"><br>&nbsp;&nbsp;
+                            <br>
+                            Announcement Type: <select id="category" class="custom-select">
+                                <option>Health Services</option>
+                                <option>Food</option>
+                                <option>Sports</option>
+                                <option>Others</option>
+                            </select>
 
-                        What: &nbsp; <input type="text" id="what"><br><br>
-                        Where: <input type="text" id="where"><br><br>
-                        When: &nbsp;<input type="text" id="when"><br>&nbsp;&nbsp;
-                        <br>
-                        Type of announcement: <select id="category">
-                            <option>Medical</option>
-                            <option>Food</option>
-                        </select>
+                            <br><br>
+                            <p>Description</p>
+                            <textarea rows="10" cols="100" id="message" maxlength="300"></textarea>
 
-                        <br><br>
-                        <p>Description</p>
-                        <textarea rows="10" cols="100" id="message" maxlength="300"></textarea>
+                            <p>Character Limit is 300. You have <span id="wordCount">300</span> characters remaining.<br>
+                                <input type="file" id="file" accept="image/*" />
+                            </p>
 
-                        <p>Character Limit is 300. You have <span id="wordCount">300</span> characters remaining.<br>
-                            <input type="file" name="fileToUpload" id="fileToUpload" style="left:350px;">
-                        </p>
-
-                        <input type="submit" id="submit" class="btn btn-primary" value="Submit" onclick="postProgram()">
-
+                            <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary" id="uploadButton"
+                                onclick="postProgram()">
                     </div>
                     <!-- /.container-fluid -->
 
