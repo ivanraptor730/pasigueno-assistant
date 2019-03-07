@@ -3,3 +3,12 @@
     width: 400px;
     height: 250px;
 }
+
+.error{
+    display: none;
+}
+
+#error-desc{
+    color: red;
+}
+
