@@ -1,4 +1,5 @@
-window.setInterval(function () {
+window.setInterval(
+  function () {
     var modals = document.getElementsByClassName('modal');
     // Get the button that opens the modal
     var btns = document.getElementsByClassName("openmodal");
@@ -13,4 +14,5 @@ window.setInterval(function () {
         modals[i].style.display = "none";
       }
     }
-  }, 1000);
+  }
+  , 1000);

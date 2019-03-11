@@ -13,13 +13,13 @@
     overflow-y: hidden;
   }
   
-  /* Modal Content/Box */
+  /* Modal ContentBox */
   .modal-content {
     background-color: #fefefe;
     margin: 5% auto; /* 15% from the top and centered */
     padding: 20px 20px 10px 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 70%; /* Could be more or less, depending on screen size */
     border-radius: 15px;
   }
   
@@ -54,7 +54,8 @@
     text-decoration-color: white;
     color: white;
     border-block-end-color: #196703;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 2px solid #196703;
   }
   
   #respond{
@@ -66,6 +67,7 @@
     width: 400px;
     height: 40px;
     margin: 0 auto;
+    border: 2px solid lightseagreen;
   }
   
   #markSpam{
@@ -76,6 +78,8 @@
     width: 400px;
     height: 40px;
     margin: 0 auto;
+    border: 2px solid red;
+    border-radius: 5px;
   }
   
   #nullRecords{
@@ -92,3 +96,14 @@
     display: none;
   }
   
+  #img{
+    background-color: green;
+    text-decoration-color: white;
+    color: white;
+    border-block-end-color: green;
+    width: 400px;
+    height: 40px;
+    margin: 0 auto;
+    border: 2px solid green;
+    border-radius: 5px;
+  }

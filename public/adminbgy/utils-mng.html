@@ -88,7 +88,7 @@
             </li>
 
             <!-- Nav Item - Requests Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-reply"></i>
@@ -98,7 +98,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="forms-request.html">Forms Requests</a>
-                        <a class="collapse-item active" href="utils-request.html">Utilities Requests</a>
+                        <a class="collapse-item" href="utils-request.html">Utilities Requests</a>
                     </div>
                 </div>
             </li>
@@ -136,7 +136,7 @@
             </div>
 
             <!-- Nav Item - Manage Stocks -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="utils-mng.html">
                     <i class="fas fa-fw fa-boxes"></i>
                     <span>Manage Utilities</span>
@@ -163,45 +163,53 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Nav Item - Messages -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link " href="#">
-                            <i class="fas fa-envelope fa-fw"></i>
-                            <!-- Counter - Messages -->
-                            <span class="badge badge-danger badge-counter">7</span>
-                        </a>
-                    </li>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
-                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
 
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                            <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link " href="#">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
                             </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
+                                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
                             </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </li>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
 
                     </ul>
 
@@ -210,126 +218,27 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>Utilities Requests</h1>
+                    <h1>Manage Barangay Utilities</h1>
                     <hr>
-                    <p id="message"></p>
-                    <div class="card mb-3">
-                        <div class="card-header text-white bg-primary">
-                            <i class="fas fa-table"></i>
-                            Pending Requests
-                            <div class="float-right">Category: <select id="leave" onchange="onChange()"></div>
-                            <option value="--">--</option>
-                            <option value="Tent">Tent</option>
-                            <option value="Multipurpose Hall">Multipurpose Hall</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Category</th>
-                                        <th>Date</th>
-                                        <th>Location</th>
-                                        <th>Start Date & Time</th>
-                                        <th>Return Date & Time</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table_body">
-                                    <tr>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
+                <!-- /.container-fluid -->
 
-
-                <div class="card mb-3">
-                    <div class="card-header text-white bg-primary">
-                        <i class="fas fa-table"></i>
-                        Approved Requests
-                        <div class="float-right">Category: <select id="leave" onchange="onChange()"></div>
-                        <option value="--">--</option>
-                        <option value="Tent">Tent</option>
-                        <option value="Multipurpose Hall">Multipurpose Hall</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Date</th>
-                                    <th>Location</th>
-                                    <th>Start Date & Time</th>
-                                    <th>Return Date & Time</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table_body1">
-                                <tr>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-header text-white bg-primary">
-                        <i class="fas fa-table"></i>
-                        Denied Requests
-                        <div class="float-right">Category: <select id="leave" onchange="onChange()"></div>
-                        <option value="--">--</option>
-                        <option value="Tent">Tent</option>
-                        <option value="Multipurpose Hall">Multipurpose Hall</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Date</th>
-                                    <th>Location</th>
-                                    <th>Start Date & Time</th>
-                                    <th>Return Date & Time</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table_body2">
-                                <tr>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
         </div>
-        <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Pasigueno Assistant 2019</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
+        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->

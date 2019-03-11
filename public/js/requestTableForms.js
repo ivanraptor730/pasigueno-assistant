@@ -1,5 +1,7 @@
+//barangay-status
+
 function requestFormsTablePending() {
-    var rootRef = firebase.database().ref("request/forms").orderByChild("Status").equalTo("Pending");
+    var rootRef = firebase.database().ref("reports").orderByChild("Barangay_Status").equalTo(barangay+"_Pending");
     rootRef.on("value", snap => {
         if (snap.exists()) {
             $("#table_body").html("");

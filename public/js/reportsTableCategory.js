@@ -1,10 +1,10 @@
-function onChange() {
-    var x = document.getElementById("leave").value;
+function onChangeResponded() {
+    var x = document.getElementById("categoryPending").value;
     var rootRef = firebase.database().ref();
     if (x == "--") {
-      var rootRef = firebase.database().ref().child("reports");
+      var rootRef = firebase.database().ref("reports").orderByChild("Status").equalTo("Responded");
       rootRef.on("value", snap => {
-        $("#table_body").html("");
+        $("#tbody_responded").html("");
         snap.forEach(snap => {
           var key = snap.key;
           var category = snap.child("Category").val();
@@ -12,7 +12,8 @@ function onChange() {
           var location = snap.child("Location").val();
           var report = snap.child("Report").val();
           var status = snap.child("Status").val();
-          $("#table_body").append("<tr><td>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
+          var photoURL = snap.child("PhotoURL").val();
+          $("#tbody_responded").append("<tr><td>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
             "<button class='openmodal myBtn'>View</button>" +
             "<div class='modal myModal'>" +
             "<div class='modal-content'>" +
@@ -31,8 +32,8 @@ function onChange() {
         })
       });
     } else {
-      rootRef.child('reports').orderByChild('Category').equalTo(x).on("value", function (snap) {
-        $("#table_body").html("");
+      rootRef.child('reports').orderByChild('Category').equalTo(x).on("child_added", function (snap) {
+        $("#tbody_responded").html("");
         snap.forEach(snap => {
           for (i = 1; i < snap.length; i++) {
             var category = snap.child("Category").val();
@@ -40,7 +41,8 @@ function onChange() {
             var location = snap.child("Location").val();
             var report = snap.child("Report").val();
             var status = snap.child("Status").val();
-            $("#table_body").append("<tr><td>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
+
+            $("#tbody_responded").append("<tr><td>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
               "<button class='openmodal myBtn'>View</button>" +
               "<div class='modal myModal'>" +
               "<div class='modal-content'>" +

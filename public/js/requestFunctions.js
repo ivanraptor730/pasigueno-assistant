@@ -6,7 +6,8 @@ $(function () { //Respond to services
         var r = confirm("Do you want to approved on Report ID " + $id + "?");
         if (r == true) {
             firebase.database().ref("request/services/" + $id).update({
-                Status: "Approved"
+                Status: "Approved",
+                Barangay_Status: "Approved"
             });
             alert('Updated Report Status of ID ' + $id);
         }
