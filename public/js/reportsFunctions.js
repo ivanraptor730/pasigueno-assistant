@@ -7,7 +7,7 @@ $(function () { //Respond to Reports
     if (r == true) {
       firebase.database().ref("reports/" + $id).update({
         Status: "Responding",
-        Barangay_Status: "Responding"
+        Barangay_Status: barangay+"_Responding" //!!!! TODO: FETCH BARANGAY HERE (SA LAHAT NG FUNCTIONS)
       });
       alert('Updated Report Status of ID ' + $id);
       console.log('Updated Report Status of ID ' + $id);

@@ -29,22 +29,21 @@ function messages() {
                                         "</div>");
                                     if (snapsh.exists()) {
                                         snapsh.forEach(snapsh => {
-                                            var div;
-                                            var placeholderName;
                                             var message = snapsh.child("message").val();
                                             if (username != key) {
-                                                placeholderName = username;
-                                                div = "speech-bubble-reciever";
-                                            }
-                                            else if (username == key) {
-                                                placeholderName = key;
-                                                div = "speech-bubble-sender";
-                                            }
-
-                                            $(".modal-content").append("<div class='" + div + "'>" +
-                                                "<b>" + placeholderName + ":</b> " + message + "</div><br>" +
+                                                $(".modal-content").append("<div class='speech-bubble-reciever'>" +
+                                                "<b>" + username + ":</b> " + message + "</div><br>" +
                                                 "</div>" +
                                                 "</div></td></tr>");
+                                            }
+                                            else {
+                                                $(".modal-content").append("<div class='speech-bubble-sender'>" +
+                                                "<b>" + key + ":</b> " + message + "</div><br>" +
+                                                "</div>" +
+                                                "</div></td></tr>");
+                                            }
+
+                                            
                                         });
                                     }
                                 })

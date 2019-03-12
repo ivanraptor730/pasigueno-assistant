@@ -7,7 +7,7 @@ $(function () { //Respond to services
         if (r == true) {
             firebase.database().ref("request/services/" + $id).update({
                 Status: "Approved",
-                Barangay_Status: "Approved"
+                Barangay_Status: Barangay +"_Approved" //!!! TODO FUNCTION FETCH BARANGAY
             });
             alert('Updated Report Status of ID ' + $id);
         }
@@ -41,10 +41,11 @@ $(function () { //Respond to services
         var $row = $(this).closest("tr");
         var $id = $row.find(".ky").text();
 
-        var r = confirm("Do you want to Declined on Report ID " + $id + "?");
+        var r = confirm("Decline Rquest " + $id + "?");
         if (r == true) {
             firebase.database().ref("request/forms/" + $id).update({
-                Status: "Declined"
+                Status: "Declined",
+                Barangay_Status: ""
             });
             alert('Updated Report Status of ID ' + $id);
         }
