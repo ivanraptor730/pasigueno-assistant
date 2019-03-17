@@ -20,6 +20,7 @@
     <link href="../css/index.css" rel="stylesheet">
     <link href="../css/modal.css" rel="stylesheet">
     <link href="../css/messages.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 
@@ -220,46 +221,55 @@
 
                 <!-- Begin Page Content -->
 
-                <div class="container-fluid">
+                <div class="container">
                     <h1>Messages</h1>
                     <hr>
+                    <div class="messaging">
+                        <div class="inbox_msg">
+                            <div class="inbox_people">
+                                <div class="headind_srch">
+                                    <div class="recent_heading">
+                                        <h4>Recent</h4>
+                                    </div>
+                                </div>
+                                <!--People-->
+                                <div id="people" class="inbox_chat">
+                                        <h6 class="text-center">Loading People...</h6>
+                                </div>
+                            </div>
+                            <!--Chatbox-->
+                            <div id="chatbox" class="mesgs">
+                                <div id="msg_container" class="msg_history">
 
-                    <div class="card mb-3">
-                        <div class="card-header bg-primary text-white">
-                            <i class="fas fa-envelope"></i>
-                            Message List
+                                </div>
+                                <div class="type_msg">
+                                    <div class="input_msg_write">
+                                        <input type="text" class="write_msg" id="message" readonly="true" placeholder="Type a message" />
+                                        <button class="msg_send_btn" type="button" onclick="sendMessage()"><i class="fas fa-fw fa-paper-plane"
+                                                aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <!-- /.container-fluid -->
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <tbody id="tbody_messages">
-                                    <tr>
-                                        <td colspan="6" class="text-center"><b>Loading Messages...</b></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
             </div>
-            <!-- /.container-fluid -->
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Pasigueno Assistant 2019</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
+        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
