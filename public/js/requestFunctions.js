@@ -37,7 +37,7 @@ $(function () { //Respond to services
             alert('Updated Report Status of ID ' + $id);
         }
     });
-    $("#table_body1").delegate("tr #Declined1", "click", function (e) {
+    $("#table_body1").delegate("tr #Declined", "click", function (e) {
         var $row = $(this).closest("tr");
         var $id = $row.find(".ky").text();
 

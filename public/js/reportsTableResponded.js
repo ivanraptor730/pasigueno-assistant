@@ -9,7 +9,7 @@ function reportsTableResponded() {
 
         return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
           brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-          var rootRef = firebase.database().ref("reports").orderByChild("Barangay_Status").equalTo(barangay+"_Responded");
+          var rootRef = firebase.database().ref("reports").orderByChild("Barangay_Status").equalTo(barangay + "_Responded");
           rootRef.on("value", snap => {
             if (snap.exists()) {
               $("#tbody_responded").html("");
