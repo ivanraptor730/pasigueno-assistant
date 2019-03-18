@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Forms Requests | Pasigueno Assistant</title>
+    <title>View Feedbacks | Pasigueno Assistant</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
     <link href="../css/modal.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
@@ -54,7 +55,7 @@
             </div>
 
             <!-- Nav Item - Newsfeed Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews" aria-expanded="true"
                     aria-controls="collapseNews">
                     <i class="fas fa-fw fa-plus-square"></i>
@@ -64,7 +65,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
-                        <a class="collapse-item" href="post-programs.html">Post Programs</a>
+                        <a class="collapse-item active" href="post-programs.html">Post Programs</a>
                     </div>
                 </div>
             </li>
@@ -88,7 +89,7 @@
             </li>
 
             <!-- Nav Item - Requests Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-reply"></i>
@@ -99,7 +100,7 @@
                         <h6 class="collapse-header">Forms:</h6>
                         <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
                         <a class="collapse-item" href="forms-req-approved.html">Approved Requests</a>
-                        <a class="collapse-item active" href="forms-req-denied.html">Denied Requests</a>
+                        <a class="collapse-item" href="forms-req-denied.html">Denied Requests</a>
                         <h6 class="collapse-header">Services/Utilities:</h6>
                         <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
                         <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
@@ -109,7 +110,7 @@
             </li>
 
             <!-- Nav Item - Community Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommunity"
                     aria-expanded="true" aria-controls="collapseCommunity">
                     <i class="fas fa-fw fa-people-carry"></i>
@@ -118,13 +119,13 @@
                 <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item" href="view-feedback.html">View Feedbacks</a>
+                        <a class="collapse-item active" href="view-feedback.html">View Feedbacks</a>
                         <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
                         <a class="collapse-item" href="registration-req.html">Registration Requests</a>
                     </div>
                 </div>
             </li>
-
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -194,7 +195,7 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item active dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link " href="messages.html">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
@@ -232,24 +233,28 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>Forms Requests</h1>
+                    <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <h1>View Feedbacks</h1>
                     <hr>
-                    <p id="message1"></p>
-                    <!-- DataTables Example -->
 
                     <div class="card mb-3">
-                        <div class="card-header text-white bg-primary">
+                        <div class="card-header bg-primary text-white">
                             <i class="fas fa-table"></i>
-                            Declined Forms Requests
-                            <div class="float-right">
-                                Category: <select id="formsDenied" onchange="onChangeFormsDenied()">
+                            Feedbacks
+                            <!--<div class="float-right">
+                                Category: <select id="categoryPending" onchange="onChangePending()">
                             </div>
                             <option value="--">--</option>
-                            <option value="Barangay Clearance">Barangay Clearance</option>
-                            <option value="Certificate of indigency">Certificate of Indigency</option>
+                            <option value="Peace and Order (Neighborhood)">Neighborhood</option>
+                            <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
+                            <option value="Peace and Order (Robbery)">Robbery</option>
+                            <option value="Clean and Green (Waste)">Waste</option>
+                            <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
+                            <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
+                            <option value="Others">Others</option>
                             </select>
-                        </div>
-
+                        </div>-->
                     </div>
 
                     <div class="card-body">
@@ -257,40 +262,44 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Request ID</th>
-                                        <th>Forms</th>
-                                        <th>Barangay</th>
+                                        <th>Feedback ID</th>
                                         <th>Full Name</th>
-                                        <th>Purpose</th>
+                                        <th>Activity Type</th>
+                                        <th>Activity Name</th>
+                                        <th>Activity Date</th>
+                                        <th>Rating</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id="table_body">
+                                <tbody id="tbody_feedback">
                                     <tr>
-                                        <td colspan="6" class="text-center"><b>Loading Forms...</b></td>
+                                        <td colspan="7" class="text-center"><b>Loading Feedback...</b></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
+                </div>
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Pasigueno Assistant 2019</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
+        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -337,9 +346,7 @@
     <script src="../js/sb-admin-2.min.js"></script>
 
     <!--JS Script(s) for this Page-->
-    <script src="../js/requestFunctions.js"></script>
-    <script src="../js/requestTableDeclined.js"></script>
-    <script src="../js/requestsModal.js"></script>
+    <script src="../js/viewFeedBack.js"></script>
 </body>
 
 </html>

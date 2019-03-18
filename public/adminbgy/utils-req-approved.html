@@ -108,6 +108,23 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Community Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommunity"
+                    aria-expanded="true" aria-controls="collapseCommunity">
+                    <i class="fas fa-fw fa-people-carry"></i>
+                    <span>Community</span>
+                </a>
+                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reports:</h6>
+                        <a class="collapse-item" href="view-feedback.html">View Community Feedbacks</a>
+                        <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
+                        <a class="collapse-item" href="registration-req.html">Registration Requests</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -222,9 +239,9 @@
                     <div class="card mb-3">
                         <div class="card-header text-white bg-primary">
                             <i class="fas fa-table"></i>
-                            Pending Services Requests
+                            Approved Services Requests
                             <div class="float-right">
-                                Category: <select id="leave1" onchange="onChangeForms()">
+                                Category: <select id="utilApproved" onchange="onChangeFormsUtilsApproved()">
                             </div>
                             <option value="--">--</option>
                             <option value="Tent">Tent</option>
@@ -239,17 +256,17 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
+                                        <th>Request ID</th>
                                         <th>Category</th>
                                         <th>Date</th>
                                         <th>Location</th>
                                         <th>Start Date & Time</th>
                                         <th>Return Date & Time</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table_body1">
                                     <tr>
-                                        <td colspan="6" class="text-center"><b>Loading Requests...</b></td>
+                                        <td colspan="7" class="text-center"><b>Loading Requests...</b></td>
                                     </tr>
                                 </tbody>
                             </table>

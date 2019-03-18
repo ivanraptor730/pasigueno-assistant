@@ -14,7 +14,6 @@ function setBarangay() {
                     barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
 
                     document.getElementById('barangay').value = barangay; //Sets the username in the Webpage.
-                    alert(barangay);
                 });
             });
 
@@ -25,16 +24,14 @@ window.onload = setBarangay();
 
 var fullname = document.getElementById("fullname");
 var barangay = document.getElementById("barangay");
-var username = document.getElementById("username");
+var username = document.getElementById("username").value;
 var address = document.getElementById("address");
-var password = document.getElementById("password");
+var password = document.getElementById("password").value;
 var userType = document.getElementById("userType");
 var submit = document.getElementById("submit");
 
 function submitClick() {
-    var usernames = username.value;
-    var passwords = password.value;
-    firebase.auth().createUserWithEmailAndPassword(usernames, passwords).then(function (user) {
+    firebase.auth().createUserWithEmailAndPassword(username, password).then(function (user) {
         var uid = firebase.auth().currentUser.uid;
         var fullnames = fullname.value;
         var barangays = barangay.value;
@@ -48,7 +45,7 @@ function submitClick() {
             Address: addresss,
             Name: fullnames,
             Barangay: barangays,
-            Username: usernames,
+            Username: username,
             UserType: userTypes,
             UserID: uid,
             Status: status

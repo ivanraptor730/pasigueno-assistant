@@ -89,25 +89,41 @@
 
       <!-- Nav Item - Requests Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-reply"></i>
-            <span>Requests</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests" aria-expanded="true"
+          aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-reply"></i>
+          <span>Requests</span>
         </a>
         <div id="collapseRequests" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Forms:</h6>
-                <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
-                <a class="collapse-item" href="forms-req-approved.html">Approved Requests</a>
-                <a class="collapse-item" href="forms-req-denied.html">Denied Requests</a>
-                <h6 class="collapse-header">Services/Utilities:</h6>
-                <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
-                <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
-                <a class="collapse-item" href="utils-req-denied.html">Denied Requests</a>
-            </div>
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Forms:</h6>
+            <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
+            <a class="collapse-item" href="forms-req-approved.html">Approved Requests</a>
+            <a class="collapse-item" href="forms-req-denied.html">Denied Requests</a>
+            <h6 class="collapse-header">Services/Utilities:</h6>
+            <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
+            <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
+            <a class="collapse-item" href="utils-req-denied.html">Denied Requests</a>
+          </div>
         </div>
-    </li>
+      </li>
 
+      <!-- Nav Item - Community Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommunity" aria-expanded="true"
+          aria-controls="collapseCommunity">
+          <i class="fas fa-fw fa-people-carry"></i>
+          <span>Community</span>
+        </a>
+        <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Reports:</h6>
+            <a class="collapse-item" href="view-feedback.html">View  Feedbacks</a>
+            <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
+            <a class="collapse-item" href="registration-req.html">Registration Requests</a>
+          </div>
+        </div>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -171,7 +187,7 @@
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          
+
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -193,18 +209,18 @@
                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
                 <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
-               <!-- Dropdown - User Information -->
-               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="my-profile.html">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Logout
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
                 </a>
-            </div>
+              </div>
             </li>
 
           </ul>
@@ -223,23 +239,26 @@
               Map Report History</div>
 
             <div class="container-fluid">
-              Date: <input type="date" class="date-dropdown" onchange="initMap()" id="date"></input>
-
-              Category: <select id="category" class="custom-dropdown" onchange="initMap()">
-                <img src="../img/logo.png" width="100" height="50">
-                <option class="form-control-user" value="--">--</option>
-                <option value="Clean and Green">Clean and Green</option>
-                <option value="Peace and Order">Peace and Order</option>
-                <option value="Peace and Order (Neighborhood)">Neighborhood</option>
-                <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
-                <option value="Peace and Order (Robbery)">Robbery</option>
-                <option value="Clean and Green (Waste)">Waste</option>
-                <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
-                <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
-                <option value="Others">Others</option>
-              </select>
-
-
+                  <br>
+                Category: <select id="category" class="custom-dropdown" onchange="initMap()">
+                    <img src="../img/logo.png" width="100" height="50">
+                    <option class="form-control-user" value="--">--</option>
+                    <option value="Clean and Green">Clean and Green</option>
+                    <option value="Peace and Order">Peace and Order</option>
+                    <option value="Peace and Order (Neighborhood)">Neighborhood</option>
+                    <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
+                    <option value="Peace and Order (Robbery)">Robbery</option>
+                    <option value="Clean and Green (Waste)">Waste</option>
+                    <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
+                    <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
+                    <option value="Others">Others</option>
+                  </select> 
+                  <br><br>
+                 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date:  <input type="date" class="date-dropdown" onchange="initMap()" id="date"></input>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Report Id: <input type="text" class="custom-text" onchange="initMap()" id="reportID"></input>
+                <br>
+              
               <div class="card-body">
                 <div id="map" style="width:100%;height:400px;">Loading Maps...</div>
 

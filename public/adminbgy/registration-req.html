@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Forms Requests | Pasigueno Assistant</title>
+    <title>Registration Requests | Pasigueno Assistant</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -88,7 +88,7 @@
             </li>
 
             <!-- Nav Item - Requests Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-reply"></i>
@@ -99,9 +99,9 @@
                         <h6 class="collapse-header">Forms:</h6>
                         <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
                         <a class="collapse-item" href="forms-req-approved.html">Approved Requests</a>
-                        <a class="collapse-item active" href="forms-req-denied.html">Denied Requests</a>
+                        <a class="collapse-item" href="forms-req-denied.html">Denied Requests</a>
                         <h6 class="collapse-header">Services/Utilities:</h6>
-                        <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
+                        <a class="collapse-item active" href="utils-req-pending.html">Pending Requests</a>
                         <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
                         <a class="collapse-item" href="utils-req-denied.html">Denied Requests</a>
                     </div>
@@ -109,7 +109,7 @@
             </li>
 
             <!-- Nav Item - Community Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommunity"
                     aria-expanded="true" aria-controls="collapseCommunity">
                     <i class="fas fa-fw fa-people-carry"></i>
@@ -118,13 +118,12 @@
                 <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item" href="view-feedback.html">View Feedbacks</a>
+                        <a class="collapse-item" href="view-feedback.html">View  Feedbacks</a>
                         <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
-                        <a class="collapse-item" href="registration-req.html">Registration Requests</a>
+                        <a class="collapse-item active" href="registration-req.html">Registration Requests</a>
                     </div>
-                </div>
+                </div> 
             </li>
-
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -211,8 +210,8 @@
                                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
                                 <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                             <!-- Dropdown - User Information -->
+                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="my-profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -232,24 +231,26 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>Forms Requests</h1>
+                    <h1>View Registration Request</h1>
                     <hr>
-                    <p id="message1"></p>
-                    <!-- DataTables Example -->
 
                     <div class="card mb-3">
-                        <div class="card-header text-white bg-primary">
+                        <div class="card-header bg-primary text-white">
                             <i class="fas fa-table"></i>
-                            Declined Forms Requests
-                            <div class="float-right">
-                                Category: <select id="formsDenied" onchange="onChangeFormsDenied()">
+                            Registration Request
+                            <!--<div class="float-right">
+                                Category: <select id="categoryPending" onchange="onChangePending()">
                             </div>
                             <option value="--">--</option>
-                            <option value="Barangay Clearance">Barangay Clearance</option>
-                            <option value="Certificate of indigency">Certificate of Indigency</option>
+                            <option value="Peace and Order (Neighborhood)">Neighborhood</option>
+                            <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
+                            <option value="Peace and Order (Robbery)">Robbery</option>
+                            <option value="Clean and Green (Waste)">Waste</option>
+                            <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
+                            <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
+                            <option value="Others">Others</option>
                             </select>
-                        </div>
-
+                        </div>-->
                     </div>
 
                     <div class="card-body">
@@ -258,20 +259,22 @@
                                 <thead>
                                     <tr>
                                         <th>Request ID</th>
-                                        <th>Forms</th>
-                                        <th>Barangay</th>
-                                        <th>Full Name</th>
-                                        <th>Purpose</th>
+                                        <th>Activity Title</th>
+                                        <th>Activity Place</th>
+                                        <th>Date of Activity</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id="table_body">
+                                <tbody id="tbody_registration">
                                     <tr>
-                                        <td colspan="6" class="text-center"><b>Loading Forms...</b></td>
+                                        <td colspan="6" class="text-center"><b>Loading Registration Request...</b></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!-- /.container-fluid -->
@@ -337,9 +340,7 @@
     <script src="../js/sb-admin-2.min.js"></script>
 
     <!--JS Script(s) for this Page-->
-    <script src="../js/requestFunctions.js"></script>
-    <script src="../js/requestTableDeclined.js"></script>
-    <script src="../js/requestsModal.js"></script>
+    <script src="../js/viewActivityRegistration.js"></script>
 </body>
 
 </html>

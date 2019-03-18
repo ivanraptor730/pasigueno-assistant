@@ -108,6 +108,23 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Community Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommunity"
+                    aria-expanded="true" aria-controls="collapseCommunity">
+                    <i class="fas fa-fw fa-people-carry"></i>
+                    <span>Community</span>
+                </a>
+                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reports:</h6>
+                        <a class="collapse-item" href="view-feedback.html">View  Feedbacks</a>
+                        <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
+                        <a class="collapse-item" href="registration-req.html">Registration Requests</a>
+                    </div>
+                </div> 
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -222,9 +239,9 @@
                     <div class="card mb-3">
                         <div class="card-header text-white bg-primary">
                             <i class="fas fa-table"></i>
-                            Pending Forms Requests
+                            Pending Services Requests
                             <div class="float-right">
-                                Category: <select id="leave1" onchange="onChangeForms()">
+                                Category: <select id="utilsPending" onchange="onChangeFormsUtilsPending()">
                             </div>
                             <option value="--">--</option>
                             <option value="Tent">Tent</option>
@@ -250,7 +267,7 @@
                                 </thead>
                                 <tbody id="table_body1">
                                     <tr>
-                                        <td colspan="6" class="text-center"><b>Loading Requests...</b></td>
+                                        <td colspan="7" class="text-center"><b>Loading Requests...</b></td>
                                     </tr>
                                 </tbody>
                             </table>

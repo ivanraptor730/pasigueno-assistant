@@ -46,11 +46,15 @@ function initMap() {
                     var x = document.getElementById("date").value;
 
                     var a = document.getElementById("category").value;
+                    var reportIDs = document.getElementById("reportID").value;
                     var as = x + "_" + a;
-
+                    var BDC = brgy +"_"+ x + "_" + a;
+                    var BC= brgy+"_"+a;
+                    
+                    var BD= brgy+"_"+x;
                     var dbRef = firebase.database().ref('reports');
                     if (x != "" && a == "--") {
-                        dbRef.orderByChild('Date').equalTo(x).on('value', function (snapshot) {
+                        dbRef.orderByChild('Barangay_Date').equalTo(BD).on('value', function (snapshot) {
                             snapshot.forEach(snap => {
                                 var childs = snap.val();
                                 var Category = snap.child("Category").val();
@@ -58,7 +62,7 @@ function initMap() {
                                 var locationName = snap.child("Location").val();
                                 var status = snap.child("Status").val();
                                 var markerColor;
-                                if (status == "Sent") {
+                                if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
                                 if (status == "Responded") {
@@ -69,6 +73,7 @@ function initMap() {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
                                 }
+                                
                                 var infowindow = new google.maps.InfoWindow();
                                 var marker = new google.maps.Marker({
                                     position: {
@@ -91,7 +96,8 @@ function initMap() {
 
                     }
                     if (a != "--" && x == "") {
-                        dbRef.orderByChild('Category').equalTo(a).on('value', function (snapshot) {
+                    
+                        dbRef.orderByChild('Barangay_Category').equalTo(BC).on('value', function (snapshot) {
                             snapshot.forEach(snap => {
 
                                 var childs = snap.val();
@@ -134,7 +140,7 @@ function initMap() {
 
                     }
                     if (a == a && x == x) {
-                        dbRef.orderByChild('Date_Category').equalTo(as).on('value', function (snapshot) {
+                        dbRef.orderByChild('Barangay_Date_Category').equalTo(BDC).on('value', function (snapshot) {
                             snapshot.forEach(snap => {
 
                                 var childs = snap.val();
@@ -176,9 +182,79 @@ function initMap() {
                         });
 
                     }
+                    if (reportIDs !="") {
+                        dbRef.on('value', function (snapshot) {
+                            snapshot.forEach(snap => {
+                                var key = snap.key;
+                                var childs = snap.val();
+
+                                var Barangay2 = snap.child("Barangay").val();
+                                var Category = snap.child("Category").val();
+                                var date = snap.child("Date").val();
+                                var locationName = snap.child("Location").val();
+                                var status = snap.child("Status").val();
+                                var markerColor;
+                                if (status == "Pending") {
+                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                                }
+                                if (status == "Responded") {
+
+                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+                                }
+                                if (status == "Responding") {
+
+                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
+                                }
+                                if(Barangay2==brgy){
+                                if(key == reportIDs){
+                                    
+                               
+                                var infowindow = new google.maps.InfoWindow();
+                                var marker = new google.maps.Marker({
+                                    position: {
+                                        lat: parseFloat(childs.Latitude),
+                                        lng: parseFloat(childs.Longitude)
+                                    },
+                                    icon: markerColor,
+                                    map: map
+                                });
+                                google.maps.event.addListener(marker, 'click', function () {
+                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
+                                        'Date: ' + date + '<br>' +
+                                        'Location: ' + locationName + '<br>' +
+                                        'Status: ' + status + '<br>' + '</div>');
+                                    infowindow.open(map, this);
+                                });
+                            }
+                        }
+                            });
+                        });
+
+                    }
                 });
             });
         }
 
     });
 }
+$('#category').change(function() {
+    if( $(this).val() != "--") {
+        $('#reportID').prop( "disabled", true );
+        
+        document.getElementById("reportID").value = "Disabled!";
+    } else {       
+        $('#reportID').prop( "disabled", false );
+        
+        document.getElementById("reportID").value = "";
+    }
+});
+$('#date').change(function() {
+    if( $(this).val() != "") {
+        $('#reportID').prop( "disabled", true );
+        document.getElementById("reportID").value = "Disabled!";
+    } else {       
+        $('#reportID').prop( "disabled", false );
+        
+        document.getElementById("reportID").value = "";
+    }
+});date

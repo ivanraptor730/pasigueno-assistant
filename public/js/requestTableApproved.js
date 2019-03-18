@@ -37,6 +37,57 @@ function requestFormsTableApproved() {
     });
 }
 
+var category1 = document.getElementById("formApproved");
+function onChangeFormApproved(){    
+  var categorys = category1.value;
+  if(categorys=="--"){
+    
+window.onload = requestFormsTableApproved();
+  }
+ else{
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var userId = firebase.auth().currentUser.uid;
+      var users = firebase.database().ref('users');
+      var ref = users.orderByChild('UserID').equalTo(userId);
+    
+     
+      ref.once('value', function (snapshot) {
+        var parentKey = Object.keys(snapshot.val())[0];
+
+        return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
+          brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
+          var bgy = brgy + "_" + categorys;
+          var rootRef = firebase.database().ref("request/forms").orderByChild("Barangay_Form").equalTo(bgy);
+          rootRef.on("value", snap => {
+            if (snap.exists()) {
+              $("#table_body").empty();
+              snap.forEach(snap => {
+                var key = snap.key;
+                var Forms = snap.child("Form").val();
+                var Dates = snap.child("Date").val();
+                var dateOfBirth = snap.child("Birthdate").val();
+                var FullName = snap.child("Fullname").val();
+                var Purpose = snap.child("Purpose").val();
+                var UserID = snap.child("UserID").val();
+                var Barangay = snap.child("Barangay").val();
+                var BirthDate = snap.child("Birthplace").val();
+                var status = snap.child("Status").val();
+                if(status=="Approved"){
+                $("#table_body").append("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
+                }
+            })
+            } else {
+              $("#table_body").empty();
+              $("#table_body").append("<td id='nullRecords'colspan=6>No Approved Form Request.</td>");
+            }
+          });
+        });
+      });
+    }
+  });
+}
+}
 function requestUtilsTableApproved() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -55,16 +106,16 @@ function requestUtilsTableApproved() {
                             $("#table_body1").html("");
                             snap.forEach(snap => {
                                 var key = snap.key;
-                                var Category = snap.child("Category").val();
-                                var Dates = snap.child("Date").val();
-                                var Location = snap.child("Location").val();
+                                var Category = snap.child("ServiceType").val();
+                                var Dates = snap.child("RequestDate").val();
+                                var Location = snap.child("Address").val();
                                 var startTime = snap.child("StartTime").val();
                                 var startDate = snap.child("StartDate").val();
-                                var returnDate = snap.child("ReturnDate").val();
-                                var returnTime = snap.child("ReturnTime").val();
+                                var returnDate = snap.child("EndDate").val();
+                                var returnTime = snap.child("EndTime").val();
                                 $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
-                                    returnDate + " " + returnTime + "</td><td>" + "<button>View</button>" + "</td></tr>")
+                                    returnDate + " " + returnTime + "</td></tr>")
                             })
                         } else {
                             $("#table_body1").empty();
@@ -75,6 +126,64 @@ function requestUtilsTableApproved() {
             });
         }
     });
+}
+var category2 = document.getElementById("utilApproved");
+function onChangeFormsUtilsApproved(){
+  var categorys = category2.value;
+  if(categorys=="--"){
+    
+window.onload = requestUtilsTableApproved();
+  }
+ else{
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var userId = firebase.auth().currentUser.uid;
+      var users = firebase.database().ref('users');
+      var ref = users.orderByChild('UserID').equalTo(userId);
+    
+     
+      ref.once('value', function (snapshot) {
+        var parentKey = Object.keys(snapshot.val())[0];
+
+        return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
+          brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
+          var bgy = brgy + "_" + categorys;
+          var rootRef = firebase.database().ref("request/services").orderByChild("Barangay_ServiceType").equalTo(bgy);
+          rootRef.on("value", snap => {
+            if (snap.exists()) {
+              $("#table_body1").empty();
+              snap.forEach(snap => {
+                var key = snap.key;
+                var Category = snap.child("ServiceType").val();
+                var Dates = snap.child("RequestDate").val();
+                var Location = snap.child("Address").val();
+                var startTime = snap.child("StartTime").val();
+                var startDate = snap.child("StartDate").val();
+                var returnDate = snap.child("EndDate").val();
+                var returnTime = snap.child("EndTime").val();
+                
+                var status = snap.child("Status").val();
+                if(status=="Approved"){
+                  
+              $("#table_body1").empty();
+                $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
+                    "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
+                    returnDate + " " + returnTime + "</td></tr>")
+                }else {
+                  $("#table_body1").empty();
+                  $("#table_body1").append("<td id='nullRecords'colspan=7>No Approved Services Requests.</td>");
+                }
+            })
+            } else {
+              $("#table_body1").empty();
+              $("#table_body1").append("<td id='nullRecords'colspan=7>No Approved Services Requests.</td>");
+            }
+          });
+        });
+      });
+    }
+  });
+}
 }
 
 window.onload = requestFormsTableApproved(); 
