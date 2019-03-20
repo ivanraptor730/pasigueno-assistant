@@ -166,7 +166,6 @@ window.onload = requestUtilsTableDeclined();
                 var status = snap.child("Status").val();
                 
                 if(status == "Declined"){
-                  alert(status);
                   $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                   "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
               returnDate + " " + returnTime + "</td></tr>")
@@ -186,3 +185,21 @@ window.onload = requestUtilsTableDeclined();
 }
 window.onload = requestFormsTableDeclined();
 requestUtilsTableDeclined();
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}

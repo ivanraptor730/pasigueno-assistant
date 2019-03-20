@@ -9,7 +9,7 @@ function reportsTableResponding() {
 
         return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
           brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-          var rootRef = firebase.database().ref("reports").orderByChild("Barangay_Status").equalTo(barangay+"_Responding");
+          var rootRef = firebase.database().ref("reports").orderByChild("Barangay_Status").equalTo(brgy+"_Responding");
           rootRef.on("value", snap => {
             if (snap.exists()) {
               $("#tbody_responding").html("");
@@ -67,7 +67,7 @@ function reportsTableResponding() {
               })
             } else {
               $("#tbody_responding").empty();
-              $("#tbody_responding").append("<td id='nullRecords' colspan='6'>No Ongoing Reports.</td>");
+              $("#tbody_responding").append("<td id='nullRecords' colspan='6'>No Responding-to Reports.</td>");
             }
           });
         });
@@ -81,7 +81,6 @@ var category1 = document.getElementById("categoryResponding");
 function onChangeResponding(){
   var categorys = category1.value;
   if(categorys=="--"){
-    
 window.onload = reportsTableResponding();
   }
  else{
@@ -98,6 +97,7 @@ window.onload = reportsTableResponding();
         return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
           brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
           var bgy = brgy + "_" + categorys;
+          
           var rootRef = firebase.database().ref("reports").orderByChild("Barangay_Category").equalTo(bgy);
           rootRef.on("value", snap => {
             if (snap.exists()) {
@@ -121,7 +121,8 @@ window.onload = reportsTableResponding();
                 }
                 if(Anonymous=="false"){
                    userID1234 = snap.child("UserID").val();
-                }if(status=="Responding"){
+                }
+                if(status=="Responding"){
                 $("#tbody_responding").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>"+
                 "<button class='openmodal myBtn'>View</button>" +
                 "<div class='modal myModal'>" +
@@ -136,7 +137,7 @@ window.onload = reportsTableResponding();
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
-                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as Resolved</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
+                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as Responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>"+
                 "<button id='openMap' class='openmodal myBtn1'> View Map</button>" +
                 "</div>" +
@@ -156,7 +157,7 @@ window.onload = reportsTableResponding();
               }})
             }  else {
             $("#tbody_responding").empty();
-            $("#tbody_responding").append("<td id='nullRecords' colspan='6'>No Respondingss-to Reports.</td>");
+            $("#tbody_responding").append("<td id='nullRecords' colspan='6'>No Respondings-to Reports.</td>");
           }
           });
         });
@@ -164,6 +165,25 @@ window.onload = reportsTableResponding();
     }
   });
 }
+}
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
 }
 ////
 window.onload = reportsTableResponding();

@@ -23,7 +23,7 @@ function reportsTableResponded() {
               })
             } else {
               $("#tbody_responded").empty();
-              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No Resolved Reports.</td>");
+              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No Responded Reports.</td>");
             }
           });
         });
@@ -68,14 +68,14 @@ window.onload = reportsTableResponded();
                 var status = snap.child("Status").val();
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status")
-              if(status=="Resolved"){
+              if(status=="Responded"){
                 $("#tbody_responded").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
 
               }
               })
             } else {
               $("#tbody_responded").empty();
-              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No  Resolved Reports.</td>");
+              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No  Responded Reports.</td>");
             }
           });
         });
@@ -86,3 +86,21 @@ window.onload = reportsTableResponded();
 }
 ////
 window.onload = reportsTableResponded();
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}

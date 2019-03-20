@@ -115,6 +115,11 @@ img {
 	font-weight: bold;
 }
 
+.unread_chat {
+	background: #ebebeb;
+	font-weight: bold;
+}
+
 .incoming_msg_img {
 	display: inline-block;
 	width: 6%;

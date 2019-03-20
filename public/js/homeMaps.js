@@ -5,10 +5,10 @@ function initMap() {
             var users = firebase.database().ref('users');
             var ref = users.orderByChild('UserID').equalTo(userId);
 
-            ref.once('value', function (snapshot){
+            ref.once('value', function (snapshot) {
                 var parentKey = Object.keys(snapshot.val())[0];
 
-                return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot){
+                return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
                     brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
                     var lat, lang;
                     if (brgy == "Santolan") {
@@ -43,63 +43,20 @@ function initMap() {
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     });
 
-                    var x = document.getElementById("date").value;
+                    var startDate = document.getElementById("startDate").value;
+                    var endDate = document.getElementById("endDate").value;
 
                     var a = document.getElementById("category").value;
                     var reportIDs = document.getElementById("reportID").value;
-                    var as = x + "_" + a;
-                    var BDC = brgy +"_"+ x + "_" + a;
-                    var BC= brgy+"_"+a;
-                    
-                    var BD= brgy+"_"+x;
+
                     var dbRef = firebase.database().ref('reports');
-                    if (x != "" && a == "--") {
-                        dbRef.orderByChild('Barangay_Date').equalTo(BD).on('value', function (snapshot) {
+
+                    if (startDate != "" && endDate != "" && a == "--" || startDate != null && endDate != null && a == "--") {
+
+                        dbRef.orderByChild("Date").startAt(startDate).endAt(endDate).on('value', function (snapshot) {
                             snapshot.forEach(snap => {
-                                var childs = snap.val();
-                                var Category = snap.child("Category").val();
-                                var date = snap.child("Date").val();
-                                var locationName = snap.child("Location").val();
-                                var status = snap.child("Status").val();
-                                var markerColor;
-                                if (status == "Pending") {
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
-                                }
-                                if (status == "Resolved") {
-
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
-                                }
-                                if (status == "Responding") {
-
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
-                                }
-                                
-                                var infowindow = new google.maps.InfoWindow();
-                                var marker = new google.maps.Marker({
-                                    position: {
-                                        lat: parseFloat(childs.Latitude),
-                                        lng: parseFloat(childs.Longitude)
-                                    },
-                                    icon: markerColor,
-                                    map: map
-                                });
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
-                                        'Date: ' + date + '<br>' +
-                                        'Location: ' + locationName + '<br>' +
-                                        'Status: ' + status + '<br>' + '</div>');
-                                    infowindow.open(map, this);
-                                });
-
-                            });
-                        });
-
-                    }
-                    if (a != "--" && x == "") {
-                    
-                        dbRef.orderByChild('Barangay_Category').equalTo(BC).on('value', function (snapshot) {
-                            snapshot.forEach(snap => {
-
+                                var barangayss = snap.child("Barangay").val();
+                                var barangey = a.value;
                                 var childs = snap.val();
 
                                 var Category = snap.child("Category").val();
@@ -110,7 +67,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Resolved") {
+                                if (status == "Responded") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -118,31 +75,35 @@ function initMap() {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
                                 }
-                                var infowindow = new google.maps.InfoWindow();
-                                var marker = new google.maps.Marker({
-                                    position: {
-                                        lat: parseFloat(childs.Latitude),
-                                        lng: parseFloat(childs.Longitude)
-                                    },
-                                    icon: markerColor,
-                                    map: map
-                                });
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
-                                        'Date: ' + date + '<br>' +
-                                        'Location: ' + locationName + '<br>' +
-                                        'Status: ' + status + '<br>' + '</div>');
-                                    infowindow.open(map, this);
-                                });
-
+                                if (status != "Spam" && barangayss == brgy) {
+                                    var infowindow = new google.maps.InfoWindow();
+                                    var marker = new google.maps.Marker({
+                                        position: {
+                                            lat: parseFloat(childs.Latitude),
+                                            lng: parseFloat(childs.Longitude)
+                                        },
+                                        icon: markerColor,
+                                        map: map
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function () {
+                                        infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
+                                            'Date: ' + date + '<br>' +
+                                            'Location: ' + locationName + '<br>' +
+                                            'Status: ' + status + '<br>' + '</div>');
+                                        infowindow.open(map, this);
+                                    });
+                                }
                             });
+
                         });
-
                     }
-                    if (a == a && x == x) {
-                        dbRef.orderByChild('Barangay_Date_Category').equalTo(BDC).on('value', function (snapshot) {
-                            snapshot.forEach(snap => {
 
+                    if (startDate != "" && endDate != "" && a != "--" || startDate != null && endDate != null && a != "--") {
+
+                        dbRef.orderByChild("Date").startAt(startDate).endAt(endDate).on('value', function (snapshot) {
+                            snapshot.forEach(snap => {
+                                var barangayss = snap.child("Barangay").val();
+                                var barangey = a.value;
                                 var childs = snap.val();
 
                                 var Category = snap.child("Category").val();
@@ -153,7 +114,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Resolved") {
+                                if (status == "Responded") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -161,28 +122,75 @@ function initMap() {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
                                 }
-                                var infowindow = new google.maps.InfoWindow();
-                                var marker = new google.maps.Marker({
-                                    position: {
-                                        lat: parseFloat(childs.Latitude),
-                                        lng: parseFloat(childs.Longitude)
-                                    },
-                                    icon: markerColor,
-                                    map: map
-                                });
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
-                                        'Date: ' + date + '<br>' +
-                                        'Location: ' + locationName + '<br>' +
-                                        'Status: ' + status + '<br>' + '</div>');
-                                    infowindow.open(map, this);
-                                });
+                                if (status != "Spam" && barangayss == brgy && a == Category) {
+                                    var infowindow = new google.maps.InfoWindow();
+                                    var marker = new google.maps.Marker({
+                                        position: {
+                                            lat: parseFloat(childs.Latitude),
+                                            lng: parseFloat(childs.Longitude)
+                                        },
+                                        icon: markerColor,
+                                        map: map
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function () {
+                                        infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
+                                            'Date: ' + date + '<br>' +
+                                            'Location: ' + locationName + '<br>' +
+                                            'Status: ' + status + '<br>' + '</div>');
+                                        infowindow.open(map, this);
+                                    });
+                                }
+                            });
 
+                        });
+                    }
+                    if (a != "--") {
+
+                        dbRef.orderByChild('Category').equalTo(a).on('value', function (snapshot) {
+                            snapshot.forEach(snap => {
+
+                                var childs = snap.val();
+
+                                var Barangay2 = snap.child("Barangay").val();
+                                var Category = snap.child("Category").val();
+                                var date = snap.child("Date").val();
+                                var locationName = snap.child("Location").val();
+                                var status = snap.child("Status").val();
+                                var markerColor;
+                                if (status == "Pending") {
+                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                                }
+                                if (status == "Responded") {
+
+                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+                                }
+                                if (status == "Responding") {
+
+                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
+                                }
+                                if (brgy == Barangay2 && status != "Spam") {
+                                    var infowindow = new google.maps.InfoWindow();
+                                    var marker = new google.maps.Marker({
+                                        position: {
+                                            lat: parseFloat(childs.Latitude),
+                                            lng: parseFloat(childs.Longitude)
+                                        },
+                                        icon: markerColor,
+                                        map: map
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function () {
+                                        infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
+                                            'Date: ' + date + '<br>' +
+                                            'Location: ' + locationName + '<br>' +
+                                            'Status: ' + status + '<br>' + '</div>');
+                                        infowindow.open(map, this);
+                                    });
+                                }
                             });
                         });
 
                     }
-                    if (reportIDs !="") {
+                    if (reportIDs != "") {
                         dbRef.on('value', function (snapshot) {
                             snapshot.forEach(snap => {
                                 var key = snap.key;
@@ -197,7 +205,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Resolved") {
+                                if (status == "Responded") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -205,28 +213,28 @@ function initMap() {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
                                 }
-                                if(Barangay2==brgy){
-                                if(key == reportIDs){
-                                    
-                               
-                                var infowindow = new google.maps.InfoWindow();
-                                var marker = new google.maps.Marker({
-                                    position: {
-                                        lat: parseFloat(childs.Latitude),
-                                        lng: parseFloat(childs.Longitude)
-                                    },
-                                    icon: markerColor,
-                                    map: map
-                                });
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
-                                        'Date: ' + date + '<br>' +
-                                        'Location: ' + locationName + '<br>' +
-                                        'Status: ' + status + '<br>' + '</div>');
-                                    infowindow.open(map, this);
-                                });
-                            }
-                        }
+                                if (Barangay2 == brgy) {
+                                    if (key == reportIDs) {
+
+
+                                        var infowindow = new google.maps.InfoWindow();
+                                        var marker = new google.maps.Marker({
+                                            position: {
+                                                lat: parseFloat(childs.Latitude),
+                                                lng: parseFloat(childs.Longitude)
+                                            },
+                                            icon: markerColor,
+                                            map: map
+                                        });
+                                        google.maps.event.addListener(marker, 'click', function () {
+                                            infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
+                                                'Date: ' + date + '<br>' +
+                                                'Location: ' + locationName + '<br>' +
+                                                'Status: ' + status + '<br>' + '</div>');
+                                            infowindow.open(map, this);
+                                        });
+                                    }
+                                }
                             });
                         });
 
@@ -237,24 +245,34 @@ function initMap() {
 
     });
 }
-$('#category').change(function() {
-    if( $(this).val() != "--") {
-        $('#reportID').prop( "disabled", true );
-        
+$('#category').change(function () {
+    if ($(this).val() != "--") {
+        $('#reportID').prop("disabled", true);
+
         document.getElementById("reportID").value = "Disabled!";
-    } else {       
-        $('#reportID').prop( "disabled", false );
-        
+    } else {
+        $('#reportID').prop("disabled", false);
+
         document.getElementById("reportID").value = "";
     }
 });
-$('#date').change(function() {
-    if( $(this).val() != "") {
-        $('#reportID').prop( "disabled", true );
+$('#startDate').change(function () {
+    if ($(this).val() != "") {
+        $('#reportID').prop("disabled", true);
         document.getElementById("reportID").value = "Disabled!";
-    } else {       
-        $('#reportID').prop( "disabled", false );
-        
+    } else {
+        $('#reportID').prop("disabled", false);
+
         document.getElementById("reportID").value = "";
     }
-});date
+});
+$('#endDate').change(function () {
+    if ($(this).val() != "") {
+        $('#reportID').prop("disabled", true);
+        document.getElementById("reportID").value = "Disabled!";
+    } else {
+        $('#reportID').prop("disabled", false);
+
+        document.getElementById("reportID").value = "";
+    }
+});

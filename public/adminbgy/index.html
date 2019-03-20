@@ -247,7 +247,6 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-
         <div class="container-fluid">
           <h1>Overview</h1>
           <hr>
@@ -257,28 +256,33 @@
               Map Report History</div>
 
             <div class="container-fluid">
-              <br>
-              Category: <select id="category" class="custom-dropdown" onchange="initMap()">
-                <img src="../img/logo.png" width="100" height="50">
-                <option class="form-control-user" value="--">--</option>
-                <option value="Clean and Green">Clean and Green</option>
-                <option value="Peace and Order">Peace and Order</option>
-                <option value="Peace and Order (Neighborhood)">Neighborhood</option>
-                <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
-                <option value="Peace and Order (Robbery)">Robbery</option>
-                <option value="Clean and Green (Waste)">Waste</option>
-                <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
-                <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
-                <option value="Others">Others</option>
-              </select>
-              <br><br>
-
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: <input type="date" class="date-dropdown" onchange="initMap()"
-                id="date"></input>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Report Id: <input type="text" class="custom-text" onchange="initMap()"
-                id="reportID"></input>
-              <br>
-
+                  <br>
+                Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Start Date:<br> <select id="category" class="custom-dropdown" onchange="initMap()">
+                    <img src="../img/logo.png" width="100" height="50">
+                    <option class="form-control-user" value="--">--</option>
+                    <option value="Peace and Order (Neighborhood)">Neighborhood</option>
+                    <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
+                    <option value="Peace and Order (Robbery)">Robbery</option>
+                    <option value="Clean and Green (Waste)">Waste</option>
+                    <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
+                    <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
+                    <option value="Others">Others</option>
+                </select>&nbsp;&nbsp;&nbsp;<input type="date" class="date-dropdown" onchange="initMap()" id="startDate"></input>
+                    <br> 
+                   
+                   Search Report Id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   End Date:<br> <input type="text" class="custom-text" onchange="initMap()" id="reportID"></input>
+                   &nbsp;&nbsp;<input type="date" class="date-dropdown" onchange="initMap()" id="endDate"></input>
+                   <br>
+              
               <div class="card-body">
                 <div id="map" style="width:100%;height:400px;">Loading Maps...</div>
 
@@ -287,7 +291,7 @@
               <b>Legend: </b>
               <p>1. Pending Reports: <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"></p>
               <p>2. Responding Reports: <img src="http://maps.google.com/mapfiles/ms/icons/orange-dot.png"></p>
-              <p>3. Resolved Reports: <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"></p>
+              <p>3. Responded Reports: <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"></p>
 
             </div>
           </div>

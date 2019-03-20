@@ -70,7 +70,8 @@ window.onload = reportsTableSpam();
                 var catstat = snap.child("Barangay_Status")
               if(status=="Spam"){
                 $("#tbody_spam").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
-              }})
+              }
+            })
             } else {
               $("#tbody_spam").empty();
               $("#tbody_spam").append("<td id='nullRecords' colspan='6'>No Spam Reports.</td>");
@@ -84,3 +85,21 @@ window.onload = reportsTableSpam();
 }
 
 window.onload = reportsTableSpam();
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}

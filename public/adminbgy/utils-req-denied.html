@@ -155,22 +155,7 @@
                 </div>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Barangay Utilities
-            </div>
-
-            <!-- Nav Item - Manage Stocks -->
-            <li class="nav-item">
-                <a class="nav-link" href="utils-mng.html">
-                    <i class="fas fa-fw fa-boxes"></i>
-                    <span>Manage Utilities</span>
-                </a>
-            </li>
-
+           
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -266,9 +251,11 @@
                     <div class="card mb-3">
                         <div class="card-header text-white bg-primary">
                             <i class="fas fa-table"></i>
-                            Declined Services Requests
+                            Approved Services Requests
                             <div class="float-right">
-                                Category: <select id="utilDenied" onchange="onChangeFormsUtilsDenied()">
+                                
+                                    Search by ID: <input type="text" id="myInput" onkeyup="myFunction()" title="Type in a name">
+                                Category: <select id="utilApproved" onchange="onChangeFormsUtilsApproved()">
                             </div>
                             <option value="--">--</option>
                             <option value="Tent">Tent</option>
@@ -283,7 +270,7 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Report ID</th>
+                                        <th>Request ID</th>
                                         <th>Category</th>
                                         <th>Date</th>
                                         <th>Location</th>
@@ -293,7 +280,7 @@
                                 </thead>
                                 <tbody id="table_body1">
                                     <tr>
-                                        <td colspan="6" class="text-center"><b>Loading Requests...</b></td>
+                                        <td colspan="7" class="text-center"><b>Loading Requests...</b></td>
                                     </tr>
                                 </tbody>
                             </table>
