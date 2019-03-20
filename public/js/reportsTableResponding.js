@@ -67,7 +67,7 @@ function reportsTableResponding() {
               })
             } else {
               $("#tbody_responding").empty();
-              $("#tbody_responding").append("<td id='nullRecords' colspan='6'>No Responding-to Reports.</td>");
+              $("#tbody_responding").append("<td id='nullRecords' colspan='6'>No Ongoing Reports.</td>");
             }
           });
         });
@@ -136,7 +136,7 @@ window.onload = reportsTableResponding();
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
-                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as Responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
+                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as Resolved</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>"+
                 "<button id='openMap' class='openmodal myBtn1'> View Map</button>" +
                 "</div>" +

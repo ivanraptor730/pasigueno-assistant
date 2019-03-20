@@ -55,7 +55,7 @@ $(function () { //Respond to Reports
                     barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
                     
                     firebase.database().ref("reports/" + $id).update({
-                      Status: "Responded",
+                      Status: "Resolved",
                       Barangay_Status: barangay+"_Responded"
                     });
             alert('Updated Report Status of ID ' + $id);
@@ -126,10 +126,10 @@ $(function () {
                     barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
                     
       firebase.database().ref("reports/" + $id).update({
-        Status: "Responded",
+        Status: "Resolved",
         Barangay_Status: barangay+"_Responded"
       });
-      alert('Report ' + $id + ' marked as Responded.');
+      alert('Report ' + $id + ' marked as Resolved.');
                 });
             });
         }

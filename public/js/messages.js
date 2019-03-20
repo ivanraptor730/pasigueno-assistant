@@ -9,6 +9,7 @@ var timeToday = formatAMPM(new Date());
 var userId;
 var myName;
 var msg;
+var brgy;
 
 function messages() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -21,6 +22,7 @@ function messages() {
                 return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
                     brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
                     myName = (snapshot.val() && snapshot.val().FullName) || 'Unknown';
+
                     var chatterRef = firebase.database().ref("messages/" + brgy); //fetch chat list from barangay
                     chatterRef.on("value", snap => {
                         if (snap.exists()) {
@@ -35,21 +37,22 @@ function messages() {
                                             message = snapsh.child("message").val();
                                             date = snapsh.child("date").val();
                                         });
-                                        $("#people").append("<div class='chat_list' id='" + key + "'>" + //populate people tab
+                                        $("#people").append("<div class='chat_list active_chat' id='" + key + "'>" + //populate people tab
                                             "<div class='chat_people'>" +
                                             "<div class='chat_img'><img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div>" +
                                             "<div class='chat_ib'>" +
-                                            "<h5><p id id='username'>" + key + "</p><span class='chat_date'>" + date + "</span></h5>" +
+                                            "<h5><p id='username'>" + key + "</p><span class='chat_date'>" + date + "</span></h5>" +
                                             "<p>" + message + "</p>" +
                                             "</div></div></div>");
 
                                         $('div.chat_list').on('click', function () { //populate chatbox and determine clicked user
                                             document.getElementById("message").readOnly = false;
+                                            document.getElementById('msg-counter').innerHTML = "";
                                             var $cl = $(this).closest('div.chat_list');
                                             $chtName = $cl.attr('id');
                                             $('div.chat_list').removeClass("active_chat");
                                             $($cl).addClass("active_chat");
-                                            var thread = firebase.database().ref("messages/" + brgy + "/" + key); //populates chat list from that barangay (names)
+                                            var thread = firebase.database().ref("messages/" + brgy).child($chtName); //populates chat list from that barangay (names)
                                             thread.on("value", snaps => {
                                                 if (snaps.exists()) { //populate chat entries for users
                                                     $(".msg_history").empty();
@@ -59,7 +62,7 @@ function messages() {
                                                         date = snaps.child("date").val();
                                                         time = snaps.child("time").val();
 
-                                                        if (username != key) { //sets the chat bubble type
+                                                        if ($chtName != username) { //sets the chat bubble type
                                                             div1 = "outgoing_msg";
                                                             div2 = "sent_msg";
                                                         } else {
@@ -75,7 +78,6 @@ function messages() {
                                                         updateScroll();
                                                     });
                                                 }
-
                                             });
 
                                         })
@@ -88,10 +90,17 @@ function messages() {
                             $("#tbody_messages").append("<td id='nullRecords'colspan=6>No Messages.</td>");
                         }
                     });
+                    var thread = firebase.database().ref("messages/" + brgy); //populates chat list from that barangay (names)
+                    thread.on('child_changed', function (snapshot) {
+                        document.getElementById('msg-counter').innerHTML = "!";
+                        console.log(snapshot.val());
+                    });
                 });
             });
         }
     });
+
+
 }
 window.onload = messages();
 
@@ -126,7 +135,7 @@ function formatAMPM(date) {
     return strTime;
 }
 
-$("#message").keyup(function(event) {
+$("#message").keyup(function (event) {
     msg = document.getElementById("message").value;
     if (event.keyCode === 13) {
         sendMessage();

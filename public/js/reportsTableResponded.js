@@ -23,7 +23,7 @@ function reportsTableResponded() {
               })
             } else {
               $("#tbody_responded").empty();
-              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No Responded Reports.</td>");
+              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No Resolved Reports.</td>");
             }
           });
         });
@@ -68,14 +68,14 @@ window.onload = reportsTableResponded();
                 var status = snap.child("Status").val();
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status")
-              if(status=="Responded"){
+              if(status=="Resolved"){
                 $("#tbody_responded").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
 
               }
               })
             } else {
               $("#tbody_responded").empty();
-              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No  Responded Reports.</td>");
+              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No  Resolved Reports.</td>");
             }
           });
         });

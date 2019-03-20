@@ -80,8 +80,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="pending-reports.html">Pending Reports</a>
-                        <a class="collapse-item" href="responding-reports.html">Responding-To Reports</a>
-                        <a class="collapse-item" href="responded-reports.html">Responded Reports</a>
+                        <a class="collapse-item" href="responding-reports.html">Ongoing Reports</a>
+                        <a class="collapse-item" href="responded-reports.html">Resolved Reports</a>
                         <a class="collapse-item" href="spam-reports.html">Spam Reports</a>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <!-- Topbar -->
+                <<!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
@@ -193,11 +193,30 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item active dropdown no-arrow mx-1">
+                        <!-- Nav Item - Reports Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-info-circle fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span id="rep-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Requests Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-reply fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span id="req-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link " href="messages.html">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
+                                <span id="msg-counter" class="badge badge-danger badge-counter"></span>
                             </a>
                         </li>
 
@@ -337,6 +356,7 @@
     <script src="../js/sb-admin-2.min.js"></script>
 
     <!--JS Script(s) for this Page-->
+<script src="../js/notificationsHandler.js"></script>
     <script src="../js/requestFunctions.js"></script>
     <script src="../js/requestTableApproved.js"></script>
     <script src="../js/requestsModal.js"></script>

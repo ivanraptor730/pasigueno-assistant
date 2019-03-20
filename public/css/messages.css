@@ -95,6 +95,10 @@ img {
 	clear: both;
 }
 
+#username{
+	font-weight: bold;
+}
+
 .chat_list {
 	border-bottom: 1px solid #c4c4c4;
 	margin: 0;
@@ -108,6 +112,7 @@ img {
 
 .active_chat {
 	background: #ebebeb;
+	font-weight: bold;
 }
 
 .incoming_msg_img {

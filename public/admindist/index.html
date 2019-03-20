@@ -191,7 +191,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
+                <span id="msg-counter" class="badge badge-danger badge-counter"></span>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
@@ -423,7 +423,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Responded") {
+                                if (status == "Resolved") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -468,7 +468,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Responded") {
+                                if (status == "Resolved") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }

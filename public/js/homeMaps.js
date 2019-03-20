@@ -65,7 +65,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Responded") {
+                                if (status == "Resolved") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -110,7 +110,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Responded") {
+                                if (status == "Resolved") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -153,7 +153,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Responded") {
+                                if (status == "Resolved") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }
@@ -197,7 +197,7 @@ function initMap() {
                                 if (status == "Pending") {
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                                 }
-                                if (status == "Responded") {
+                                if (status == "Resolved") {
 
                                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                                 }

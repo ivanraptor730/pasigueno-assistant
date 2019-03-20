@@ -2,7 +2,7 @@ function onChangeResponded() {
     var x = document.getElementById("categoryPending").value;
     var rootRef = firebase.database().ref();
     if (x == "--") {
-      var rootRef = firebase.database().ref("reports").orderByChild("Status").equalTo("Responded");
+      var rootRef = firebase.database().ref("reports").orderByChild("Status").equalTo("Resolved");
       rootRef.on("value", snap => {
         $("#tbody_responded").html("");
         snap.forEach(snap => {

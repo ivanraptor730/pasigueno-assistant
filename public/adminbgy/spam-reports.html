@@ -12,7 +12,8 @@
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -55,12 +56,13 @@
 
             <!-- Nav Item - Newsfeed Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews" aria-expanded="true"
-                    aria-controls="collapseNews">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews"
+                    aria-expanded="true" aria-controls="collapseNews">
                     <i class="fas fa-fw fa-plus-square"></i>
                     <span>Newsfeed</span>
                 </a>
-                <div id="collapseNews" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div id="collapseNews" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manage Newsfeed:</h6>
                         <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
@@ -76,12 +78,13 @@
                     <i class="fas fa-fw fa-info-circle"></i>
                     <span>Reports</span>
                 </a>
-                <div id="collapseReports" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div id="collapseReports" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="pending-reports.html">Pending Reports</a>
-                        <a class="collapse-item" href="responding-reports.html">Responding-To Reports</a>
-                        <a class="collapse-item" href="responded-reports.html">Responded Reports</a>
+                        <a class="collapse-item" href="responding-reports.html">Ongoing Reports</a>
+                        <a class="collapse-item" href="responded-reports.html">Resolved Reports</a>
                         <a class="collapse-item active" href="spam-reports.html">Spam Reports</a>
                     </div>
                 </div>
@@ -94,7 +97,8 @@
                     <i class="fas fa-fw fa-reply"></i>
                     <span>Requests</span>
                 </a>
-                <div id="collapseRequests" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+                <div id="collapseRequests" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Forms:</h6>
                         <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
@@ -115,10 +119,11 @@
                     <i class="fas fa-fw fa-people-carry"></i>
                     <span>Community</span>
                 </a>
-                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item" href="view-feedback.html">View  Feedbacks</a>
+                        <a class="collapse-item" href="view-feedback.html">View Feedbacks</a>
                         <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
                         <a class="collapse-item" href="registration-req.html">Registration Requests</a>
                     </div>
@@ -140,7 +145,8 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>Accounts</span>
                 </a>
-                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="account-reg.html">Account Registration</a>
@@ -194,11 +200,30 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item active dropdown no-arrow mx-1">
+                        <!-- Nav Item - Reports Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-info-circle fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span id="rep-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Requests Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-reply fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span id="req-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link " href="messages.html">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
+                                <span id="msg-counter" class="badge badge-danger badge-counter"></span>
                             </a>
                         </li>
 
@@ -206,13 +231,16 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="userName"
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="my-profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -239,7 +267,8 @@
                         <div class="card-header bg-primary text-white">
                             <i class="fas fa-table"></i>
                             Reports
-                            <div class="float-right">Category: <select id="categoryPending" onchange="onChangePending()">
+                            <div class="float-right">Category: <select id="categoryPending"
+                                    onchange="onChangePending()">
                                     <option value="--">--</option>
                                     <option value="Clean and Green">Clean and Green</option>
                                     <option value="Peace and Order">Peace and Order</option>
@@ -339,6 +368,7 @@
     <script src="../js/sb-admin-2.min.js"></script>
 
     <!--JS Script(s) for this Page-->
+    <script src="../js/notificationsHandler.js"></script>
     <script src="../js/reportsTableSpam.js"></script>
     <script src="../js/reportsFunctions.js"></script>
     <script src="../js/reportsTableCategory.js"></script>
