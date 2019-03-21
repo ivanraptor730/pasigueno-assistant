@@ -49,7 +49,7 @@ function submitClick() {
             Status: status
         });
         otherApp.auth().signOut();
-        console.log(UserType + " account id " + uid + " created.");
+        console.log(userTypes + " account id " + uid + " created.");
     }, function (error) {
         console.log(error);
         otherApp.auth().signOut();
