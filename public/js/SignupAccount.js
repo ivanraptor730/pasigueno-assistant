@@ -28,30 +28,45 @@ function submitClick() {
     var password = document.getElementById("password").value;
     var userType = document.getElementById("userType");
 
-
-    otherApp.auth().createUserWithEmailAndPassword(username, password).then(function (userCreds) {
-        var uid = userCreds.user.uid;
-        var fullnames = fullname.value;
-        var barangays = barangay.value;
-        var status = "Active";
-        var addresss = address.value;
-        var userTypes = userType.value;
-        var rootRef = firebase.database().ref();
-        var storesRef = rootRef.child('users');
-        var newStoreRef = storesRef.push();
-        newStoreRef.set({
-            Address: addresss,
-            Name: fullnames,
-            Barangay: barangays,
-            Username: username,
-            UserType: userTypes,
-            UserID: uid,
-            Status: status
+    if (password.value != password1.value) {
+        alert("Passwords Don't Match");
+    } else {
+        otherApp.auth().createUserWithEmailAndPassword(username, password).then(function (userCreds) {
+            var uid = userCreds.user.uid;
+            var fullnames = fullname.value;
+            var barangays = barangay.value;
+            var status = "Active";
+            var addresss = address.value;
+            var userTypes = userType.value;
+            var rootRef = firebase.database().ref();
+            var storesRef = rootRef.child('users');
+            var newStoreRef = storesRef.push();
+            newStoreRef.set({
+                Address: addresss,
+                Name: fullnames,
+                Barangay: barangays,
+                Username: username,
+                UserType: userTypes,
+                UserID: uid,
+                Status: status
+            });
+            otherApp.auth().signOut();
+            console.log(userTypes + " account id " + uid + " created.");
+        }, function (error) {
+            console.log(error);
+            otherApp.auth().signOut();
         });
-        otherApp.auth().signOut();
-        console.log(userTypes + " account id " + uid + " created.");
-    }, function (error) {
-        console.log(error);
-        otherApp.auth().signOut();
-    });
+    }
 }
+
+$('#userType').change(function () {
+    if ($(this).val() != "User") {
+        $('#question').prop("disabled", true);
+
+
+        document.getElementById('question').innerHTML = "Security Question:<select name='question' id='question' required><option value='---'>---</option><option value='Maiden name of mother'>Maiden name of mother</option><option value='Favorite food'>Favorite food</option><option value='Favorite number'>Favorite number</option><option value='Name of dog'>Name of dog</option><option value='Favorite sport'>Favorite sport</option><option value='Name of brother'>Name of brother</option><option value='Name of sister'>Name of sister</option><option value='Name of father'>Name of father</option> </select>";
+    } else {
+
+        $('#question').prop("disabled", false);
+    }
+});

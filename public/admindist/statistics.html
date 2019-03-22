@@ -1,4 +1,3 @@
-
 <html lang="en">
 
 <head>
@@ -12,7 +11,8 @@
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -55,10 +55,10 @@
 
       <!-- Nav Item - Newsfeed Collapse Menu -->
       <li class="nav-item active">
-          <a class="nav-link" href="statistics.html">
-              <i class="fas fa-fw fa-table"></i>
-              <span>Statistics</span>
-          </a>
+        <a class="nav-link" href="statistics.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Statistics</span>
+        </a>
       </li>
 
       <!-- Divider -->
@@ -71,19 +71,19 @@
 
       <!-- Nav Item - Accounts Collapse Menu -->
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts" aria-expanded="true"
-            aria-controls="collapseAccounts">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Accounts</span>
-          </a>
-          <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Reports:</h6>
-              <a class="collapse-item" href="signup.html">Account Registration</a>
-              <a class="collapse-item" href="viewSignup.html">View Accounts</a>
-            </div>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+          aria-expanded="true" aria-controls="collapseAccounts">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Accounts</span>
+        </a>
+        <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Reports:</h6>
+            <a class="collapse-item" href="signup.html">Account Registration</a>
+            <a class="collapse-item" href="viewSignup.html">View Accounts</a>
           </div>
-        </li>
+        </div>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -120,7 +120,8 @@
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -144,7 +145,8 @@
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
               <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
@@ -194,7 +196,8 @@
                 <span id="msg-counter" class="badge badge-danger badge-counter"></span>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
                   Message Center
                 </h6>
@@ -253,7 +256,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                <img class="img-profile rounded-circle"
+                  src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -285,45 +289,45 @@
         <!-- Begin Page Content -->
 
         <div class="container-fluid">
-                Barangay: <select id="barangay" onchange="onBarangayChange()">
-                    
-                        <option value="--">--</option>
-                        <option value="Santolan">Santolan</option>
-                        <option value="Manggahan">Manggahan</option>
-                        <option value="Dela Paz">Dela Paz</option>
-                        <option value="Sta. Lucia">Sta. Lucia</option>
-                        <option value="San Miguel">San Miguel</option>
-                        <option value="Pinagbuhatan">Pinagbuhatan</option>
-                        <option value="Maybungga">Maybungga</option>
-                        <option value="Rosario">Rosario</option>
+          Barangay: <select id="barangay" onchange="onBarangayChange()">
 
-                    </select>
-            Start: <input type="date" id="startDate" onchange="onBarangayChange()">
-            End: <input type="date" id="endDate"onchange="onBarangayChange()">
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-            <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
-                </div>
-                
-              
-            </div>
+            <option value="--">--</option>
+            <option value="Santolan">Santolan</option>
+            <option value="Manggahan">Manggahan</option>
+            <option value="Dela Paz">Dela Paz</option>
+            <option value="Sta. Lucia">Sta. Lucia</option>
+            <option value="San Miguel">San Miguel</option>
+            <option value="Pinagbuhatan">Pinagbuhatan</option>
+            <option value="Maybungga">Maybungga</option>
+            <option value="Rosario">Rosario</option>
+
+          </select>
+          Start: <input type="date" id="startDate" onchange="onBarangayChange()">
+          End: <input type="date" id="endDate" onchange="onBarangayChange()">
+          <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+          <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
         </div>
-        <!-- /.container-fluid -->
+
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Pasigueno Assistant 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
@@ -334,7 +338,8 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -369,21 +374,20 @@
 
   <!-- Page level custom scripts -->
   <script>
-      window.onload = function () {
-      
+    window.onload = function () {
       var chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         exportEnabled: true,
         showInLegend: true,
         axisX: {
-          title:"Category",
-			labelMaxWidth: 140,
-			labelWrap: true,   // change it to false
-			interval: 1,
-		},
+          title: "Category",
+          labelMaxWidth: 140,
+          labelWrap: true, // change it to false
+          interval: 1,
+        },
         theme: "light1", // "light1", "light2", "dark1", "dark2"
-       
-        title:{
+
+        title: {
           text: "Report Statistics"
         },
         data: [{
@@ -391,260 +395,346 @@
           indexLabel: "{y}", //Shows y value on all Data Points
           indexLabelFontColor: "#5A5757",
           indexLabelPlacement: "outside",
-          dataPoints: [
-            { label: "Peace nd Order (Neighborhood)", y: 0 },
-            { label: "Peace and Order (Illegal Drugs)", y: 0 },
-            { label: "Peace and Order (Robbery)", y: 0 },
-            { label: "Clean and Green (Waste)", y:0 },
-            { label: "Clean and Green (Clogged Canal)", y: 0  },
-            { label: "Clean and Green (Illegal Smoking)", y: 0 },
-            { label: "Others", y: 0 }
+          dataPoints: [{
+              label: "Peace nd Order (Neighborhood)",
+              y: 0
+            },
+            {
+              label: "Peace and Order (Illegal Drugs)",
+              y: 0
+            },
+            {
+              label: "Peace and Order (Robbery)",
+              y: 0
+            },
+            {
+              label: "Clean and Green (Waste)",
+              y: 0
+            },
+            {
+              label: "Clean and Green (Clogged Canal)",
+              y: 0
+            },
+            {
+              label: "Clean and Green (Illegal Smoking)",
+              y: 0
+            },
+            {
+              label: "Others",
+              y: 0
+            }
           ]
         }]
-          });
+      });
       chart.render();
-      
+
+    }
+  </script>
+  
+  <script>
+    function onBarangayChange() {
+      var barangay1 = document.getElementById("barangay").value;
+      var start = document.getElementById("startDate").value;
+      var end = document.getElementById("endDate").value;
+      var counter1 = 0;
+      var counter2 = 0;
+      var counter3 = 0;
+      var counter4 = 0;
+      var counter5 = 0;
+      var counter6 = 0;
+      var counter7 = 0;
+
+      if (Date.parse(start) > Date.parse(end)) {
+        alert("End date must be later than start date. \nPlease Try again.");
       }
-      </script>
-<script>
- 
-    function onBarangayChange(){
-        var barangay1 = document.getElementById("barangay").value;
-       var start = document.getElementById("startDate").value;
-       var end =  document.getElementById("endDate").value;
-       var counter1=0;
-      var counter2=0;
-      var counter3=0;
-      var counter4=0;
-      var counter5=0;
-      var counter6=0;
-      var counter7=0;
-     
-     if(Date.parse(start) > Date.parse(end) ){
-       alert("End date must be later than start date. \nPlease Try again.");
-     }
-     /*  if(){
-error message pag invalid yung date na ininput
-       }*/
-       if(start == null && end == null && barangay1 != "--" || start == "" && end == "" && barangay1 != "--"){
+      
+      if (start == null && end == null && barangay1 != "--" || start == "" && end == "" && barangay1 != "--") {
         var rootRef = firebase.database().ref("reports").orderByChild("Barangay").equalTo(barangay1);
-  rootRef.on("value", snap => {
-    if(snap.exists()){
-      $("#chartContainer").html("");
-    snap.forEach(snap => {
-      var key = snap.key;
-      var barangay = snap.child("Barangay").val();
-      var date = snap.child("Date").val();
-      var category = snap.child("Category").val();
-      
-     if(barangay==barangay1){
-      if(category == "Peace and Order (Neighborhood)" ){
-        counter1++;
+        rootRef.on("value", snap => {
+          if (snap.exists()) {
+            $("#chartContainer").html("");
+            snap.forEach(snap => {
+              var key = snap.key;
+              var barangay = snap.child("Barangay").val();
+              var date = snap.child("Date").val();
+              var category = snap.child("Category").val();
 
-      }
-     if(category=="Peace and Order (Illegal Drugs)"){
-        counter2++;
-      }
-      if(category=="Peace and Order (Robbery)"){
-        counter3++;
-        }
-       if(category=="Clean and Green (Waste)"){
-            counter4++;
-        }
-       if(category=="Clean and Green (Clogged Canal)"){
-            counter5++;
-        }
-        if(category=="Clean and Green (Illegal Smoking)"){
-            counter6++;
-        }
-        if(category=="Others"){
-          counter7++;
-        }
-    }
+              if (category == "Peace and Order (Neighborhood)") {
+                counter1++;
+
+              }
+              if (category == "Peace and Order (Illegal Drugs)") {
+                counter2++;
+              }
+              if (category == "Peace and Order (Robbery)") {
+                counter3++;
+              }
+              if (category == "Clean and Green (Waste)") {
+                counter4++;
+              }
+              if (category == "Clean and Green (Clogged Canal)") {
+                counter5++;
+              }
+              if (category == "Clean and Green (Illegal Smoking)") {
+                counter6++;
+              }
+              if (category == "Others") {
+                counter7++;
+              }
+
+              var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: "light1", // "light1", "light2", "dark1", "dark2"
+                axisX: {
+                  labelMaxWidth: 140,
+                  labelWrap: true, // change it to false
+                  interval: 1,
+                },
+
+                title: {
+                  text: "Report Statistics"
+                },
+
+                data: [{
+                  type: "column", //change type to bar, line, area, pie, etc
+                  indexLabel: "{y}", //Shows y value on all Data Points
+                  indexLabelFontColor: "#5A5757",
+                  indexLabelPlacement: "outside",
+                  dataPoints: [{
+                      label: "Peace and Order (Neighborhood)",
+                      y: counter1,
+                    },
+                    {
+                      label: "Peace and Order (Illegal Drugs)",
+                      y: counter2,
+                    },
+                    {
+                      label: "Peace and Order (Robbery)",
+                      y: counter3,
+                    },
+                    {
+                      label: "Clean and Green (Waste)",
+                      y: counter4,
+                    },
+                    {
+                      label: "Clean and Green (Clogged Canal)",
+                      y: counter5,
+                    },
+                    {
+                      label: "Clean and Green (Illegal Smoking)",
+                      y: counter6,
+                    },
+                    {
+                      label: "Others",
+                      y: counter7,
+                    }
+                  ]
+
+
+                }]
+              });
+              chart.render();
+
+
+
+            })
+
+          } else {
             var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: true,
-                theme: "light1", // "light1", "light2", "dark1", "dark2"
-                axisX: {
-			labelMaxWidth: 140,
-			labelWrap: true,   // change it to false
-			interval: 1,
-		},
-			
-                title:{
-                    text: "Report Statistics"
-                },
-              
-                data: [{
-                    type: "column", //change type to bar, line, area, pie, etc
-                    indexLabel: "{y}", //Shows y value on all Data Points
-                    indexLabelFontColor: "#5A5757",
-                    indexLabelPlacement: "outside",
-                    dataPoints: [
-                        {label: "Peace and Order (Neighborhood)", y: counter1, },
-                        {label: "Peace and Order (Illegal Drugs)", y: counter2,  },
-                        {label: "Peace and Order (Robbery)", y: counter3,  },
-                        {label: "Clean and Green (Waste)", y: counter4,},
-                        {label: "Clean and Green (Clogged Canal)", y: counter5,  },
-                        {label: "Clean and Green (Illegal Smoking)", y: counter6,  },
-                        {label: "Others", y: counter7,  }
-                    ]
-
-                  
-                }]
+              animationEnabled: true,
+              exportEnabled: true,
+              theme: "light1", // "light1", "light2", "dark1", "dark2"
+              axisX: {
+                labelMaxWidth: 140,
+                labelWrap: true, // change it to false
+                interval: 1,
+              },
+              title: {
+                text: "Report Statistics    "
+              },
+              data: [{
+                type: "column", //change type to bar, line, area, pie, etc
+                indexLabel: "{y}", //Shows y value on all Data Points
+                indexLabelFontColor: "#5A5757",
+                indexLabelPlacement: "outside",
+                dataPoints: [{
+                    label: "Peace and Order (Neighborhood)",
+                    y: 0,
+                  },
+                  {
+                    label: "Peace and Order (Illegal Drugs)",
+                    y: 0,
+                  },
+                  {
+                    label: "Peace and Order (Robbery)",
+                    y: 0,
+                  },
+                  {
+                    label: "Clean and Green (Waste)",
+                    y: 0,
+                  },
+                  {
+                    label: "Clean and Green (Clogged Canal)",
+                    y: 0,
+                  },
+                  {
+                    label: "Clean and Green (Illegal Smoking)",
+                    y: 0,
+                  },
+                  {
+                    label: "Others",
+                    y: 0,
+                  }
+                ]
+              }]
             });
             chart.render();
-            
-            
-
-    })
-    
-  }
-  
-  else{
-    var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: true,
-                theme: "light1", // "light1", "light2", "dark1", "dark2"
-                axisX: {
-			labelMaxWidth: 140,
-			labelWrap: true,   // change it to false
-			interval: 1,
-		},
-                title:{
-                    text: "Report Statistics    "
-                },
-                data: [{
-                    type: "column", //change type to bar, line, area, pie, etc
-                    indexLabel: "{y}", //Shows y value on all Data Points
-                    indexLabelFontColor: "#5A5757",
-                    indexLabelPlacement: "outside",
-                    dataPoints: [
-                    {label: "Peace and Order (Neighborhood)",  y: 0,},
-                        {label: "Peace and Order (Illegal Drugs)", y: 0, },
-                        {label: "Peace and Order (Robbery)",  y: 0,},
-                        { label: "Clean and Green (Waste)", y: 0,  },
-                        { label: "Clean and Green (Clogged Canal)", y: 0,},
-                        { label: "Clean and Green (Illegal Smoking)", y: 0,  },
-                        {label: "Others",  y: 0,  }
-                    ]
-                }]
-            });
-            chart.render();
-  }
-  });
-       }
-       else{
+          }
+        });
+      } else {
         var rootRef = firebase.database().ref("reports").orderByChild("Date").startAt(start).endAt(end);
-  rootRef.on("value", snap => {
-    if(snap.exists()){
-      
-      $("#chartContainer").html("");
-    snap.forEach(snap => {
-      var key = snap.key;
-      var barangay = snap.child("Barangay").val();
-      var date = snap.child("Date").val();
-      var category = snap.child("Category").val();
-      
-     if(barangay==barangay1){
-      if(category == "Peace and Order (Neighborhood)" ){
-        counter1++;
+        rootRef.on("value", snap => {
+          if (snap.exists()) {
 
-      }
-     if(category=="Peace and Order (Illegal Drugs)"){
-        counter2++;
-      }
-      if(category=="Peace and Order (Robbery)"){
-        counter3++;
-        }
-       if(category=="Clean and Green (Waste)"){
-            counter4++;
-        }
-       if(category=="Clean and Green (Clogged Canal)"){
-            counter5++;
-        }
-        if(category=="Clean and Green (Illegal Smoking)"){
-            counter6++;
-        }
-        if(category=="Others"){
-          counter7++;
-        }
-    }
+            $("#chartContainer").html("");
+            snap.forEach(snap => {
+              var key = snap.key;
+              var barangay = snap.child("Barangay").val();
+              var date = snap.child("Date").val();
+              var category = snap.child("Category").val();
+
+              if (category == "Peace and Order (Neighborhood)") {
+                counter1++;
+
+              }
+              if (category == "Peace and Order (Illegal Drugs)") {
+                counter2++;
+              }
+              if (category == "Peace and Order (Robbery)") {
+                counter3++;
+              }
+              if (category == "Clean and Green (Waste)") {
+                counter4++;
+              }
+              if (category == "Clean and Green (Clogged Canal)") {
+                counter5++;
+              }
+              if (category == "Clean and Green (Illegal Smoking)") {
+                counter6++;
+              }
+              if (category == "Others") {
+                counter7++;
+              }
+
+              var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                exportEnabled: true,
+                axisX: {
+                  labelMaxWidth: 140,
+                  labelWrap: true, // change it to false
+                  interval: 1,
+                },
+                theme: "light1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                  text: "Report Statistics    "
+                },
+                data: [{
+                  type: "column", //change type to bar, line, area, pie, etc
+                  indexLabel: "{y}", //Shows y value on all Data Points
+                  indexLabelFontColor: "#5A5757",
+                  indexLabelPlacement: "inside",
+                  dataPoints: [{
+                      label: "Peace and Order (Neighborhood)",
+                      y: counter1,
+                    },
+                    {
+                      label: "Peace and Order (Illegal Drugs)",
+                      y: counter2,
+                    },
+                    {
+                      label: "Peace and Order (Robbery)",
+                      y: counter3,
+                    },
+                    {
+                      label: "Clean and Green (Waste)",
+                      y: counter4,
+                    },
+                    {
+                      label: "Clean and Green (Clogged Canal)",
+                      y: counter5,
+                    },
+                    {
+                      label: "Clean and Green (Illegal Smoking)",
+                      y: counter6,
+                    },
+                    {
+                      label: "Others",
+                      y: counter7,
+                    }
+
+                  ]
+                }]
+              });
+              chart.render();
+            })
+          } else {
             var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: true,
-                axisX: {
-			labelMaxWidth: 140,
-			labelWrap: true,   // change it to false
-			interval: 1,
-		},
-                theme: "light1", // "light1", "light2", "dark1", "dark2"
-                title:{
-                    text: "Report Statistics    "
-                },
-                data: [{
-                    type: "column", //change type to bar, line, area, pie, etc
-                    indexLabel: "{y}", //Shows y value on all Data Points
-                    indexLabelFontColor: "#5A5757",
-                    indexLabelPlacement: "inside",
-                    dataPoints: [
-                    {label: "Peace and Order (Neighborhood)", y: counter1, },
-                        {label: "Peace and Order (Illegal Drugs)", y: counter2,  },
-                        {label: "Peace and Order (Robbery)", y: counter3,  },
-                        {label: "Clean and Green (Waste)", y: counter4,},
-                        {label: "Clean and Green (Clogged Canal)", y: counter5,  },
-                        {label: "Clean and Green (Illegal Smoking)", y: counter6,  },
-                        {label: "Others", y: counter7,  }
-                        
-                    ]
-                }]
+              animationEnabled: true,
+              exportEnabled: true,
+              theme: "light1", // "light1", "light2", "dark1", "dark2"
+              axisX: {
+                labelMaxWidth: 140,
+                labelWrap: true, // change it to false
+                interval: 1,
+              },
+              title: {
+                text: "Report Statistics    "
+              },
+              data: [{
+                type: "column", //change type to bar, line, area, pie, etc
+                indexLabel: "{y}", //Shows y value on all Data Points
+                indexLabelFontColor: "#5A5757",
+                indexLabelPlacement: "outside",
+                dataPoints: [{
+                    label: "Peace and Order (Neighborhood)",
+                    y: 0,
+                  },
+                  {
+                    label: "Peace and Order (Illegal Drugs)",
+                    y: 0,
+                  },
+                  {
+                    label: "Peace and Order (Robbery)",
+                    y: 0,
+                  },
+                  {
+                    label: "Clean and Green (Waste)",
+                    y: 0,
+                  },
+                  {
+                    label: "Clean and Green (Clogged Canal)",
+                    y: 0,
+                  },
+                  {
+                    label: "Clean and Green (Illegal Smoking)",
+                    y: 0,
+                  },
+                  {
+                    label: "Others",
+                    y: 0,
+                  }
+                ]
+              }]
             });
             chart.render();
-            
-            
+          }
+        });
+      }
+    }
+  </script>
 
-    })
-    
-  }
-  
-  else{
-    var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: true,
-                theme: "light1", // "light1", "light2", "dark1", "dark2"
-                axisX: {
-			labelMaxWidth: 140,
-			labelWrap: true,   // change it to false
-			interval: 1,
-		},
-                title:{
-                    text: "Report Statistics    "
-                },
-                data: [{
-                    type: "column", //change type to bar, line, area, pie, etc
-                    indexLabel: "{y}", //Shows y value on all Data Points
-                    indexLabelFontColor: "#5A5757",
-                    indexLabelPlacement: "outside",
-                    dataPoints: [
-                    {label: "Peace and Order (Neighborhood)",  y: 0,},
-                        {label: "Peace and Order (Illegal Drugs)", y: 0, },
-                        {label: "Peace and Order (Robbery)",  y: 0,},
-                        { label: "Clean and Green (Waste)", y: 0,  },
-                        { label: "Clean and Green (Clogged Canal)", y: 0,},
-                        { label: "Clean and Green (Illegal Smoking)", y: 0,  },
-                        {label: "Others",  y: 0,  }
-                      
-                    ]
-                }]
-            });
-            chart.render();
-  }
-  });
-}
-}
-            </script>
-        
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </body>
 
