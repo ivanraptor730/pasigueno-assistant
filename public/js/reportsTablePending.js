@@ -28,6 +28,7 @@ function reportsTablePending() {
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status");
                 var Anonymous = snap.child("Anonymous").val();
+                var message = snap.child("Response").val();
                
                 var lang = snap.child("Longitude").val();
                 var lat = snap.child("Latitude").val();
@@ -44,7 +45,7 @@ function reportsTablePending() {
                 "<div class='modal myModal'>" +
                 "<div class='modal-content'>" +
                 "<div class='modal-header'>" +
-                "<h2>" + category + "</h2>" +
+                "<h2 id='category095'>" + category + "</h2>" +
                 "<span class='close'>&times;</span>" +
                 "</div>" +
                 "<p><b>Report ID: </b>" + key + "</p>" +
@@ -53,11 +54,11 @@ function reportsTablePending() {
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
+                "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
                 "<b>Actions:</b> <button id='respond'><i class='fas fa-check'></i> Respond to this report</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>" +
                 "</div>" +
                 "</div>"+
-               
                 "</div>"+"</td></tr>")
                    
               })
@@ -110,7 +111,7 @@ window.onload = reportsTablePending();
                 var userIDs = snap.child("UserID");;
                 var Anonymous = snap.child("Anonymous").val();
                var Longitude = snap.child("Longitude").val();
-               
+               var message = snap.child("Response").val();
                 var userID1234;
 
                 if(Anonymous == "true"){
@@ -127,7 +128,7 @@ window.onload = reportsTablePending();
                 "<div class='modal myModal'>" +
                 "<div class='modal-content'>" +
                 "<div class='modal-header'>" +
-                "<h2>" + category + "</h2>" +
+                "<h2 id='category095'>" + category + "</h2>" +
                 "<span class='close'>&times;</span>" +
                 "</div>" +
                 "<p><b>Report ID: </b>" + key + "</p>" +
@@ -136,11 +137,11 @@ window.onload = reportsTablePending();
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
+                "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
                 "<b>Actions:</b> <button id='respond'><i class='fas fa-check'></i> Respond to this report</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>" +
                 "</div>" +
                 "</div>"+
-               
                 "</div>"+"</td></tr>")
                   
               }

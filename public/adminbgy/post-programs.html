@@ -156,7 +156,7 @@
                 </div>
             </li>
 
-           
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -237,9 +237,7 @@
                                 </a>
                             </div>
                         </li>
-
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
 
@@ -249,18 +247,23 @@
                     <hr>
                     <div class="container-fluid">
                         <form method="POST" action="createCard.php">
-                            Title: &nbsp; <input type="text" id="what"><br><br>
-                            Where: <input type="text" id="where"><br><br>
-                            When: &nbsp;<input type="date" id="when"><br>&nbsp;&nbsp;
-                            <br>
-                            Announcement Type: <select id="category" class="custom-select">
-                                <option>Health Services</option>
-                                <option>Food</option>
-                                <option>Sports</option>
-                                <option>Others</option>
+                            Category:<br> <select id="category1" class="custom-select">
+                                <option>--</option>
+                                <option>Events</option>
+                                <option>Advisory</option>
                             </select>
+                            <br>
 
-                            <br><br>
+                            Title:<br><input type="text" id="what" class="custom-text" required> <br>
+                            Where:<br><input type="text" id="where" class="custom-text" required> <br>
+                            Start Time:<br><input type="time" id="startTime" class="custom-text" required> <br>
+                            <p id=message1></p>
+                            End Time:<br><input type="time" id="endTime" class="custom-text" required> <br>
+                            <p id=message2></p>
+                            When: <br><input type="date" id="when" class="custom-text">
+
+
+                            <br>
                             <p>Description</p>
                             <textarea rows="10" cols="100" id="message" maxlength="300"></textarea>
 
@@ -275,72 +278,69 @@
                     <!-- /.container-fluid -->
 
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Are you sure you want to log-out?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Are you sure you want to log-out?</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!--Firebase Core + Dependent Scripts (must be on all pages)-->
-    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
-    <script src="../js/firebase.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/userInfo.js"></script>
+        <!--Firebase Core + Dependent Scripts (must be on all pages)-->
+        <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+        <script src="../js/firebase.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/userInfo.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
 
-    <!--JS Script(s) for this Page-->
-    <script src="../js/notificationsHandler.js"></script>
-    <script src="../js/postProgram.js"></script>
-    <script src="../js/textLimiter.js"></script>
+        <!--JS Script(s) for this Page-->
+        <script src="../js/notificationsHandler.js"></script>
+        <script src="../js/postProgram.js"></script>
+        <script src="../js/textLimiter.js"></script>
 </body>
 
 </html>

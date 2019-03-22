@@ -22,7 +22,7 @@ function reportsTableResponding() {
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status");
                 var Anonymous = snap.child("Anonymous").val();
-               
+                var message = snap.child("Response").val();
                 var lang = snap.child("Longitude").val();
                 var lat = snap.child("Latitude").val();
                 var userID1234;
@@ -38,7 +38,7 @@ function reportsTableResponding() {
                 "<div class='modal myModal'>" +
                 "<div class='modal-content'>" +
                 "<div class='modal-header'>" +
-                "<h2>" + category + "</h2>" +
+                "<h2 id='category095'>" + category + "</h2>" +
                 "<span class='close'>&times;</span>" +
                 "</div>" + 
                 "<p><b>Report ID: </b>" + key + "</p>" +
@@ -47,20 +47,10 @@ function reportsTableResponding() {
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
+                "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
                 "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>"+
-                "<button id='openMap' class='openmodal myBtn1'> View Map</button>" +
-                "</div>" +
-                "</div>"+
-                "<div class='modal myModal'>" +
-                "<div class='modal-content'>" +
-                "<div class='modal-header'>" +
-                "<h2>Map</h2>" +
-                "<span class='close'>&times;</span>" +
-                "</div>" +
-                "<div class='map-canvas' id='map-canvas' name='map-canvas' style='width:1025px; height:500px;'>"+
-                "</div>"+
-                "</div>"+ 
+                 "</div>" +
                 "</div>"+
                 "</tr></td>"
                 );
@@ -111,7 +101,7 @@ window.onload = reportsTableResponding();
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status");
                 var Anonymous = snap.child("Anonymous").val();
-               
+                var message = snap.child("Response").val();
                 var lang = snap.child("Longitude").val();
                 var lat = snap.child("Latitude").val();
                 var userID1234;
@@ -123,12 +113,12 @@ window.onload = reportsTableResponding();
                    userID1234 = snap.child("UserID").val();
                 }
                 if(status=="Responding"){
-                $("#tbody_responding").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>"+
+                  $("#tbody_responding").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>"+
                 "<button class='openmodal myBtn'>View</button>" +
                 "<div class='modal myModal'>" +
                 "<div class='modal-content'>" +
                 "<div class='modal-header'>" +
-                "<h2>" + category + "</h2>" +
+                "<h2 id='category095'>" + category + "</h2>" +
                 "<span class='close'>&times;</span>" +
                 "</div>" + 
                 "<p><b>Report ID: </b>" + key + "</p>" +
@@ -137,20 +127,10 @@ window.onload = reportsTableResponding();
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
-                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as Responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
+                "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
+                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>"+
-                "<button id='openMap' class='openmodal myBtn1'> View Map</button>" +
-                "</div>" +
-                "</div>"+
-                "<div class='modal myModal'>" +
-                "<div class='modal-content'>" +
-                "<div class='modal-header'>" +
-                "<h2>Map</h2>" +
-                "<span class='close'>&times;</span>" +
-                "</div>" +
-                "<div class='map-canvas' id='map-canvas' name='map-canvas' style='width:1025px; height:500px;'>"+
-                "</div>"+
-                "</div>"+ 
+                 "</div>" +
                 "</div>"+
                 "</tr></td>"
                 );
