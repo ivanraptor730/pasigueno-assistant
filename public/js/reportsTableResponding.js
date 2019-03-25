@@ -34,12 +34,12 @@ function reportsTableResponding() {
                    userID1234 = snap.child("UserID").val();
                 }
                 $("#tbody_responding").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>"+
-                "<button class='openmodal myBtn'>View</button>" +
-                "<div class='modal myModal'>" +
-                "<div class='modal-content'>" +
-                "<div class='modal-header'>" +
+                "<button class='openmodals myBtn'>View</button>" +
+                "<div class='modals myModal'>" +
+                "<div class='modals-content'>" +
+                "<div class='modals-header'>" +
                 "<h2 id='category095'>" + category + "</h2>" +
-                "<span class='close'>&times;</span>" +
+                "<span class='closes'>&times;</span>" +
                 "</div>" + 
                 "<p><b>Report ID: </b>" + key + "</p>" +
                 "<p><b>User ID: </b>" + userID1234 + " </p>" +
@@ -48,7 +48,7 @@ function reportsTableResponding() {
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
                 "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
-                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
+                "<b>Actions:</b><br> <button id='responded2'><i class='fas fa-check'></i> Mark as responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>"+
                  "</div>" +
                 "</div>"+
@@ -128,7 +128,7 @@ window.onload = reportsTableResponding();
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
                 "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
-                "<b>Actions:</b> <button id='responded2'><i class='fas fa-check'></i> Mark as responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
+                "<b>Actions:</b><br> <button id='responded2'><i class='fas fa-check'></i> Mark as responded</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>"+
                  "</div>" +
                 "</div>"+

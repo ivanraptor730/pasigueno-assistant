@@ -47,7 +47,7 @@ function accountMng() {
                                     "<p><b>Username: </b>" + emailAdd + " </p>" +
                                     "<p><b>"+Question+":</b> " + Answer + " </p>" +
                                     "<p><b>Status: </b>" + status + " </p>" +
-                                    "<b>Actions:</b> <button id='accntApproved'>Approve</button><br> <button id='accntDeclined'>Decline</button>" +
+                                    "<b>Actions:</b><br> <button id='accntApproved'>Approve</button><br> <button id='accntDeclined'>Decline</button>" +
                                     "</div>" +
                                     "</div></td></tr>")
                                }
@@ -119,7 +119,7 @@ window.onload = accountMng();
                           "<p><b>Username: </b>" + emailAdd + " </p>" +
                           "<p><b>"+Question+":</b> " + Answer + " </p>" +
                           "<p><b>Status: </b>" + status + " </p>" +
-                          "<b>Actions:</b> <button id='accntApproved'>Approve</button><br> <button id='accntDeclined'>Decline</button>" +
+                          "<b>Actions:</b><br> <button id='accntApproved'>Approve</button><br> <button id='accntDeclined'>Decline</button>" +
                           "</div>" +
                           "</div></td></tr>")
                       }

@@ -95,10 +95,6 @@ img {
 	clear: both;
 }
 
-#username{
-	font-weight: bold;
-}
-
 .chat_list {
 	border-bottom: 1px solid #c4c4c4;
 	margin: 0;
@@ -112,11 +108,17 @@ img {
 
 .active_chat {
 	background: #ebebeb;
+}
+
+.unread_chat {
 	font-weight: bold;
 }
 
 .unread_chat {
-	background: #ebebeb;
+	font-weight: bold;
+}
+
+.unread_username{
 	font-weight: bold;
 }
 

@@ -19,9 +19,6 @@ function reports() {
     })
 }
 
-
-
-
 function messages() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -42,7 +39,6 @@ function messages() {
         }
     })
 }
-
 
 function requests() {
     firebase.auth().onAuthStateChanged(function (user) {

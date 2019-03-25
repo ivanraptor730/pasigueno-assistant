@@ -37,11 +37,11 @@ function messages() {
                                             message = snapsh.child("message").val();
                                             date = snapsh.child("date").val();
                                         });
-                                        $("#people").append("<div class='chat_list active_chat' id='" + key + "'>" + //populate people tab
+                                        $("#people").prepend("<div class='chat_list unread_chat' id='" + key + "'>" + //populate people tab
                                             "<div class='chat_people'>" +
                                             "<div class='chat_img'><img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div>" +
                                             "<div class='chat_ib'>" +
-                                            "<h5><p id='username'>" + key + "</p><span class='chat_date'>" + date + "</span></h5>" +
+                                            "<h5><p class='unread_username' id='username'>" + key + "</p><span class='chat_date'>" + date + "</span></h5>" +
                                             "<p>" + message + "</p>" +
                                             "</div></div></div>");
 
@@ -50,7 +50,8 @@ function messages() {
                                             document.getElementById('msg-counter').innerHTML = "";
                                             var $cl = $(this).closest('div.chat_list');
                                             $chtName = $cl.attr('id');
-                                            $('div.chat_list').removeClass("active_chat");
+                                            $('div.chat_list').removeClass("unread_chat");
+                                            $('p.unread_username').removeClass("unread_username")
                                             $($cl).addClass("active_chat");
                                             var thread = firebase.database().ref("messages/" + brgy).child($chtName); //populates chat list from that barangay (names)
                                             thread.on("value", snaps => {

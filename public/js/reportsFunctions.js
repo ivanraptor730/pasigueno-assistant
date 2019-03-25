@@ -1,3 +1,6 @@
+var dateToday = formatDate(new Date());
+var timeToday = formatAMPM(new Date());
+
 $(function () { //Respond to Reports
   $("#tbody_pending").delegate("tr #respond", "click", function (e) {
     var $row = $(this).closest("tr");
@@ -19,12 +22,12 @@ $(function () { //Respond to Reports
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
 
-              var message = document.getElementById("myTextarea").value;
+              var message = prompt("Enter your response to the user: ");
               var category095 = document.getElementsByTagName('h2')[0].innerHTML;
-            
+
               firebase.database().ref("reports/" + $id).update({
-                Category_Status:category095 +"_Responding",
-                Response: message,
+                Category_Status: category095 + "_Responding",
+                message: message,
                 Status: "Responding",
                 Barangay_Status: barangay + "_Responding" //!!!! TODO: FETCH BARANGAY HERE (SA LAHAT NG FUNCTIONS)
               });
@@ -58,13 +61,13 @@ $(function () { //Respond to Reports
             return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-              var message = document.getElementById("myTextarea").value;
+              var message = prompt("Enter your response to the user: ");
               var category095 = document.getElementsByTagName('h2')[0].innerHTML;
-            
+
               firebase.database().ref("reports/" + $id).update({
-                Category_Status:category095 +"_Responded",///binago ni jm responded na ngayon hindi resolved
-                Response: message,////binago ni jm
-                Status: "Responded",///binago ni jm
+                Category_Status: category095 + "_Responded", ///binago ni jm responded na ngayon hindi resolved
+                message: message,
+                Status: "Responded", ///binago ni jm
                 Barangay_Status: barangay + "_Responded"
               });
               alert('Updated Report Status of ID ' + $id);
@@ -97,11 +100,11 @@ $(function () { //Mark Reports as Spam
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
 
-              var message = document.getElementById("myTextarea").value;
+              var message = prompt("Enter your response to the user: ");
               var category095 = document.getElementsByTagName('h2')[0].innerHTML;
               firebase.database().ref("reports/" + $id).update({
-                Category_Status:category095 +"_Spam",///binago ni jm responded na ngayon hindi resolved
-                Response: message,////binago ni jm
+                Category_Status: category095 + "_Spam", ///binago ni jm responded na ngayon hindi resolved
+                message: message,
                 Status: "Spam",
                 Barangay_Status: barangay + "_Spam"
               });
@@ -122,7 +125,7 @@ $(function () {
     var $row = $(this).closest("tr");
     var $id = $row.find(".ky").text();
 
-    var r = confirm("Do you want to dismiss Report ID " + $id + " as SPAM?");
+    var r = confirm("Do you want to mark Report ID " + $id + " as Resolved?");
     if (r == true) { ///
       firebase.auth().onAuthStateChanged(function (user) {
 
@@ -133,13 +136,14 @@ $(function () {
 
           ref.once('value', function (snapshot) {
             var parentKey = Object.keys(snapshot.val())[0];
-
+            var message = prompt("Enter your response to the user: ");
             return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
 
               firebase.database().ref("reports/" + $id).update({
                 Status: "Resolved",
+                message: message,
                 Barangay_Status: barangay + "_Responded"
               });
               alert('Report ' + $id + ' marked as Resolved.');
@@ -152,3 +156,29 @@ $(function () {
     }
   });
 });
+
+function formatDate(date) {
+  var monthNames = [
+    "Jan", "Feb", "Mar",
+    "Apr", "May", "Jun", "Jul",
+    "Aug", "Sept", "Oct",
+    "Nov", "Dec"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+}
+
+function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}

@@ -28,12 +28,12 @@ function requestFormsTablePending() {
                                 var status = snap.child("Status").val();
                                
                                 $("#table_body").append("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td><td>" +
-                                    "<button class='openmodal myBtn'>View</button>" +
-                                    "<div class='modal myModal'>" +
-                                    "<div class='modal-content'>" +
-                                    "<div class='modal-header'>" +
+                                    "<button class='openmodals myBtn'>View</button>" +
+                                    "<div class='modals myModal'>" +
+                                    "<div class='modals-content'>" +
+                                    "<div class='modals-header'>" +
                                     "<h2>" + Forms + "</h2>" +
-                                    "<span class='close'>&times;</span>" +
+                                    "<span class='closes'>&times;</span>" +
                                     "</div>" +
                                     "<p><b>Request ID: </b>" + key + "</p>" +
                                     "<p><b>Barangay: </b>" + Barangay + " </p>" +
@@ -42,7 +42,7 @@ function requestFormsTablePending() {
                                     "<p><b>Place Of Birth: </b>" + BirthDate + " </p>" +
                                     "<p><b>Purpose: </b>" + Purpose + " </p>" +
                                     "<p><b>Status: </b>" + status + " </p>" +
-                                    "<b>Actions:</b> <button id='takeActionApproved'>Approve</button><br> <button id='Declined'>Decline</button>" +
+                                    "<b>Actions:</b><br> <button id='takeActionApproved'>Approve</button><br> <button id='Declined'>Decline</button>" +
                                     "</div>" +
                                     "</div></td></tr>")
                                 
@@ -98,12 +98,12 @@ window.onload = requestFormsTablePending();
                                
                 if(status=="Pending"){
                 $("#table_body").append("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td><td>" +
-                    "<button class='openmodal myBtn'>View</button>" +
-                    "<div class='modal myModal'>" +
-                    "<div class='modal-content'>" +
-                    "<div class='modal-header'>" +
+                    "<button class='openmodals myBtn'>View</button>" +
+                    "<div class='modals myModal'>" +
+                    "<div class='modals-content'>" +
+                    "<div class='modals-header'>" +
                     "<h2>" + Forms + "</h2>" +
-                    "<span class='close'>&times;</span>" +
+                    "<span class='closes'>&times;</span>" +
                     "</div>" +
                     "<p><b>Request ID: </b>" + key + "</p>" +
                     "<p><b>Barangay: </b>" + Barangay + " </p>" +
@@ -112,7 +112,7 @@ window.onload = requestFormsTablePending();
                     "<p><b>Place Of Birth: </b>" + BirthDate + " </p>" +
                     "<p><b>Purpose: </b>" + Purpose + " </p>" +
                     "<p><b>Status: </b>" + status + " </p>" +
-                    "<b>Actions:</b> <button id='takeActionApproved'>Approve</button> <br><button id='Declined'>Decline</button>" +
+                    "<b>Actions:</b><br> <button id='takeActionApproved'>Approve</button> <br><button id='Declined'>Decline</button>" +
                     "</div>" +
                     "</div></td></tr>")
                 }
@@ -160,10 +160,10 @@ function requestUtilsTablePending() {
                                 $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
                                     returnDate + " " + returnTime + "</td><td>" + 
-                                    "<button class='openmodal myBtn'>View</button>" +
-                                    "<div class='modal myModal'>" +
-                                    "<div class='modal-content'>" +
-                                    "<div class='modal-header'>" +
+                                    "<button class='openmodals myBtn'>View</button>" +
+                                    "<div class='modals myModal'>" +
+                                    "<div class='modals-content'>" +
+                                    "<div class='modals-header'>" +
                                     "<h2>" + Category + "</h2>" +
                                     "<span class='close'>&times;</span>" +
                                     "</div>" +
@@ -175,7 +175,7 @@ function requestUtilsTablePending() {
                                     "<p><b>Return Date: </b>" + returnDate + " </p>" +
                                     "<p><b>Return Time: </b>" + returnTime + " </p>" +
                                     "<p><b>Status: </b>" + status + " </p>" +
-                                    "<b>Actions:</b> <button id='takeActionApproved1'>Approve</button><br> <button id='Declined1'>Decline</button>" +
+                                    "<b>Actions:</b><br> <button id='takeActionApproved1'>Approve</button><br> <button id='Declined1'>Decline</button>" +
                                     "</div>" +
                                     "</div></td></tr>")
                             })
@@ -234,12 +234,12 @@ window.onload = requestUtilsTablePending();
                   $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                 "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
                 returnDate + " " + returnTime + "</td><td>" + 
-                "<button class='openmodal myBtn'>View</button>" +
-                "<div class='modal myModal'>" +
-                "<div class='modal-content'>" +
-                "<div class='modal-header'>" +
+                "<button class='openmodals myBtn'>View</button>" +
+                "<div class='modals myModal'>" +
+                "<div class='modals-content'>" +
+                "<div class='modals-header'>" +
                 "<h2>" + Category + "</h2>" +
-                "<span class='close'>&times;</span>" +
+                "<span class='closes'>&times;</span>" +
                 "</div>" +
                 "<p><b>Request ID: </b>" + key + "</p>" +
                 "<p><b>Barangay: </b>" + Barangay + " </p>" +
@@ -249,7 +249,7 @@ window.onload = requestUtilsTablePending();
                 "<p><b>Return Date: </b>" + returnDate + " </p>" +
                 "<p><b>Return Time: </b>" + returnTime + " </p>" +
                 "<p><b>Status: </b>" + status + " </p>" +
-                "<b>Actions:</b> <button id='takeActionApproved1'>Approve</button><br> <button id='Declined1'>Decline</button>" +
+                "<b>Actions:</b><br> <button id='takeActionApproved1'>Approve</button><br> <button id='Declined1'>Decline</button>" +
                 "</div>" +
                 "</div></td></tr>")
                 }else {
