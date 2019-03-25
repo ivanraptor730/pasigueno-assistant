@@ -22,6 +22,7 @@ window.onload = function viewActivityRegistration() {
                 var AnnouncementID = snap.child("AnnouncementID").val();
                 var AnnouncementPlace = snap.child("AnnouncementPlace").val();
                 var AnnouncementTitle = snap.child("AnnouncementTitle").val();
+                var FullName = snap.child("FullName").val();
                 var UserID = snap.child("UserID").val();
 
                   $("#tbody_registration").prepend("<tr><td class='ky' >" + key + "</td><td>" + AnnouncementTitle + "</td><td>" + AnnouncementPlace +
@@ -36,7 +37,7 @@ window.onload = function viewActivityRegistration() {
                     "<p><b>Date of activity: </b>" + AnnouncementDate + "</p>" +
                     "<p><b>Place of activity: </b>" + AnnouncementPlace + "</p>" +
                     "<p><b>Description: </b>" + AnnouncementDescription + " </p>" +
-                    "<p><b>User ID: </b>" + UserID + "</p>" +
+                    "<p><b>Name of Participant: </b>" + FullName + "</p>" +
                     "<button id='Approved'><i class='fas fa-check'></i> Approved</button>" +
                     "<button id='Declined'><i class='fas fa-flag'></i> Declined</button>" +
                     "</div>" +
