@@ -17,7 +17,6 @@ function postProgram() {
 
   var filename;
   if (document.getElementById("file").files.length == 0) {
-    alert("no files selected");
     filename = "N/A";
 
     // var fileRef =  storage().chld(filename);
@@ -29,46 +28,41 @@ function postProgram() {
     var descriptions = message.value;
     var categorys1 = category1.value;
     var dateToday = date();
-    if (dateToday < whens) {
-      alert("The date of the activity is invalid");
-    } else {
-      var rootRef = firebase.database().ref();
-      var storesRef = rootRef.child('newsfeed');
-      var newStoreRef = storesRef.push();
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          // User is signed in.
-          var uid = firebase.auth().currentUser.uid;
-          var rootRefs = firebase.database().ref();
-          var storesRefs = rootRefs.child('users');
 
-          storesRefs.on("child_added", snap => {
-            if (uid == snap.val().UserID) {
-              var barangay = snap.val().Barangay;
-              newStoreRef.set({
-                Title: whats,
-                When: whens,
-                Where: wheres,
-                DatePosted: dateToday,
-                Description: descriptions,
-                Barangay: barangay,
-                PhotoURL: filename,
-                StartTime: startTimes,
-                EndTime: endTimes,
-                Category: categorys1
-              });
-              alert('Successfully Posted!');
-              window.location.reload();
-            }
-          });
+    var rootRef = firebase.database().ref();
+    var storesRef = rootRef.child('newsfeed');
+    var newStoreRef = storesRef.push();
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        var uid = firebase.auth().currentUser.uid;
+        var rootRefs = firebase.database().ref();
+        var storesRefs = rootRefs.child('users');
 
+        storesRefs.on("child_added", snap => {
+          if (uid == snap.val().UserID) {
+            var barangay = snap.val().Barangay;
+            newStoreRef.set({
+              Title: whats,
+              When: whens,
+              Where: wheres,
+              DatePosted: dateToday,
+              Description: descriptions,
+              Barangay: barangay,
+              PhotoURL: filename,
+              StartTime: startTimes,
+              EndTime: endTimes,
+              Category: categorys1
+            });
+            alert('Successfully Posted!');
+            window.location.reload();
+          }
+        });
+      } else {
+        alert('Error!');
+      }
+    });
 
-
-        } else {
-          alert('Error!');
-        }
-      });
-    }
   } else {
 
     filename = selectedFile.name;
@@ -84,58 +78,56 @@ function postProgram() {
     var descriptions = message.value;
     var categorys1 = category1.value;
     var dateToday = date();
-    if (dateToday < whens) {
-      alert("The date of the activity is invalid");
-    } else {
-      var rootRef = firebase.database().ref();
-      var storesRef = rootRef.child('newsfeed');
-      var newStoreRef = storesRef.push();
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          // User is signed in.
-          var uid = firebase.auth().currentUser.uid;
-          var rootRefs = firebase.database().ref();
-          var storesRefs = rootRefs.child('users');
-          uploadTask.on('state_changed', function (snapshot) {
 
-            },
-            function (error) {
-              window.alert("Invalid File");
-            },
-            function () {
-              var storageRef = firebase.storage().ref('/Announcements/' + filename);
-              storageRef.getDownloadURL().then(function (url) {
-                storesRefs.on("child_added", snap => {
-                  if (uid == snap.val().UserID) {
+    var rootRef = firebase.database().ref();
+    var storesRef = rootRef.child('newsfeed');
+    var newStoreRef = storesRef.push();
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        var uid = firebase.auth().currentUser.uid;
+        var rootRefs = firebase.database().ref();
+        var storesRefs = rootRefs.child('users');
+        uploadTask.on('state_changed', function (snapshot) {
+
+          },
+          function (error) {
+            window.alert("Invalid File");
+          },
+          function () {
+            var storageRef = firebase.storage().ref('/Announcements/' + filename);
+            storageRef.getDownloadURL().then(function (url) {
+              storesRefs.on("child_added", snap => {
+                if (uid == snap.val().UserID) {
 
 
-                    var barangay = snap.val().Barangay;
-                    newStoreRef.set({
-                      Title: whats,
-                      When: whens,
-                      Where: wheres,
-                      DatePosted: dateToday,
-                      Description: descriptions,
-                      Barangay: barangay,
-                      PhotoURL: url,
-                      StartTime: startTimes,
-                      EndTime: endTimes,
-                      Category: categorys1
-                    });
-                    alert('Successfully Posted!');
-                    window.location.reload();
-                  }
-                });
+                  var barangay = snap.val().Barangay;
+                  newStoreRef.set({
+                    Title: whats,
+                    When: whens,
+                    Where: wheres,
+                    DatePosted: dateToday,
+                    Description: descriptions,
+                    Barangay: barangay,
+                    PhotoURL: url,
+                    StartTime: startTimes,
+                    EndTime: endTimes,
+                    Category: categorys1
+                  });
+                  alert('Successfully Posted!');
+                  window.location.reload();
+                }
               });
-
             });
-        } else {
-          alert('Error!');
-        }
-      });
-    }
+
+          });
+      } else {
+        alert('Error!');
+      }
+    });
   }
 }
+
 
 
 function date() {

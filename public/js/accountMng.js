@@ -33,12 +33,12 @@ function accountMng() {
                                 $("#table_account").append("<tr><td class='ky' hidden>" + key +
                                  "</td><td>" + UserID + "</td><td>" + FullName + "</td><td>" 
                                  + emailAdd + "</td><td>" + Address + "</td><td>"+status+"</td><td>" +
-                                    "<button class='openmodal myBtn'>View</button>" +
-                                    "<div class='modal myModal'>" +
-                                    "<div class='modal-content'>" +
-                                    "<div class='modal-header'>" +
+                                    "<button class='openmodals myBtn'>View</button>" +
+                                    "<div class='modals myModal'>" +
+                                    "<div class='modals-content'>" +
+                                    "<div class='modals-header'>" +
                                     "<h2>" + FullName + "</h2>" +
-                                    "<span class='close'>&times;</span>" +
+                                    "<span class='closes'>&times;</span>" +
                                     "</div>" +
                                     "<p><b>Request ID: </b>" + key + "</p>" +
                                     "<p><b>Barangay: </b>" + Barangay + " </p>" +
