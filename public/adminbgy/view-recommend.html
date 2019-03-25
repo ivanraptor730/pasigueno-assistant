@@ -56,7 +56,7 @@
             </div>
 
             <!-- Nav Item - Newsfeed Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews"
                     aria-expanded="true" aria-controls="collapseNews">
                     <i class="fas fa-fw fa-plus-square"></i>
@@ -68,7 +68,6 @@
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
                         <a class="collapse-item" href="post-programs.html">Post Programs</a>
-                        <a class="collapse-item active" href="view-recommend.html">View Recommendations</a>
                     </div>
                 </div>
             </li>
@@ -125,8 +124,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item active" href="view-feedback.html">View Feedbacks</a>
-                        <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
+                        <a class="collapse-item" href="view-feedback.html">View Feedbacks</a>
+                        <a class="collapse-item active" href="view-recommend.html">View Recommendations</a>
                         <a class="collapse-item" href="registration-req.html">Registration Requests</a>
                     </div>
                 </div>
@@ -204,7 +203,7 @@
 
                         <!-- Nav Item - Reports Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="pending-reports.html">
                                 <i class="fas fa-info-circle fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span id="rep-counter" class="badge badge-danger badge-counter"></span>
@@ -261,26 +260,13 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>View Recommendation</h1>
+                    <h1>View Recommendations</h1>
                     <hr>
 
                     <div class="card mb-3">
                         <div class="card-header bg-primary text-white">
                             <i class="fas fa-table"></i>
-                            Recommendation
-                            <!--<div class="float-right">
-                                Category: <select id="categoryPending" onchange="onChangePending()">
-                            </div>
-                            <option value="--">--</option>
-                            <option value="Peace and Order (Neighborhood)">Neighborhood</option>
-                            <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
-                            <option value="Peace and Order (Robbery)">Robbery</option>
-                            <option value="Clean and Green (Waste)">Waste</option>
-                            <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
-                            <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
-                            <option value="Others">Others</option>
-                            </select>
-                        </div>-->
+                            Recommendations
                         </div>
 
                         <div class="card-body">
@@ -290,7 +276,7 @@
                                         <tr>
                                             <th>UserID</th>
                                             <th>Full Name</th>
-                                            <th>Action</th>
+                                            <th>Recommendations</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tbody_recommendation">
@@ -365,9 +351,11 @@
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
 
-    <!--JS Script(s) for this Page-->
+    <!-- Page level custom scripts -->
+    <script src="../js/notificationsHandler.js"></script>
     <script src="../js/messages.js"></script>
     <script src="../js/viewRecommendation.js"></script>
+    <script src="../js/notificationsHandler.js"></script>
 </body>
 
 </html>

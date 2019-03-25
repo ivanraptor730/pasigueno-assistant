@@ -19,11 +19,11 @@ function reportsTableResponded() {
                 var date = snap.child("Date").val();
                 var location = snap.child("Location").val();
                 var report = snap.child("Report").val();
-                $("#tbody_responded").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
+                $("#tbody_responded").prepend("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
               })
             } else {
               $("#tbody_responded").empty();
-              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No Responded Reports.</td>");
+              $("#tbody_responded").prepend("<td id='nullRecords' colspan='6'>No Responded Reports.</td>");
             }
           });
         });
@@ -69,13 +69,13 @@ window.onload = reportsTableResponded();
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status")
               if(status=="Responded"){
-                $("#tbody_responded").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
+                $("#tbody_responded").prepend("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
 
               }
               })
             } else {
               $("#tbody_responded").empty();
-              $("#tbody_responded").append("<td id='nullRecords' colspan='6'>No  Responded Reports.</td>");
+              $("#tbody_responded").prepend("<td id='nullRecords' colspan='6'>No Responded Reports.</td>");
             }
           });
         });

@@ -1,4 +1,3 @@
-
 function accountMng() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -26,30 +25,39 @@ function accountMng() {
                                 var Barangay = snap.child("Barangay").val();
                                 var BirthDate = snap.child("Birthplace").val();
                                 
-                      var Answer = snap.child("Answer2").val();
-                      var Question = snap.child("Question2").val();
                                 var status = snap.child("Status").val();
+                                var userType = snap.child("UserType").val();
+                     var Answer;
+                     var Question;
+                                if(userType != "User"){
+                                
+                      Answer = " ";
+                      Question = " ";
+                                }else{
+                       Answer = snap.child("Answer2").val();
+                       Question = snap.child("Question2").val();
+                                }
                                if(Barangay==barangay){
-                                $("#table_account").append("<tr><td class='ky' hidden>" + key +
-                                 "</td><td>" + UserID + "</td><td>" + FullName + "</td><td>" 
-                                 + emailAdd + "</td><td>" + Address + "</td><td>"+status+"</td><td>" +
-                                    "<button class='openmodals myBtn'>View</button>" +
-                                    "<div class='modals myModal'>" +
-                                    "<div class='modals-content'>" +
-                                    "<div class='modals-header'>" +
-                                    "<h2>" + FullName + "</h2>" +
-                                    "<span class='closes'>&times;</span>" +
-                                    "</div>" +
-                                    "<p><b>Request ID: </b>" + key + "</p>" +
-                                    "<p><b>Barangay: </b>" + Barangay + " </p>" +
-                                    "<p><b>Full name: </b>" + FullName + " </p>" +
-                                    "<p><b>Address: </b>" + Address + " </p>" +
-                                    "<p><b>Username: </b>" + emailAdd + " </p>" +
-                                    "<p><b>"+Question+":</b> " + Answer + " </p>" +
-                                    "<p><b>Status: </b>" + status + " </p>" +
-                                    "<b>Actions:</b><br> <button id='accntApproved'>Approve</button><br> <button id='accntDeclined'>Decline</button>" +
-                                    "</div>" +
-                                    "</div></td></tr>")
+                                $("#table_account").append("<tr><td class='ky' >" + key +
+                                "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" 
+                                + emailAdd + "</td><td>" + Address + "</td><td>"+status+"</td><td>" +
+                                   "<button class='openmodals myBtn'>View</button>" +
+                                   "<div class='modals myModal'>" +
+                                   "<div class='modals-content'>" +
+                                   "<div class='modals-header'>" +
+                                   "<h2>" + FullName + "</h2>" +
+                                   "<span class='closes'>&times;</span>" +
+                                   "</div>" +
+                                   "<p><b>User ID: </b>" + UserID + "</p>" +
+                                   "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                                   "<p><b>Full name: </b>" + FullName + " </p>" +
+                                   "<p><b>Address: </b>" + Address + " </p>" +
+                                   "<p><b>Username: </b>" + emailAdd + " </p>" +
+                                   "<p><b>"+Question+"</b> " + Answer + " </p>" +
+                                   "<p><b>Status: </b>" + status + " </p>" +
+                                   "<b>Actions:</b> <button id='accntApproved'>Activate</button><button id='accntDeclined'>Decline</button><br>" +
+                                   "</div>" +
+                                   "</div></td></tr>")
                                }
                             })
                         } else {
@@ -98,30 +106,40 @@ window.onload = accountMng();
                       var UserID = snap.child("UserID").val();
                       var Barangay = snap.child("Barangay").val();
                       var BirthDate = snap.child("Birthplace").val();
-                      var Answer = snap.child("Answer2").val();
-                      var Question = snap.child("Question2").val();
                       var status = snap.child("Status").val();
+                      var Answer;
+                     var Question;
+                     
+                     var userType = snap.child("UserType").val();
+                                if(userType != "User"){
+                                  
+                      Answer = " ";
+                      Question = " ";
+                                }if(userType == "User"){
+                       Answer = snap.child("Answer2").val();
+                       Question = snap.child("Question2").val();
+                                }
                       if(Barangay==barangay){
-                      $("#table_account").append("<tr><td class='ky' hidden >" + key +
-                       "</td><td>" + UserID + "</td><td>" + FullName + "</td><td>" 
-                       + emailAdd + "</td><td>" + Address + "</td><td>"+status+"</td><td>" +
-                          "<button class='openmodal myBtn'>View</button>" +
-                          "<div class='modal myModal'>" +
-                          "<div class='modal-content'>" +
-                          "<div class='modal-header'>" +
-                          "<h2>" + Fullname + "</h2>" +
-                          "<span class='close'>&times;</span>" +
-                          "</div>" +
-                          "<p><b>Request ID: </b>" + key + "</p>" +
-                          "<p><b>Barangay: </b>" + Barangay + " </p>" +
-                          "<p><b>Full name: </b>" + FullName + " </p>" +
-                          "<p><b>Address: </b>" + Address + " </p>" +
-                          "<p><b>Username: </b>" + emailAdd + " </p>" +
-                          "<p><b>"+Question+":</b> " + Answer + " </p>" +
-                          "<p><b>Status: </b>" + status + " </p>" +
-                          "<b>Actions:</b><br> <button id='accntApproved'>Approve</button><br> <button id='accntDeclined'>Decline</button>" +
-                          "</div>" +
-                          "</div></td></tr>")
+                        $("#table_account").append("<tr><td class='ky' >" + key +
+                        "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" 
+                        + emailAdd + "</td><td>" + Address + "</td><td>"+status+"</td><td>" +
+                           "<button class='openmodal myBtn'>View</button>" +
+                           "<div class='modals myModal'>" +
+                           "<div class='modals-content'>" +
+                           "<div class='modals-header'>" +
+                           "<h2>" + FullName + "</h2>" +
+                           "<span class='closes'>&times;</span>" +
+                           "</div>" +
+                           "<p><b>User ID: </b>" + UserID + "</p>" +
+                           "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                           "<p><b>Full name: </b>" + FullName + " </p>" +
+                           "<p><b>Address: </b>" + Address + " </p>" +
+                           "<p><b>Username: </b>" + emailAdd + " </p>" +
+                           "<p><b>"+Question+"</b> " + Answer + " </p>" +
+                           "<p><b>Status: </b>" + status + " </p>" +
+                           "<b>Actions:</b> <button id='accntApproved'>Activate</button><button id='accntDeclined'>Decline</button>" +
+                           "</div>" +
+                           "</div></td></tr>")
                       }
                   })
               } else {
@@ -136,4 +154,22 @@ window.onload = accountMng();
 }
 }
 
+function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("dataTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
 window.onload= accountMng();

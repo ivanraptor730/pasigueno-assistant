@@ -40,7 +40,7 @@ function reportsTablePending() {
                 if(Anonymous=="false"){
                    userID1234 = snap.child("UserID").val();
                 }
-                $("#tbody_pending").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
+                $("#tbody_pending").prepend("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
                 "<button class='openmodals' onclick='openMap()'>View</button>" +
                 "<div class='modals myModal'>" +
                 "<div class='modals-content'>" +
@@ -54,7 +54,6 @@ function reportsTablePending() {
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
-                "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
                 "<b>Actions:</b><br> <button id='respond'><i class='fas fa-check'></i> Respond to this report</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>" +
                 "</div>" +
@@ -64,7 +63,7 @@ function reportsTablePending() {
               })
             } else {
               $("#tbody_pending").empty();
-              $("#tbody_pending").append("<td id='nullRecords'colspan=6>No Pending Reports.</td>");
+              $("#tbody_pending").prepend("<td id='nullRecords'colspan=6>No Pending Reports.</td>");
             }
           });
         });
@@ -123,7 +122,7 @@ window.onload = reportsTablePending();
  
 
               if(status=="Pending"){
-                $("#tbody_pending").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
+                $("#tbody_pending").prepend("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
                 "<button class='openmodals' onclick='openMap()'>View</button>" +
                 "<div class='modals myModal'>" +
                 "<div class='modals-content'>" +
@@ -137,7 +136,6 @@ window.onload = reportsTablePending();
                 "<p><b>Location: </b>" + location + " </p>" +
                 "<p><b>Report Details: </b>" + report + " </p>" +
                 "<p><b>Report Status: </b>" + status + " </p>" +
-                "<p><b>Message: <br></b>" + "<textarea id='myTextarea' style='height:150px;width:100%;'>"+message+"</textarea>" + " </p>" +
                 "<b>Actions:</b><br> <button id='respond'><i class='fas fa-check'></i> Respond to this report</button> <button id='markSpam'><i class='fas fa-flag'></i> Mark Spam</button>" +
                 "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>" +
                 "</div>" +
@@ -148,7 +146,7 @@ window.onload = reportsTablePending();
               })
             } else {
               $("#tbody_pending").empty();
-              $("#tbody_pending").append("<td id='nullRecords'colspan=6>No Pending Reports.</td>");
+              $("#tbody_pending").prepend("<td id='nullRecords'colspan=6>No Pending Reports.</td>");
             }
           });
         });

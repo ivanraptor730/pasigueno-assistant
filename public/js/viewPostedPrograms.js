@@ -11,7 +11,7 @@ window.onload =function viewPostedPrograms() {
   
           return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
             brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-            var rootRef = firebase.database().ref("newsfeed");
+            var rootRef = firebase.database().ref("newsfeed").orderByChild("Barangay").equalTo(brgy);
             rootRef.on("value", snap => {
               if (snap.exists()) {
                 $("#tbody_programs").html("");
@@ -25,30 +25,15 @@ window.onload =function viewPostedPrograms() {
                   var When = snap.child("When").val();
                   var Where = snap.child("Where").val();
                   
-                 if(Barangay==brgy){
-                  $("#tbody_programs").append("<tr><td class='ky' hidden>" + key + "</td><td>" + Title + "</td><td>" + Where +
+                  $("#tbody_programs").prepend("<tr><td class='ky' hidden>" + key + "</td><td>" + Title + "</td><td>" + Where +
                   "</td><td>" + When + "</td><td>" + Category+
                   "</td><td>" + Description + "</td><td>" + 
-                  "<button class='openmodal myBtn'>View</button>" +
-                  "<div class='modal myModal'>" +
-                  "<div class='modal-content'>" +
-                  "<div class='modal-header'>" +
-                  "<h2>" + Title + "</h2>" +
-                  "<span class='close'>&times;</span>" +
-                  "</div>" +
-                  "<p><b>Type of activity: </b>" + Category + "</p>" +
-                  "<p><b>Date of activity: </b>" + When + "</p>" +
-                  "<p><b>Place of activity: </b>" + Where + "</p>" +
-                  "<p><b>Description: </b>" + Description + " </p>" +
-                  "<button id='img' onclick=window.open('" + PhotoURL + "')><i class='fas fa-camera'></i> View Image</button>"+
-                  "</div>" +
-                  "</div></td></tr>")
-                 }
-                
+                  "<button id='img2' onclick=window.open('" + PhotoURL + "')><i class='fas fa-camera'></i> View Image</button>");
+          
                 })
               } else {
                 $("#tbody_programs").empty();
-                $("#tbody_programs").append("<td id='nullRecords'colspan=5>No Feedbacks.</td>");
+                $("#tbody_programs").prepend("<td id='nullRecords'colspan=5>No Feedbacks.</td>");
               }
             });
           });

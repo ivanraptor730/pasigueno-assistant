@@ -11,12 +11,12 @@ function requestServicesPending() {
                 var startDate = snap.child("StartDate").val();
                 var returnDate = snap.child("ReturnDate").val();
                 var returnTime = snap.child("ReturnTime").val();
-                $("#table_body").append("<tr><td>" + Category + "</td><td>" + Dates +
+                $("#table_body").prepend("<tr><td>" + Category + "</td><td>" + Dates +
                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
                     returnDate + " " + returnTime + "</td><td>" + "<button>View</button>" + "</td></tr>")
             })
         } else {
-            $("#table_body").append("<td id='nullRecords'colspan=7>No Pending Services.</td>")
+            $("#table_body").prepend("<td id='nullRecords'colspan=7>No Pending Services.</td>")
         }
     });
 
@@ -35,12 +35,12 @@ function requestServicesApproved() {
                 var startDate = snap.child("StartDate").val();
                 var returnDate = snap.child("ReturnDate").val();
                 var returnTime = snap.child("ReturnTime").val();
-                $("#table_body1").append("<tr><td>" + Category + "</td><td>" + Dates +
+                $("#table_body1").prepend("<tr><td>" + Category + "</td><td>" + Dates +
                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
                     returnDate + " " + returnTime + "</td></tr>") //Add Action kung naibalik na yung item or hindi
             })
         } else {
-            $("#table_body1").append("<td id='nullRecords'colspan=7>No Approved Services.</td>")
+            $("#table_body1").prepend("<td id='nullRecords'colspan=7>No Approved Services.</td>")
         }
     });
 }
@@ -58,12 +58,12 @@ function requestServicesDenied() {
                 var startDate = snap.child("StartDate").val();
                 var returnDate = snap.child("ReturnDate").val();
                 var returnTime = snap.child("ReturnTime").val();
-                $("#table_body2").append("<tr><td>" + Category + "</td><td>" + Dates +
+                $("#table_body2").prepend("<tr><td>" + Category + "</td><td>" + Dates +
                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
                     returnDate + " " + returnTime + "</td></tr>")
             })
         } else {
-            $("#table_body2").append("<td id='nullRecords'colspan=7>No Denied Services.</td>")
+            $("#table_body2").prepend("<td id='nullRecords'colspan=7>No Denied Services.</td>")
         }
     });
 

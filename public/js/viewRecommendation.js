@@ -1,5 +1,4 @@
-
-window.onload =function viewFeedBacks() {
+function viewFeedBacks() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       var userId = firebase.auth().currentUser.uid;
@@ -23,19 +22,7 @@ window.onload =function viewFeedBacks() {
                 var Recommendation = snap.child("Recommendation").val();
                
                 $("#tbody_recommendation").append("<tr><td class='ky' hidden>" + key + "</td><td>" + UserID +
-                "</td><td>" + Fullname + "</td><td>" + 
-                "<button class='openmodal myBtn'>View</button>" +
-                "<div class='modal myModal'>" +
-                "<div class='modal-content'>" +
-                "<div class='modal-header'>" +
-                "<h2>" + "Recommendation" + "</h2>" +
-                "<span class='close'>&times;</span>" +
-                "</div>" +
-                "<p><b>User ID: </b>" + UserID + "</p>" +
-                "<p><b>Full name: </b>" + Fullname + "</p>" +
-                "<p><b>Recommendation: </b>" + Recommendation + "</p>" +
-                "</div>" +
-                "</div></td></tr>")
+                "</td><td>" + Fullname + "</td><td>" + Recommendation +"</td>")
                 
               })
             } else {
@@ -48,7 +35,7 @@ window.onload =function viewFeedBacks() {
     }
   });
 }
-
+window.onload = viewFeedBacks();
 window.setInterval(
     function () {
       var modals = document.getElementsByClassName('modal');

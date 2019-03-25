@@ -21,13 +21,10 @@ $(function () { //Respond to Reports
             return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-
-              var message = prompt("Enter your response to the user: ");
               var category095 = document.getElementsByTagName('h2')[0].innerHTML;
 
               firebase.database().ref("reports/" + $id).update({
                 Category_Status: category095 + "_Responding",
-                message: message,
                 Status: "Responding",
                 Barangay_Status: barangay + "_Responding" //!!!! TODO: FETCH BARANGAY HERE (SA LAHAT NG FUNCTIONS)
               });
@@ -61,12 +58,10 @@ $(function () { //Respond to Reports
             return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-              var message = prompt("Enter your response to the user: ");
               var category095 = document.getElementsByTagName('h2')[0].innerHTML;
 
               firebase.database().ref("reports/" + $id).update({
                 Category_Status: category095 + "_Responded", ///binago ni jm responded na ngayon hindi resolved
-                message: message,
                 Status: "Responded", ///binago ni jm
                 Barangay_Status: barangay + "_Responded"
               });
@@ -100,11 +95,9 @@ $(function () { //Mark Reports as Spam
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
 
-              var message = prompt("Enter your response to the user: ");
               var category095 = document.getElementsByTagName('h2')[0].innerHTML;
               firebase.database().ref("reports/" + $id).update({
                 Category_Status: category095 + "_Spam", ///binago ni jm responded na ngayon hindi resolved
-                message: message,
                 Status: "Spam",
                 Barangay_Status: barangay + "_Spam"
               });
@@ -136,14 +129,12 @@ $(function () {
 
           ref.once('value', function (snapshot) {
             var parentKey = Object.keys(snapshot.val())[0];
-            var message = prompt("Enter your response to the user: ");
             return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
 
               barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
 
               firebase.database().ref("reports/" + $id).update({
                 Status: "Resolved",
-                message: message,
                 Barangay_Status: barangay + "_Responded"
               });
               alert('Report ' + $id + ' marked as Resolved.');

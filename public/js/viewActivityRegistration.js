@@ -25,14 +25,14 @@ window.onload = function viewActivityRegistration() {
                 var UserID = snap.child("UserID").val();
 
                 if (Barangay == brgy) {
-                  $("#tbody_registration").append("<tr><td class='ky' >" + key + "</td><td>" + AnnouncementTitle + "</td><td>" + AnnouncementPlace +
+                  $("#tbody_registration").prepend("<tr><td class='ky' >" + key + "</td><td>" + AnnouncementTitle + "</td><td>" + AnnouncementPlace +
                     "</td><td>" + AnnouncementDate + "</td><td>" + AnnouncementDescription + "</td><td>" +
-                    "<button class='openmodal myBtn'>View</button>" +
-                    "<div class='modal myModal'>" +
-                    "<div class='modal-content'>" +
-                    "<div class='modal-header'>" +
+                    "<button class='openmodals myBtn'>View</button>" +
+                    "<div class='modals myModal'>" +
+                    "<div class='modals-content'>" +
+                    "<div class='modals-header'>" +
                     "<h2>" + AnnouncementTitle + "</h2>" +
-                    "<span class='close'>&times;</span>" +
+                    "<span class='closes'>&times;</span>" +
                     "</div>" +
                     "<p><b>Date of activity: </b>" + AnnouncementDate + "</p>" +
                     "<p><b>Place of activity: </b>" + AnnouncementPlace + "</p>" +
@@ -47,7 +47,7 @@ window.onload = function viewActivityRegistration() {
               })
             } else {
               $("#tbody_registration").empty();
-              $("#tbody_registration").append("<td id='nullRecords'colspan=6>No Registration Request.</td>");
+              $("#tbody_registration").prepend("<td id='nullRecords'colspan=6>No Registration Request.</td>");
             }
           });
         });

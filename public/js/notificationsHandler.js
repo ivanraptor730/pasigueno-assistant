@@ -29,8 +29,7 @@ function messages() {
                 return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
                     var brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
                     var chatterRef = firebase.database().ref("messages/" + brgy).limitToLast(1); //fetch chat list from barangay
-                    chatterRef.on('value', function (snapshot) {
-                        var seen = snapshot.child("isSeen").val(); //TOdO
+                    chatterRef.on('child_changed', function (snapshot) {
                         document.getElementById('msg-counter').innerHTML = "!";
                         console.log(snapshot.val());
                     })

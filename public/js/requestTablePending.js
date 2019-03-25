@@ -112,7 +112,7 @@ window.onload = requestFormsTablePending();
                     "<p><b>Place Of Birth: </b>" + BirthDate + " </p>" +
                     "<p><b>Purpose: </b>" + Purpose + " </p>" +
                     "<p><b>Status: </b>" + status + " </p>" +
-                    "<b>Actions:</b><br> <button id='takeActionApproved'>Approve</button> <br><button id='Declined'>Decline</button>" +
+                    "<b>Actions:</b><br> <button id='takeActionApproved'>Approve</button><button id='takeActionDeclined'>Decline</button>" +
                     "</div>" +
                     "</div></td></tr>")
                 }
@@ -165,7 +165,7 @@ function requestUtilsTablePending() {
                                     "<div class='modals-content'>" +
                                     "<div class='modals-header'>" +
                                     "<h2>" + Category + "</h2>" +
-                                    "<span class='close'>&times;</span>" +
+                                    "<span class='closes'>&times;</span>" +
                                     "</div>" +
                                     "<p><b>Request ID: </b>" + key + "</p>" +
                                     "<p><b>Barangay: </b>" + Barangay + " </p>" +
@@ -175,7 +175,7 @@ function requestUtilsTablePending() {
                                     "<p><b>Return Date: </b>" + returnDate + " </p>" +
                                     "<p><b>Return Time: </b>" + returnTime + " </p>" +
                                     "<p><b>Status: </b>" + status + " </p>" +
-                                    "<b>Actions:</b><br> <button id='takeActionApproved1'>Approve</button><br> <button id='Declined1'>Decline</button>" +
+                                    "<b>Actions:</b><br> <button id='takeActionApproved'>Approve</button><button id='takeActionDeclined'>Decline</button>" +
                                     "</div>" +
                                     "</div></td></tr>")
                             })

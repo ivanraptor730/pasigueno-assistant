@@ -24,11 +24,11 @@ function requestFormsTableDeclined() {
                                 var UserID = snap.child("UserID").val();
                                 var Barangay = snap.child("Barangay").val();
                                 var BirthDate = snap.child("Birthplace").val();
-                                $("#table_body").append("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
+                                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
                             })
                         } else {
                             $("#table_body").empty();
-                            $("#table_body").append("<td id='nullRecords'colspan=7>No Declined Forms Requests.</td>")
+                            $("#table_body").prepend("<td id='nullRecords'colspan=7>No Declined Forms Requests.</td>")
                         }
                     });
                 });
@@ -74,12 +74,12 @@ window.onload = requestFormsTableDeclined();
                 var BirthDate = snap.child("Birthplace").val();
                 var status = snap.child("Status").val();
                 if(status=="Declined"){
-                    $("#table_body").append("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
+                    $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
                 }
             })
             } else {
               $("#table_body").empty();
-              $("#table_body").append("<td id='nullRecords'colspan=6>No Approved Form Request.</td>");
+              $("#table_body").prepend("<td id='nullRecords'colspan=6>No Approved Form Request.</td>");
             }
           });
         });
@@ -114,13 +114,13 @@ function requestUtilsTableDeclined() {
                                 var startDate = snap.child("StartDate").val();
                                 var returnDate = snap.child("EndDate").val();
                                 var returnTime = snap.child("EndTime").val();
-                                $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
+                                $("#table_body1").prepend("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
                                     returnDate + " " + returnTime + "</td></tr>")
                             })
                         } else {
                             $("#table_body1").empty();
-                            $("#table_body1").append("<td id='nullRecords'colspan=7>No Declined Services Requests.</td>")
+                            $("#table_body1").prepend("<td id='nullRecords'colspan=7>No Declined Services Requests.</td>")
                         }
                     });
                 });
@@ -166,7 +166,7 @@ window.onload = requestUtilsTableDeclined();
                 var status = snap.child("Status").val();
                 
                 if(status == "Declined"){
-                  $("#table_body1").append("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
+                  $("#table_body1").prepend("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                   "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
               returnDate + " " + returnTime + "</td></tr>")
           }
@@ -174,7 +174,7 @@ window.onload = requestUtilsTableDeclined();
           
       } else {
           $("#table_body1").empty();
-          $("#table_body1").append("<td id='nullRecords'colspan=7>No Declined Services Requests.</td>")
+          $("#table_body1").prepend("<td id='nullRecords'colspan=7>No Declined Services Requests.</td>")
       }
           });
         });

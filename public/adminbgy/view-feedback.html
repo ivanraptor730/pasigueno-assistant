@@ -56,7 +56,7 @@
             </div>
 
             <!-- Nav Item - Newsfeed Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews"
                     aria-expanded="true" aria-controls="collapseNews">
                     <i class="fas fa-fw fa-plus-square"></i>
@@ -65,9 +65,9 @@
                 <div id="collapseNews" class="collapse" aria-labelledby="headingReports"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Reports:</h6>
+                        <h6 class="collapse-header">Newsfeed:</h6>
                         <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
-                        <a class="collapse-item active" href="post-programs.html">Post Programs</a>
+                        <a class="collapse-item" href="post-programs.html">Post Programs</a>
                     </div>
                 </div>
             </li>
@@ -188,7 +188,7 @@
 
                         <!-- Nav Item - Reports Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="pending-reports.html">
                                 <i class="fas fa-info-circle fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span id="rep-counter" class="badge badge-danger badge-counter"></span>
@@ -286,7 +286,7 @@
                                         </thead>
                                         <tbody id="tbody_feedback">
                                             <tr>
-                                                <td colspan="7" class="text-center"><b>Loading Feedback...</b></td>
+                                                <td colspan="7" class="text-center"><b>Loading Community Feedbacks...</b></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -358,9 +358,10 @@
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
 
-    <!--JS Script(s) for this Page-->
+    <!-- Page level custom scripts -->
     <script src="../js/notificationsHandler.js"></script>
     <script src="../js/viewFeedBack.js"></script>
+    <script src="../js/reportsModal.js"></script>
 </body>
 
 </html>

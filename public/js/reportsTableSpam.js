@@ -19,11 +19,11 @@ function reportsTableSpam() {
                 var date = snap.child("Date").val();
                 var location = snap.child("Location").val();
                 var report = snap.child("Report").val();
-                $("#tbody_spam").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
+                $("#tbody_spam").prepend("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
               })
             } else {
               $("#tbody_spam").empty();
-              $("#tbody_spam").append("<td id='nullRecords' colspan='6'>No Spam Reports.</td>");
+              $("#tbody_spam").prepend("<td id='nullRecords' colspan='6'>No Spam Reports.</td>");
             }
           });
         });
@@ -69,12 +69,12 @@ window.onload = reportsTableSpam();
                 var photoURL = snap.child("PhotoURL").val();
                 var catstat = snap.child("Barangay_Status")
               if(status=="Spam"){
-                $("#tbody_spam").append("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
+                $("#tbody_spam").prepend("<tr><td class='ky'>" + key + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td>");
               }
             })
             } else {
               $("#tbody_spam").empty();
-              $("#tbody_spam").append("<td id='nullRecords' colspan='6'>No Spam Reports.</td>");
+              $("#tbody_spam").prepend("<td id='nullRecords' colspan='6'>No Spam Reports.</td>");
             }
           });
         });

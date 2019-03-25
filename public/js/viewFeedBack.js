@@ -11,7 +11,7 @@ window.onload =function viewFeedBacks() {
 
         return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
           brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-          var rootRef = firebase.database().ref("activityfeedback");
+          var rootRef = firebase.database().ref("activityfeedback").orderByChild("Barangay").equalTo(brgy);
           rootRef.on("value", snap => {
             if (snap.exists()) {
               $("#tbody_feedback").html("");
@@ -29,15 +29,14 @@ window.onload =function viewFeedBacks() {
                 var AnnouncementTitle= snap.child("AnnouncementTitle").val();
                 var AnnouncementPlace= snap.child("AnnouncementPlace").val();
                 
-               if(Barangay==brgy){
-                $("#tbody_feedback").append("<tr><td class='ky'>" + key + "</td><td>" + Fullname +
+                $("#tbody_feedback").prepend("<tr><td class='ky'>" + key + "</td><td>" + Fullname +
                 "</td><td>" + AnnouncementCategory + "</td><td>" + AnnouncementTitle +
                 "</td><td>" + AnnouncementDate + "</td>" + 
                 "<td>" + StarRating + "</td><td>" + 
-                "<button class='openmodal myBtn'>View</button>" +
-                "<div class='modal myModal'>" +
-                "<div class='modal-content'>" +
-                "<div class='modal-header'>" +
+                "<button class='openmodals myBtn'>View</button>" +
+                "<div class='modals myModal'>" +
+                "<div class='modals-content'>" +
+                "<div class='modals-header'>" +
                 "<h2>" + AnnouncementTitle + "</h2>" +
                 "<span class='close'>&times;</span>" +
                 "</div>" +
@@ -52,11 +51,10 @@ window.onload =function viewFeedBacks() {
                 "<p><b>Message: </b>" + Feedback + " </p>" +
                 "</div>" +
                 "</div></td></tr>")
-               }  
               })
             } else {
               $("#tbody_feedback").empty();
-              $("#tbody_feedback").append("<td id='nullRecords'colspan=7>No Feedbacks.</td>");
+              $("#tbody_feedback").prepend("<td id='nullRecords'colspan=7>No Feedbacks.</td>");
             }
           });
         });
