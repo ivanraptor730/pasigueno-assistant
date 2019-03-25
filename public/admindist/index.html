@@ -12,7 +12,8 @@
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -26,75 +27,75 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-       <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-          <img src="../img/logo.png" width="100px" height="50px">
-          <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <img src="../img/logo.png" width="100px" height="50px">
+        <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Barangay
+      </div>
+
+      <!-- Nav Item - Newsfeed Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="statistics.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Statistics</span>
         </a>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-  
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-  
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          Barangay
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        System
+      </div>
+
+      <!-- Nav Item - Accounts Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+          aria-expanded="true" aria-controls="collapseAccounts">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Accounts</span>
+        </a>
+        <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Reports:</h6>
+            <a class="collapse-item" href="signup.html">Account Registration</a>
+            <a class="collapse-item" href="viewSignup.html">View Accounts</a>
+          </div>
         </div>
-  
-        <!-- Nav Item - Newsfeed Collapse Menu -->
-        <li class="nav-item ">
-            <a class="nav-link" href="statistics.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Statistics</span>
-            </a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-  
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          System
-        </div>
-  
-        <!-- Nav Item - Accounts Collapse Menu -->
-        <li class="nav-item ">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts" aria-expanded="true"
-              aria-controls="collapseAccounts">
-              <i class="fas fa-fw fa-user"></i>
-              <span>Accounts</span>
-            </a>
-            <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Reports:</h6>
-                <a class="collapse-item" href="signup.html">Account Registration</a>
-                <a class="collapse-item" href="viewSignup.html">View Accounts</a>
-              </div>
-            </div>
-          </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-  
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-  
-      </ul>
-      <!-- End of Sidebar -->
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -111,7 +112,7 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-          
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -120,7 +121,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                <img class="img-profile rounded-circle"
+                  src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -146,34 +148,36 @@
         <div class="container-fluid">
           <div class="card mb-3">
             <div class="card-header text-white bg-primary">
-                <i class="fas fa-map-marked text-white"></i>
-                Map Report History</div>              
-                <div>
-                 
-                  Barangay: <select id="barangay" class="custom-dropdown" onchange="initMap()">
-                    
-                    <option value="--">--</option>
-                    <option value="Santolan">Santolan</option>
-                    <option value="Manggahan">Manggahan</option>
-                    <option value="Dela Paz">Dela Paz</option>
-                    <option value="Sta. Lucia">Sta. Lucia</option>
-                    <option value="San Miguel">San Miguel</option>
-                    <option value="Pinagbuhatan">Pinagbuhatan</option>
-                    <option value="Maybungga">Maybungga</option>
-                    <option value="Rosario">Rosario</option>
-                  </select>
+              <i class="fas fa-map-marked text-white"></i>
+              Map Report History</div>
+            <div>
 
-                  <br>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start: <input class="date-dropdown" type="date" id="startDate" onchange="initMap()" >
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End: <input class="date-dropdown" type="date" id="endDate"onchange="initMap()">
-                </div>
-                
-              <div class="card-body">
-                <div id="map" style="width:100%;height:400px;"></div>
-                
-              </div>
+              Barangay: <select id="barangay" class="custom-dropdown" onchange="initMap()">
+
+                <option value="--">--</option>
+                <option value="Santolan">Santolan</option>
+                <option value="Manggahan">Manggahan</option>
+                <option value="Dela Paz">Dela Paz</option>
+                <option value="Sta. Lucia">Sta. Lucia</option>
+                <option value="San Miguel">San Miguel</option>
+                <option value="Pinagbuhatan">Pinagbuhatan</option>
+                <option value="Maybungga">Maybungga</option>
+                <option value="Rosario">Rosario</option>
+              </select>
+
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start: <input class="date-dropdown" type="date"
+                id="startDate" onchange="initMap()">
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End: <input class="date-dropdown" type="date"
+                id="endDate" onchange="initMap()">
             </div>
+
+            <div class="card-body">
+              <div id="map" style="width:100%;height:400px;"></div>
+
+            </div>
+          </div>
         </div>
         <!-- /.container-fluid -->
 
@@ -202,7 +206,8 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -237,132 +242,12 @@
   <script src="../js/sb-admin-2.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9jb6--NfLfSn3SCresxshyhfwKMi_34&callback=initMap">
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9jb6--NfLfSn3SCresxshyhfwKMi_34&callback=initMap">
   </script>
-     <script >
-    
-function initMap() { 
-    
-    //firebase.auth().onAuthStateChanged(function (user) {
-    //    if (user) {
-       //     alert("asd"); 
-         //   var userId = firebase.auth().currentUser.uid;
-          //  var users = firebase.database().ref('users');
-            //var ref = users.orderByChild('UserID').equalTo(userId);
- 
-                    var lat=14.576377, lang=121.085110;
- 
-                    var map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 12.9,
-                        center: new google.maps.LatLng(lat, lang),
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    });
+  <script src="../js/disthomeMap.js"></script>
 
-                    
-       var start = document.getElementById("startDate").value;
-       var end =  document.getElementById("endDate").value;
-                    var a = document.getElementById("barangay").value;
-                  
 
-                    var dbRef = firebase.database().ref('reports');
-                    if(Date.parse(start) > Date.parse(end) ){
-       alert("End date must be later than start date. \nPlease Try again.");
-     }
-                    if (start == null && end == null && a != "--" || start == "" && end == "" && a !="--") {
-                        dbRef.orderByChild('Barangay').equalTo(a).on('value', function (snapshot) {
-                            snapshot.forEach(snap => {
-
-                                var childs = snap.val();
-
-                                var Category = snap.child("Category").val();
-                                var date = snap.child("Date").val();
-                                var locationName = snap.child("Location").val();
-                                var status = snap.child("Status").val();
-                                var markerColor;
-                                if (status == "Pending") {
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
-                                }
-                                if (status == "Responded") {
-
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
-                                }
-                                if (status == "Responding") {
-
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
-                                }
-                                if(status != "Spam"){
-                                var infowindow = new google.maps.InfoWindow();
-                                var marker = new google.maps.Marker({
-                                    position: {
-                                        lat: parseFloat(childs.Latitude),
-                                        lng: parseFloat(childs.Longitude)
-                                    },
-                                    icon: markerColor,
-                                    map: map
-                                });
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
-                                        'Date: ' + date + '<br>' +
-                                        'Location: ' + locationName + '<br>' +
-                                        'Status: ' + status + '<br>' + '</div>');
-                                    infowindow.open(map, this);
-                                });
-                              }
-                            });
-                            
-                        });
-
-                    }else{
-                      dbRef.orderByChild("Date").startAt(start).endAt(end).on('value', function (snapshot) {
-                            snapshot.forEach(snap => {
-                                var barangayss = snap.child("Barangay").val();
-                                var barangey = a.value; 
-                                var childs = snap.val();
-
-                                var Category = snap.child("Category").val();
-                                var date = snap.child("Date").val();
-                                var locationName = snap.child("Location").val();
-                                var status = snap.child("Status").val();
-                                var markerColor;
-                                if (status == "Pending") {
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
-                                }
-                                if (status == "Responded") {
-
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
-                                }
-                                if (status == "Responding") {
-
-                                    markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
-                                }
-                                if(status != "Spam" && barangayss == a){
-                                var infowindow = new google.maps.InfoWindow();
-                                var marker = new google.maps.Marker({
-                                    position: {
-                                        lat: parseFloat(childs.Latitude),
-                                        lng: parseFloat(childs.Longitude)
-                                    },  
-                                    icon: markerColor,
-                                    map: map
-                                });
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.setContent('<div><strong>Category:' + Category + '</strong><br>' +
-                                        'Date: ' + date + '<br>' +
-                                        'Location: ' + locationName + '<br>' +
-                                        'Status: ' + status + '<br>' + '</div>');
-                                    infowindow.open(map, this);
-                                });
-                              }
-                            });
-                            
-                        });
-                    }
-        
-}
-
-    </script>
- 
-
-</body> 
+</body>
 
 </html>

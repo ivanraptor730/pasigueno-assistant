@@ -1,12 +1,4 @@
 function initMap() {
-
-    //firebase.auth().onAuthStateChanged(function (user) {
-    //    if (user) {
-    //     alert("asd");
-    //   var userId = firebase.auth().currentUser.uid;
-    //  var users = firebase.database().ref('users');
-    //var ref = users.orderByChild('UserID').equalTo(userId);
-
     var lat = 14.576377,
         lang = 121.085110;
 
@@ -23,9 +15,6 @@ function initMap() {
 
 
     var dbRef = firebase.database().ref('reports');
-    if (Date.parse(start) > Date.parse(end)) {
-        alert("End date must be later than start date. \nPlease Try again.");
-    }
     if (start == null && end == null && a != "--" || start == "" && end == "" && a != "--") {
         dbRef.orderByChild('Barangay').equalTo(a).on('value', function (snapshot) {
             snapshot.forEach(snap => {
@@ -44,7 +33,7 @@ function initMap() {
 
                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                 }
-                if (status == "Responding") {
+                if (status == "Ongoing") {
 
                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
                 }
@@ -85,7 +74,7 @@ function initMap() {
                 if (status == "Pending") {
                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
                 }
-                if (status == "Resolved") {
+                if (status == "Responded") {
 
                     markerColor = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
                 }
@@ -118,4 +107,5 @@ function initMap() {
 
 }
 
-window.onload=initMap();
+
+window.onload = initMap();
