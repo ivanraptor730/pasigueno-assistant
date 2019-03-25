@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Account Signup | Pasigueno Assistant</title>
+  <title>My Profile | Pasigueno Assistant</title>
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -79,7 +79,7 @@
             <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Reports:</h6>
-                <a class="collapse-item active" href="signup.html">Account Registration</a>
+                <a class="collapse-item" href="signup.html">Account Registration</a>
                 <a class="collapse-item" href="viewSignup.html">View Accounts</a>
               </div>
             </div>
@@ -141,132 +141,43 @@
         </nav>
         <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+        <!-- Begin Page Content -->
+<!-- Begin Page Content -->
 
-                    <h3>Sign up</h3>
-                    <p>Please fill in this form to create an account!</p><br>
-                    <table>
-                        <tr>
-                            <td>Fullname:
-                                <input type="text" id="fullname" size="60" required class="custom-text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Barangay:
-                                <select id="barangay" class="custom-dropdown">
-                                    <option>---</option>
-                                    <option>Santolan</option>
-                                    <option>Pinagbuhatan</option>
-                                    <option>Manggahan</option>
-                                    <option>Maybunga</option>
-                                    <option>Sta. Lucia</option>
-                                    <option>Rosario</option>
-                                    <option>Dela Paz</option>
-                                    <option>San Miguel</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr></tr>
-                            <td>Address: &nbsp;
-                                <input type="text" name="address" id="address" required class="custom-text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
+<div class="container-fluid">
+    <h1>My Account</h1>
+    <hr>
+    <div class="card mb-3">
+      <div class="card-header text-white bg-primary">
+        <i class="fas fa-map text-white"></i>
+        Manage My Account</div>
+      <br>
+      <div class="container-fluid">
+        Fullname: <br><input type="text" id="fullname" class="custom-text"><br><br>
+        
+        User ID:<br><input type="text" id="userid" class="custom-text" disabled><br><br>
+        Address:<br> <input type="text" id="address" class="custom-text"><br><br>
+        Barangay: <br><input type="text" id="barangay" class="custom-text"><br><br>
+        Email Address:<br> <input type="text" id="emailaddress" class="custom-text"><br><br>
+          
+        Password:<br> <input type="password" id="password" class="custom-text"><br><br>
+        Security Question:<br> <input type="text" id="secquestion" class="custom-text" disabled><br><br>
+        Answer:<br> <input type="text" id="answer" class="custom-text" required><br><br>
+        
 
-                        <td>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="email" name="usernames" id="usernames" required class="custom-text">
-                        </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Password:
-                                <input type="password" name="password" id="password" required class="custom-text">
-                            </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              &nbsp;
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>Question:
-                              <select id="question" class="custom-dropdown">
-                                  <option>---</option>
-                                  <option>Maiden name of mother</option>
-                                  <option>Favorite Food</option>
-                                  <option>Favorite Number</option>
-                                  <option>Name of dog</option>
-                                  <option>Favorite sport</option>
-                                  <option>Name of brother</option>
-                                  <option>Name of sister</option>
-                                  <option>Name of father</option>
-                              </select>
-                          </td>
-                      </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              Answer: <input type="text" id="answer" required class="custom-text">
-                          </td>
-                      </tr><tr>
-                        <td>
-                            &nbsp;
-                        </td>
-                    </tr>
-                        <tr>
-                            <td>User type:
-                                <select name="userType" id="userType" required class="custom-dropdown">
-                                  
-                                      <option value="Admin">Barangay Administrator</option>
-                                      <option value="District">District Admin</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
+        <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary" id="submitButton"
+        onclick="manageAcct()">
+          
+        <div class="card-body">
+         
+        </div>
 
-                                <input type="submit" id="submit" class="btn btn-submit pull-right bg-primary text-white"
-                                    value="Submit" onclick="submitClick()">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-
-                    </table>
-
-                </div>
-                <!-- /.container-fluid -->
+        
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
@@ -328,28 +239,88 @@
   <script src="../js/sb-admin-2.min.js"></script>
 
   <!-- Page level custom scripts -->
-
-  <script src="../js/SignUpDist.js"></script>
-  
-  <script src="../js/firebase-2.js"></script>
   <script>
-    
-      $('#userType').change(function() {
-        if( $(this).val() != "Barangay Administrator") {
-          $('#barangay').prop( "disabled", true );
-          
+    /* Redirect File for determining userinfo */
+  window.onload= function userInfos() {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        var userId = firebase.auth().currentUser.uid;
+        var users = firebase.database().ref('users');
+        var ref = users.orderByChild('UserID').equalTo(userId);
+  
+        ref.once('value', function (snapshot) {
+          var parentKey = Object.keys(snapshot.val())[0];
+  
+          return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
+            emailaddress = (snapshot.val() && snapshot.val().EmailAddress) || 'Unknown'; //fetch name
+            barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown'; //fetch barangay?
+            userid = (snapshot.val() && snapshot.val().UserID) || 'Unknown'; 
+            question = (snapshot.val() && snapshot.val().Question) || 'Unknown';
+            address = (snapshot.val() && snapshot.val().Address) || 'Unknown';
+            fullname = (snapshot.val() && snapshot.val().FullName) || 'Unknown';
             
-      document.getElementById('barangay').innerHTML = "Barangay:<select id='barangay'><option>---</option><option>Santolan</option><option>Pinagbuhatan</option><option>Manggahan</option><option>Maybunga</option><option>Sta. Lucia</option><option>Rosario</option><option>Dela Paz</option><option>San Miguel</option></select>";
-        } 
-        if( $(this).val() != "District Admin") {  
+            document.getElementById('fullname').value = fullname; 
+            document.getElementById('userid').value = userid; 
+            document.getElementById('address').value = address; 
+            document.getElementById('barangay').value = barangay; 
+            document.getElementById('emailaddress').value = emailaddress; 
+            document.getElementById('secquestion').value = question; 
+           
+          });
+        });
+      } 
+  
+    });
+  }
+  function manageAcct(){
+  
+     var fullname= document.getElementById('fullname').value; 
+     var userid=document.getElementById('userid').value; 
+     var address=document.getElementById('address').value; 
+     var barangay=document.getElementById('barangay').value; 
+     var emailaddress=document.getElementById('emailaddress').value;
+     var password=document.getElementById('password').value;
+     var secquestion=document.getElementById('secquestion').value;
+     var answer=document.getElementById('answer').value;
+  
+     var rootRef =  firebase.database().ref("users").orderByChild("UserID").equalTo(userid);
+            rootRef.on("value", snap => {
             
-          $('#barangay').prop( "disabled", false );
-          document.getElementById('barangay').innerHTML = "Barangay:<select id='barangay'><option>---</option><option>Santolan</option><option>Pinagbuhatan</option><option>Manggahan</option><option>Maybunga</option><option>Sta. Lucia</option><option>Rosario</option><option>Dela Paz</option><option>San Miguel</option></select>";
+                snap.forEach(snap => {
+                  var key = snap.key;
+                  var answer1 = snap.child("Answer").val();
+                  var user = firebase.auth().currentUser;
+  
+                 if(answer.toLowerCase()==answer1.toLowerCase()){
+                 
+  user.updatePassword(password).then(function() {
      
-        }
-      });
-          </script>
- 
+    alert("Successfully Changed");
+    window.location.reload();
+  }).catch(function(error) {
+    
+      alert("Successfully Changed");
+      window.location.reload();
+  });
+  firebase.database().ref("users/" + key).update({
+                  Address:address,
+                  FullName:fullname,
+                  Barangay:barangay,
+                  EmailAddress:emailaddress,
+                  
+              });
+          }else{
+              alert("Invalid Answer for Security Question!!");
+              window.location.reload();
+          }
+                })
+                
+              
+            });
+  
+         
+  }
+    </script>
 
 </body> 
 

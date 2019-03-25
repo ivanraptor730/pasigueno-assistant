@@ -1,3 +1,4 @@
+
 function submitClick() {
     var fullname = document.getElementById("fullname");
     var barangay = document.getElementById("barangay");
@@ -5,13 +6,11 @@ function submitClick() {
     var address = document.getElementById("address");
     var password = document.getElementById("password");
 
-    var password1 = document.getElementById("password1");
+    var question = document.getElementById("question");
+    var answer = document.getElementById("answer");
     var userType = document.getElementById("userType");
     var submit = document.getElementById("submit");
 
-    if (password.value != password1.value) {
-        alert("Passwords Don't Match");
-    } else {
 
         var usernames = username.value;
         var passwords = password.value;
@@ -19,6 +18,8 @@ function submitClick() {
             var uid = userCreds.user.uid;
             var fullnames = fullname.value;
             var barangays = barangay.value;
+            var questions = question.value;
+            var answers = answer.value;
             var status = "Active";
             var addresss = address.value;
             var userTypes = userType.value;
@@ -33,7 +34,9 @@ function submitClick() {
                 EmailAddress: usernames,
                 UserType: userTypes,
                 UserID: uid,
-                Status: status
+                Status: status,
+                Question:questions,
+                Answer:answers
             });
 
 
@@ -42,21 +45,4 @@ function submitClick() {
         });
 
 
-    }
-
-    $('#userType').change(function () {
-        if ($(this).val() != "Barangay Administrator") {
-            $('#barangay').prop("disabled", true);
-
-
-            document.getElementById('barangay').innerHTML = "Barangay:<select id='barangay'><option>---</option><option>Santolan</option><option>Pinagbuhatan</option><option>Manggahan</option><option>Maybunga</option><option>Sta. Lucia</option><option>Rosario</option><option>Dela Paz</option><option>San Miguel</option></select>";
-        }
-        if ($(this).val() != "District Admin") {
-
-            $('#barangay').prop("disabled", false);
-            document.getElementById('barangay').innerHTML = "Barangay:<select id='barangay'><option>---</option><option>Santolan</option><option>Pinagbuhatan</option><option>Manggahan</option><option>Maybunga</option><option>Sta. Lucia</option><option>Rosario</option><option>Dela Paz</option><option>San Miguel</option></select>";
-
-        }
-    });
-
-}
+}  
