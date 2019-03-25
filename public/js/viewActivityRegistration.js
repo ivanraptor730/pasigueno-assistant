@@ -10,7 +10,7 @@ window.onload = function viewActivityRegistration() {
 
         return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
           brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
-          var rootRef = firebase.database().ref("activityregistration");
+          var rootRef = firebase.database().ref("activityregistration").orderByChild("Barangay").equalTo(brgy);
           rootRef.on("value", snap => {
             if (snap.exists()) {
               $("#tbody_registration").html("");
@@ -24,7 +24,6 @@ window.onload = function viewActivityRegistration() {
                 var AnnouncementTitle = snap.child("AnnouncementTitle").val();
                 var UserID = snap.child("UserID").val();
 
-                if (Barangay == brgy) {
                   $("#tbody_registration").prepend("<tr><td class='ky' >" + key + "</td><td>" + AnnouncementTitle + "</td><td>" + AnnouncementPlace +
                     "</td><td>" + AnnouncementDate + "</td><td>" + AnnouncementDescription + "</td><td>" +
                     "<button class='openmodals myBtn'>View</button>" +
@@ -42,8 +41,6 @@ window.onload = function viewActivityRegistration() {
                     "<button id='Declined'><i class='fas fa-flag'></i> Declined</button>" +
                     "</div>" +
                     "</div></td></tr>")
-                }
-
               })
             } else {
               $("#tbody_registration").empty();
