@@ -9,7 +9,7 @@ function submitClick() {
     var answer = document.getElementById("answer");
     var userType = document.getElementById("userType");
     var submit = document.getElementById("submit");
-    var usernames = username.value;
+    var usernames = username.value.trim();
     var passwords = password.value;
     otherApp.auth().createUserWithEmailAndPassword(usernames, passwords).then(function (userCreds) {
         var uid = userCreds.user.uid;
