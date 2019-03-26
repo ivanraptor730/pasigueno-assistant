@@ -34,7 +34,7 @@ function submitClick() {
         var uid = userCreds.user.uid;
         var fullnames = fullname.value;
         var barangays = barangay.value;
-        var status = "Active";
+        var status = "Approved";
         var questions = question.value;
         var answers = answer.value;
         var addresss = address.value;

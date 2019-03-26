@@ -16,7 +16,7 @@ function submitClick() {
         var barangays = barangay.value;
         var questions = question.value;
         var answers = answer.value;
-        var status = "Active";
+        var status = "Approved";
         var addresss = address.value;
         var userTypes = userType.value;
         var rootRef = firebase.database().ref();
