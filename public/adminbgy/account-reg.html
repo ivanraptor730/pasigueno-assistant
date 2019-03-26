@@ -155,7 +155,7 @@
                 </div>
             </li>
 
-           
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -213,137 +213,167 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                       <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                <img class="img-profile rounded-circle"
-                  src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="my-profile.html">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="userName"
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="my-profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
 
-          </ul>
+                    </ul>
 
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <h3>Sign up</h3>
-                    <p>Please fill in this form to create an account!</p><br>
-                    <table>
-                        <tr>
-                            <td>Fullname:
-                                <input type="text" name="fullname" id="fullname" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Barangay:
-                                <input type="text" id="barangay" readonly="true" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr></tr>
-                        <td>Address: &nbsp;
-                            <input type="text" name="address" id="address" required>
+                <div class="container">
+                <h3>Sign up</h3>
+                <p>Please fill in this form to create an account!</p><br>
+                <table>
+                    <tr>
+                        <td>Fullname:
+                            <input type="text" id="fullname">
                         </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-
-                        <td>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="email" name="username" id="username" required>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
                         </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Password:
-                                <input type="password" name="password" id="password" required maxlength="8">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>User type:
-                                <select name="userType" id="userType" required>
-                                    <option value="User">User Account</option>
-                                    <option value="Admin">Barangay Administrator</option>
+                    </tr>
+                    <tr>
+                        <td>Barangay:
+                            <input type="text" id="barangay" readonly="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <td>Address: &nbsp;
+                        <input type="text" name="address" id="address" required class="custom-text">
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
 
+                    <td>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="email" name="username" id="username" required class="custom-text">
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password:
+                            <input type="password" name="password" id="password" required class="custom-text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Question:
+                            <select id="question" class="custom-dropdown">
+                                <option>---</option>
+                                <option>Maiden name of mother</option>
+                                <option>Favorite Food</option>
+                                <option>Favorite Number</option>
+                                <option>Name of dog</option>
+                                <option>Favorite sport</option>
+                                <option>Name of brother</option>
+                                <option>Name of sister</option>
+                                <option>Name of father</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Answer: <input type="text" id="answer" required class="custom-text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>User type:
+                            <select name="userType" id="userType" required class="custom-dropdown">
 
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
+                                <option value="Admin">Barangay Administrator</option>
+                                <option value="User">Barangay Citizen</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
 
-                                <input type="submit" id="submit" class="btn btn-submit pull-right bg-primary text-white"
-                                    value="Submit" onclick="submitClick()">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
+                            <input type="submit" id="submit" class="btn btn-submit pull-right bg-primary text-white"
+                                value="Submit" onclick="submitClick()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
 
-                    </table>
-
-                </div>
-                <!-- /.container-fluid -->
+                </table>
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
