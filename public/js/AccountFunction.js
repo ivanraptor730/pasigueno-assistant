@@ -7,7 +7,7 @@ $(function () { //Respond to forms
         if (r == true) {
             
             firebase.database().ref("users/" + $id).update({
-                Status: "Active"
+                Status: "Approved"
             });
             alert('Thank you');
      
