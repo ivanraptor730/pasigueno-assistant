@@ -12,7 +12,8 @@
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -26,75 +27,75 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-       <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-          <img src="../img/logo.png" width="100px" height="50px">
-          <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <img src="../img/logo.png" width="100px" height="50px">
+        <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Barangay
+      </div>
+
+      <!-- Nav Item - Newsfeed Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="statistics.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Statistics</span>
         </a>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-  
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-  
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          Barangay
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        System
+      </div>
+
+      <!-- Nav Item - Accounts Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+          aria-expanded="true" aria-controls="collapseAccounts">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Accounts</span>
+        </a>
+        <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Reports:</h6>
+            <a class="collapse-item" href="signup.html">Account Registration</a>
+            <a class="collapse-item" href="viewSignup.html">View Accounts</a>
+          </div>
         </div>
-  
-        <!-- Nav Item - Newsfeed Collapse Menu -->
-        <li class="nav-item ">
-            <a class="nav-link" href="statistics.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Statistics</span>
-            </a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-  
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          System
-        </div>
-  
-        <!-- Nav Item - Accounts Collapse Menu -->
-        <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts" aria-expanded="true"
-              aria-controls="collapseAccounts">
-              <i class="fas fa-fw fa-user"></i>
-              <span>Accounts</span>
-            </a>
-            <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Reports:</h6>
-                <a class="collapse-item" href="signup.html">Account Registration</a>
-                <a class="collapse-item" href="viewSignup.html">View Accounts</a>
-              </div>
-            </div>
-          </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-  
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-  
-      </ul>
-      <!-- End of Sidebar -->
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -111,7 +112,7 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-          
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -120,7 +121,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                <img class="img-profile rounded-circle"
+                  src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -142,41 +144,34 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-<!-- Begin Page Content -->
 
-<div class="container-fluid">
-    <h1>My Account</h1>
-    <hr>
-    <div class="card mb-3">
-      <div class="card-header text-white bg-primary">
-        <i class="fas fa-map text-white"></i>
-        Manage My Account</div>
-      <br>
-      <div class="container-fluid">
-        Fullname: <br><input type="text" id="fullname" class="custom-text"><br><br>
-        
-        User ID:<br><input type="text" id="userid" class="custom-text" disabled><br><br>
-        Address:<br> <input type="text" id="address" class="custom-text"><br><br>
-        Barangay: <br><input type="text" id="barangay" class="custom-text"><br><br>
-        Email Address:<br> <input type="text" id="emailaddress" class="custom-text"><br><br>
-          
-        Password:<br> <input type="password" id="password" class="custom-text"><br><br>
-        Security Question:<br> <input type="text" id="secquestion" class="custom-text" disabled><br><br>
-        Answer:<br> <input type="text" id="answer" class="custom-text" required><br><br>
-        
+        <div class="container-fluid">
+          <h1>My Account</h1>
+          <hr>
+          <div class="card mb-3">
+            <div class="card-header text-white bg-primary">
+              <i class="fas fa-map text-white"></i>
+              Manage My Account</div>
+            <br>
+            <div class="container-fluid">
+              Fullname: <br><input type="text" id="fullname" class="custom-text"><br><br>
 
-        <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary" id="submitButton"
-        onclick="manageAcct()">
-          
-        <div class="card-body">
-         
+              User ID:<br><input type="text" id="userid" class="custom-text" disabled><br><br>
+              Address:<br> <input type="text" id="address" class="custom-text"><br><br>
+              Barangay: <br><input type="text" id="barangay" class="custom-text"><br><br>
+              Email Address:<br> <input type="text" id="emailaddress" class="custom-text"><br><br>
+
+              Password:<br> <input type="password" id="password" class="custom-text"><br><br>
+              Security Question:<br> <input type="text" id="secquestion" class="custom-text" disabled><br><br>
+              Answer:<br> <input type="text" id="answer" class="custom-text" required><br><br>
+
+
+              <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary" id="submitButton"
+                onclick="manageAcct()">
+            </div>
+          </div>
         </div>
-
-        
-      </div>
-    </div>
-  </div>
-  <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
         <!-- /.container-fluid -->
 
       </div>
@@ -204,7 +199,8 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -241,87 +237,88 @@
   <!-- Page level custom scripts -->
   <script>
     /* Redirect File for determining userinfo */
-  window.onload= function userInfos() {
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        var userId = firebase.auth().currentUser.uid;
-        var users = firebase.database().ref('users');
-        var ref = users.orderByChild('UserID').equalTo(userId);
-  
-        ref.once('value', function (snapshot) {
-          var parentKey = Object.keys(snapshot.val())[0];
-  
-          return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
-            emailaddress = (snapshot.val() && snapshot.val().EmailAddress) || 'Unknown'; //fetch name
-            barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown'; //fetch barangay?
-            userid = (snapshot.val() && snapshot.val().UserID) || 'Unknown'; 
-            question = (snapshot.val() && snapshot.val().Question) || 'Unknown';
-            address = (snapshot.val() && snapshot.val().Address) || 'Unknown';
-            fullname = (snapshot.val() && snapshot.val().FullName) || 'Unknown';
-            
-            document.getElementById('fullname').value = fullname; 
-            document.getElementById('userid').value = userid; 
-            document.getElementById('address').value = address; 
-            document.getElementById('barangay').value = barangay; 
-            document.getElementById('emailaddress').value = emailaddress; 
-            document.getElementById('secquestion').value = question; 
-           
-          });
-        });
-      } 
-  
-    });
-  }
-  function manageAcct(){
-  
-     var fullname= document.getElementById('fullname').value; 
-     var userid=document.getElementById('userid').value; 
-     var address=document.getElementById('address').value; 
-     var barangay=document.getElementById('barangay').value; 
-     var emailaddress=document.getElementById('emailaddress').value;
-     var password=document.getElementById('password').value;
-     var secquestion=document.getElementById('secquestion').value;
-     var answer=document.getElementById('answer').value;
-  
-     var rootRef =  firebase.database().ref("users").orderByChild("UserID").equalTo(userid);
-            rootRef.on("value", snap => {
-            
-                snap.forEach(snap => {
-                  var key = snap.key;
-                  var answer1 = snap.child("Answer").val();
-                  var user = firebase.auth().currentUser;
-  
-                 if(answer.toLowerCase()==answer1.toLowerCase()){
-                 
-  user.updatePassword(password).then(function() {
-     
-    alert("Successfully Changed");
-    window.location.reload();
-  }).catch(function(error) {
-    
-      alert("Successfully Changed");
-      window.location.reload();
-  });
-  firebase.database().ref("users/" + key).update({
-                  Address:address,
-                  FullName:fullname,
-                  Barangay:barangay,
-                  EmailAddress:emailaddress,
-                  
-              });
-          }else{
-              alert("Invalid Answer for Security Question!!");
-              window.location.reload();
-          }
-                })
-                
-              
-            });
-  
-         
-  }
-    </script>
+    window.onload = function userInfos() {
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          var userId = firebase.auth().currentUser.uid;
+          var users = firebase.database().ref('users');
+          var ref = users.orderByChild('UserID').equalTo(userId);
 
-</body> 
+          ref.once('value', function (snapshot) {
+            var parentKey = Object.keys(snapshot.val())[0];
+
+            return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
+              emailaddress = (snapshot.val() && snapshot.val().EmailAddress) || 'Unknown'; //fetch name
+              barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown'; //fetch barangay?
+              userid = (snapshot.val() && snapshot.val().UserID) || 'Unknown';
+              question = (snapshot.val() && snapshot.val().Question) || 'Unknown';
+              address = (snapshot.val() && snapshot.val().Address) || 'Unknown';
+              fullname = (snapshot.val() && snapshot.val().FullName) || 'Unknown';
+
+              document.getElementById('fullname').value = fullname;
+              document.getElementById('userid').value = userid;
+              document.getElementById('address').value = address;
+              document.getElementById('barangay').value = barangay;
+              document.getElementById('emailaddress').value = emailaddress;
+              document.getElementById('secquestion').value = question;
+
+            });
+          });
+        }
+
+      });
+    }
+
+    function manageAcct() {
+
+      var fullname = document.getElementById('fullname').value;
+      var userid = document.getElementById('userid').value;
+      var address = document.getElementById('address').value;
+      var barangay = document.getElementById('barangay').value;
+      var emailaddress = document.getElementById('emailaddress').value;
+      var password = document.getElementById('password').value;
+      var secquestion = document.getElementById('secquestion').value;
+      var answer = document.getElementById('answer').value;
+
+      var rootRef = firebase.database().ref("users").orderByChild("UserID").equalTo(userid);
+      rootRef.on("value", snap => {
+
+        snap.forEach(snap => {
+          var key = snap.key;
+          var answer1 = snap.child("Answer").val();
+          var user = firebase.auth().currentUser;
+
+          if (answer.toLowerCase() == answer1.toLowerCase()) {
+
+            user.updatePassword(password).then(function () {
+
+              alert("Successfully Changed");
+              window.location.reload();
+            }).catch(function (error) {
+
+              alert("Successfully Changed");
+              window.location.reload();
+            });
+            firebase.database().ref("users/" + key).update({
+              Address: address,
+              FullName: fullname,
+              Barangay: barangay,
+              EmailAddress: emailaddress,
+
+            });
+          } else {
+            alert("Invalid Answer for Security Question!!");
+            window.location.reload();
+          }
+        })
+
+
+      });
+
+
+    }
+  </script>
+
+</body>
 
 </html>

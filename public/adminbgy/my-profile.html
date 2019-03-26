@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>My Profile| Pasigueno Assistant</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <img src="../img/logo.png" width="100px" height="50px">
+                <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Barangay
+            </div>
+
+            <!-- Nav Item - Newsfeed Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews"
+                    aria-expanded="true" aria-controls="collapseNews">
+                    <i class="fas fa-fw fa-plus-square"></i>
+                    <span>Newsfeed</span>
+                </a>
+                <div id="collapseNews" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reports:</h6>
+                        <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
+                        <a class="collapse-item" href="post-programs.html">Post Programs</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Reports Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReports"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-info-circle"></i>
+                    <span>Reports</span>
+                </a>
+                <div id="collapseReports" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reports:</h6>
+                        <a class="collapse-item" href="pending-reports.html">Pending Reports</a>
+                        <a class="collapse-item" href="responding-reports.html">Ongoing Reports</a>
+                        <a class="collapse-item" href="responded-reports.html">Resolved Reports</a>
+                        <a class="collapse-item" href="spam-reports.html">Spam Reports</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Requests Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-reply"></i>
+                    <span>Requests</span>
+                </a>
+                <div id="collapseRequests" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Forms:</h6>
+                        <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
+                        <a class="collapse-item" href="forms-req-approved.html">Approved Requests</a>
+                        <a class="collapse-item" href="forms-req-denied.html">Denied Requests</a>
+                        <h6 class="collapse-header">Services/Utilities:</h6>
+                        <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
+                        <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
+                        <a class="collapse-item" href="utils-req-denied.html">Denied Requests</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Community Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommunity"
+                    aria-expanded="true" aria-controls="collapseCommunity">
+                    <i class="fas fa-fw fa-people-carry"></i>
+                    <span>Community</span>
+                </a>
+                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Community:</h6>
+                        <a class="collapse-item" href="view-feedback.html">View Feedbacks</a>
+                        <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
+                        <a class="collapse-item" href="registration-req.html">Registration Requests</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                System
+            </div>
+
+            <!-- Nav Item - Accounts Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+                    aria-expanded="true" aria-controls="collapseAccounts">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Accounts</span>
+                </a>
+                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Account Management:</h6>
+                        <a class="collapse-item" href="account-reg.html">Account Registration</a>
+                        <a class="collapse-item" href="account-mng.html">Manage Accounts</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Reports Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-info-circle fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span id="rep-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Requests Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-reply fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span id="req-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link " href="messages.html">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span id="msg-counter" class="badge badge-danger badge-counter"></span>
+                            </a>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="userName"
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="my-profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+
+                <div class="container-fluid">
+                    <h1>My Account</h1>
+                    <hr>
+                    <div class="card mb-3">
+                        <div class="card-header text-white bg-primary">
+                            <i class="fas fa-map text-white"></i>
+                            Manage My Account</div>
+                        <br>
+                        <div class="container-fluid">
+                            Fullname: <br><input type="text" id="fullname" class="custom-text"><br><br>
+
+                            User ID:<br><input type="text" id="userid" class="custom-text" disabled><br><br>
+                            Address:<br> <input type="text" id="address" class="custom-text"><br><br>
+                            Barangay: <br><input type="text" id="barangay" class="custom-text"><br><br>
+                            Email Address:<br> <input type="text" id="emailaddress" class="custom-text"><br><br>
+
+                            Password:<br> <input type="password" id="password" class="custom-text"><br><br>
+                            Security Question:<br> <input type="text" id="secquestion" class="custom-text"
+                                disabled><br><br>
+                            Answer:<br> <input type="text" id="answer" class="custom-text" required><br><br>
+
+
+                            <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary"
+                                id="submitButton" onclick="manageAcct()">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Are you sure you want to log-out?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Firebase Core + Dependent Scripts (must be on all pages)-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/userInfo.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9jb6--NfLfSn3SCresxshyhfwKMi_34&callback=initMap">
+    </script>
+    <script src="../js/homeMaps.js"></script>
+    <script src="../js/notificationsHandler.js"></script>
+ <!-- Page level custom scripts -->
+ <script>
+    /* Redirect File for determining userinfo */
+    window.onload = function userInfos() {
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          var userId = firebase.auth().currentUser.uid;
+          var users = firebase.database().ref('users');
+          var ref = users.orderByChild('UserID').equalTo(userId);
+
+          ref.once('value', function (snapshot) {
+            var parentKey = Object.keys(snapshot.val())[0];
+
+            return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
+              emailaddress = (snapshot.val() && snapshot.val().EmailAddress) || 'Unknown'; //fetch name
+              barangay = (snapshot.val() && snapshot.val().Barangay) || 'Unknown'; //fetch barangay?
+              userid = (snapshot.val() && snapshot.val().UserID) || 'Unknown';
+              question = (snapshot.val() && snapshot.val().Question) || 'Unknown';
+              address = (snapshot.val() && snapshot.val().Address) || 'Unknown';
+              fullname = (snapshot.val() && snapshot.val().FullName) || 'Unknown';
+
+              document.getElementById('fullname').value = fullname;
+              document.getElementById('userid').value = userid;
+              document.getElementById('address').value = address;
+              document.getElementById('barangay').value = barangay;
+              document.getElementById('emailaddress').value = emailaddress;
+              document.getElementById('secquestion').value = question;
+
+            });
+          });
+        }
+
+      });
+    }
+
+    function manageAcct() {
+
+      var fullname = document.getElementById('fullname').value;
+      var userid = document.getElementById('userid').value;
+      var address = document.getElementById('address').value;
+      var barangay = document.getElementById('barangay').value;
+      var emailaddress = document.getElementById('emailaddress').value;
+      var password = document.getElementById('password').value;
+      var secquestion = document.getElementById('secquestion').value;
+      var answer = document.getElementById('answer').value;
+
+      var rootRef = firebase.database().ref("users").orderByChild("UserID").equalTo(userid);
+      rootRef.on("value", snap => {
+
+        snap.forEach(snap => {
+          var key = snap.key;
+          var answer1 = snap.child("Answer").val();
+          var user = firebase.auth().currentUser;
+
+          if (answer.toLowerCase() == answer1.toLowerCase()) {
+
+            user.updatePassword(password).then(function () {
+
+              alert("Successfully Changed");
+              window.location.reload();
+            }).catch(function (error) {
+
+              alert("Successfully Changed");
+              window.location.reload();
+            });
+            firebase.database().ref("users/" + key).update({
+              Address: address,
+              FullName: fullname,
+              Barangay: barangay,
+              EmailAddress: emailaddress,
+
+            });
+          } else {
+            alert("Invalid Answer for Security Question!!");
+            window.location.reload();
+          }
+        })
+
+
+      });
+
+
+    }
+  </script>
+
+</body>
+
+</html>
