@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Resolved Reports | Pasigueno Assistant</title>
+    <title>Reports | Pasigueno Assistant</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,11 +19,12 @@
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     <link href="../css/modal.css" rel="stylesheet">
+    <link href="../css/messages.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -71,23 +72,11 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Reports Collapse Menu -->
+            <!-- Nav Item - Reports -->
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReports"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link" href="reports.html">
                     <i class="fas fa-fw fa-info-circle"></i>
-                    <span>Reports</span>
-                </a>
-                <div id="collapseReports" class="collapse" aria-labelledby="headingReports"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item" href="pending-reports.html">Pending Reports</a>
-                        <a class="collapse-item" href="responding-reports.html">Ongoing Reports</a>
-                        <a class="collapse-item active" href="responded-reports.html">Resolved Reports</a>
-                        <a class="collapse-item" href="spam-reports.html">Spam Reports</a>
-                    </div>
-                </div>
+                    <span>Reports</span></a>
             </li>
 
             <!-- Nav Item - Requests Collapse Menu -->
@@ -130,6 +119,7 @@
                 </div>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -155,7 +145,7 @@
                 </div>
             </li>
 
-           
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -212,79 +202,95 @@
                         </li>
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                       <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                <img class="img-profile rounded-circle"
-                  src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="my-profile.html">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="userName"
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="my-profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <h1>Reports Center</h1><div class="float-right">Search by ID: <input type="text" id="myInput" onkeyup="myFunction()"
+                        title="Type in a name">
+                    Category: <select id="categorychange" onchange="onChangeCategory()">
 
-                    <h1>Resolved Reports</h1>
+                        <option value="--">--</option>
+                        <option value="Peace and Order (Neighborhood)">Neighborhood</option>
+                        <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
+                        <option value="Peace and Order (Robbery)">Robbery</option>
+                        <option value="Clean and Green (Waste)">Waste</option>
+                        <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
+                        <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    Report Status: <select id="statuschange" onchange="onChangeStatus()">
+
+                        <option value="--">--</option>
+                        <option value="Peace and Order (Neighborhood)">Pending</option>
+                        <option value="Peace and Order (Illegal Drugs)">Ongoing</option>
+                        <option value="Peace and Order (Robbery)">Completed</option>
+                        <option value="Clean and Green (Waste)">Spam</option>
+                    </select></div>
+                    <br>
                     <hr>
-                    <div class="card mb-3">
-                        <div class="card-header bg-primary text-white">
-                            <i class="fas fa-table"></i>
-                            Reports
-                            <div class="float-right">
-                                Search by ID: <input type="text" id="myInput" onkeyup="myFunction()"
-                                    title="Type in a name">
-                                Category: <select id="categoryResponded" onchange="onChangeResponded()">
-                                    <option value="--">--</option>
-                                    <option value="Peace and Order (Neighborhood)">Neighborhood</option>
-                                    <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
-                                    <option value="Peace and Order (Robbery)">Robbery</option>
-                                    <option value="Clean and Green (Waste)">Waste</option>
-                                    <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
-                                    <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
-                                    <option value="Others">Others</option>
-                                </select>
+                    <div class="messaging">
+                        <div class="inbox_msg">
+                            <div class="inbox_people">
+                                <div class="headind_srch">
+                                    <div class="recent_heading">
+                                        <h4>Reporters List</h4>
+                                    </div>
+                                </div>
+                                <!--People-->
+                                <div id="people" class="inbox_chat">
+                                    <br>
+                                    <h6 class="text-center">Loading Citizens...</h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Report ID</th>
-                                            <th>Date (yyyy/mm/dd)</th>
-                                            <th>Category</th>
-                                            <th>Location</th>
-                                            <th>Report</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tbody_responded">
-                                        <tr>
-                                            <td colspan="6" class="text-center"><i class='fa fa-spinner fa-spin'></i> <b>Loading Reports...</b></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <!--Chatbox-->
+                            <div id="chatbox" class="mesgs">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Date (yyyy/mm/dd)</th>
+                                                <th>Category</th>
+                                                <th>Location</th>
+                                                <th>Report</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_pending">
+                                            <tr>
+                                                <td colspan="6" class="text-center">Select a Citizen.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -331,6 +337,7 @@
         </div>
     </div>
 
+
     <!--Firebase Core + Dependent Scripts (must be on all pages)-->
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
     <script src="../js/firebase.js"></script>
@@ -349,10 +356,9 @@
 
     <!-- Page level custom scripts -->
     <script src="../js/notificationsHandler.js"></script>
-    <script src="../js/reportsTableResponded.js"></script>
-    <script src="../js/reportsFunctions.js"></script>
-    <script src="../js/reportsTableCategory.js"></script>
+    <script src="../js/reportsTable.js"></script>>
     <script src="../js/reportsModal.js"></script>
+    <script src="../js/loadScreen.js"></script>
 </body>
 
 </html>

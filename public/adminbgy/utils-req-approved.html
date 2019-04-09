@@ -12,7 +12,8 @@
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -55,12 +56,13 @@
 
             <!-- Nav Item - Newsfeed Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews" aria-expanded="true"
-                    aria-controls="collapseNews">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews"
+                    aria-expanded="true" aria-controls="collapseNews">
                     <i class="fas fa-fw fa-plus-square"></i>
                     <span>Newsfeed</span>
                 </a>
-                <div id="collapseNews" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div id="collapseNews" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
@@ -69,22 +71,11 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Reports Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReports"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+            <!-- Nav Item - Reports -->
+            <li class="nav-item active">
+                <a class="nav-link" href="reports.html">
                     <i class="fas fa-fw fa-info-circle"></i>
-                    <span>Reports</span>
-                </a>
-                <div id="collapseReports" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item" href="pending-reports.html">Pending Reports</a>
-                        <a class="collapse-item" href="responding-reports.html">Ongoing Reports</a>
-                        <a class="collapse-item" href="responded-reports.html">Resolved Reports</a>
-                        <a class="collapse-item" href="spam-reports.html">Spam Reports</a>
-                    </div>
-                </div>
+                    <span>Reports</span></a>
             </li>
 
             <!-- Nav Item - Requests Collapse Menu -->
@@ -94,7 +85,8 @@
                     <i class="fas fa-fw fa-reply"></i>
                     <span>Requests</span>
                 </a>
-                <div id="collapseRequests" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+                <div id="collapseRequests" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Forms:</h6>
                         <a class="collapse-item" href="forms-req-pending.html">Pending Requests</a>
@@ -115,7 +107,8 @@
                     <i class="fas fa-fw fa-people-carry"></i>
                     <span>Community</span>
                 </a>
-                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div id="collapseCommunity" class="collapse" aria-labelledby="headingReports"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="view-feedback.html">View Community Feedbacks</a>
@@ -140,7 +133,8 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>Accounts</span>
                 </a>
-                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="account-reg.html">Account Registration</a>
@@ -149,7 +143,7 @@
                 </div>
             </li>
 
-           
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -168,115 +162,119 @@
             <div id="content">
 
                 <<!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Reports Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link" href="pending-reports.html">
-                                <i class="fas fa-info-circle fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span id="rep-counter" class="badge badge-danger badge-counter"></span>
-                            </a>
-                        </li>
-
-                        <!-- Nav Item - Requests Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-reply fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span id="req-counter" class="badge badge-danger badge-counter"></span>
-                            </a>
-                        </li>
-
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link " href="messages.html">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span id="msg-counter" class="badge badge-danger badge-counter"></span>
-                            </a>
-                        </li>
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
-                            </a>
-                             <!-- Dropdown - User Information -->
-                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="my-profile.html">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                            <!-- Nav Item - Reports Alerts -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a class="nav-link" href="pending-reports.html">
+                                    <i class="fas fa-info-circle fa-fw"></i>
+                                    <!-- Counter - Alerts -->
+                                    <span id="rep-counter" class="badge badge-danger badge-counter"></span>
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                            </li>
+
+                            <!-- Nav Item - Requests Alerts -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-reply fa-fw"></i>
+                                    <!-- Counter - Alerts -->
+                                    <span id="req-counter" class="badge badge-danger badge-counter"></span>
                                 </a>
+                            </li>
+
+                            <!-- Nav Item - Messages -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a class="nav-link " href="messages.html">
+                                    <i class="fas fa-envelope fa-fw"></i>
+                                    <!-- Counter - Messages -->
+                                    <span id="msg-counter" class="badge badge-danger badge-counter"></span>
+                                </a>
+                            </li>
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span id="userName"
+                                        class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
+                                    <img class="img-profile rounded-circle"
+                                        src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="my-profile.html">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <h1>Utilities Requests</h1>
+                        <hr>
+                        <p id="message1"></p>
+                        <!-- DataTables Example -->
+
+                        <div class="card mb-3">
+                            <div class="card-header text-white bg-primary">
+                                <i class="fas fa-table"></i>
+                                Approved Services Requests
+                                <div class="float-right">
+                                    Category: <select id="utilApproved" onchange="onChangeFormsUtilsApproved()">
+                                </div>
+                                <option value="--">--</option>
+                                <option value="Tent">Tent</option>
+                                <option value="Multipurpose Hall">Multipurpose Hall</option>
+                                </select>
                             </div>
-                        </li>
 
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <h1>Utilities Requests</h1>
-                    <hr>
-                    <p id="message1"></p>
-                    <!-- DataTables Example -->
-
-                    <div class="card mb-3">
-                        <div class="card-header text-white bg-primary">
-                            <i class="fas fa-table"></i>
-                            Approved Services Requests
-                            <div class="float-right">
-                                Category: <select id="utilApproved" onchange="onChangeFormsUtilsApproved()">
-                            </div>
-                            <option value="--">--</option>
-                            <option value="Tent">Tent</option>
-                            <option value="Multipurpose Hall">Multipurpose Hall</option>
-                            </select>
                         </div>
 
-                    </div>
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Request ID</th>
-                                        <th>Category</th>
-                                        <th>Date</th>
-                                        <th>Location</th>
-                                        <th>Start Date & Time</th>
-                                        <th>Return Date & Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table_body1">
-                                    <tr>
-                                        <td colspan="7" class="text-center"><i class='fa fa-spinner fa-spin'></i> <b>Loading Requests...</b></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Request ID</th>
+                                            <th>Category</th>
+                                            <th>Date</th>
+                                            <th>Location</th>
+                                            <th>Start Date & Time</th>
+                                            <th>Return Date & Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table_body1">
+                                        <tr>
+                                            <td colspan="7" class="text-center"><i class='fa fa-spinner fa-spin'></i>
+                                                <b>Loading Requests...</b></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
             <!-- /.container-fluid -->
 
@@ -342,7 +340,7 @@
 
     <!-- Page level custom scripts -->
     <script src="../js/notificationsHandler.js"></script>
-<script src="../js/notificationsHandler.js"></script>
+    <script src="../js/notificationsHandler.js"></script>
     <script src="../js/requestFunctions.js"></script>
     <script src="../js/requestTableApproved.js"></script>
     <script src="../js/requestsModal.js"></script>
