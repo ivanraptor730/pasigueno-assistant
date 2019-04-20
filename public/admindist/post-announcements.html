@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard | Pasigueno Assistant</title>
+  <title>Post Announcement | Pasigueno Assistant</title>
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -55,28 +55,28 @@
       </div>
 
       <!-- Nav Item - Post Announcements -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="post-announcements.html">
           <i class="fas fa-fw fa-plus-square"></i>
           <span>Post Announcements</span></a>
       </li>
-
+      
       <!-- Nav Item - Statistics Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStats"
-            aria-expanded="true" aria-controls="collapseStats">
-            <i class="fas fa-fw fa-chart-bar"></i>
-            <span>Statistics</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStats" aria-expanded="true"
+          aria-controls="collapseStats">
+          <i class="fas fa-fw fa-chart-bar"></i>
+          <span>Statistics</span>
         </a>
-        <div id="collapseStats" class="collapse" aria-labelledby="headingStats"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Statistics:</h6>
-                <a class="collapse-item" href="statistics.html">Report Statistics</a>
-                <a class="collapse-item" href="FeedbackStatistics.html">Feedback Statistics</a>
-            </div>
+        <div id="collapseStats" class="collapse" aria-labelledby="headingStats" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Statistics:</h6>
+            <a class="collapse-item" href="statistics.html">Report Statistics</a>
+            <a class="collapse-item" href="FeedbackStatistics.html">Feedback Statistics</a>
+          </div>
         </div>
-    </li>
+      </li>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -95,7 +95,7 @@
         </a>
         <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Accounts:</h6>
+            <h6 class="collapse-header">Reports:</h6>
             <a class="collapse-item" href="signup.html">Account Registration</a>
             <a class="collapse-item" href="viewSignup.html">View Accounts</a>
           </div>
@@ -127,13 +127,16 @@
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
+
+
+
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i class='fa fa-spinner fa-spin'></i>Loading...</span>
+                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
                 <img class="img-profile rounded-circle"
                   src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
@@ -156,110 +159,102 @@
         </nav>
         <!-- End of Topbar -->
 
+
         <!-- Begin Page Content -->
-
         <div class="container-fluid">
-          <div class="card mb-3">
-            <div class="card-header text-white bg-primary">
-              <i class="fas fa-map-marked text-white"></i>
-              Map Report History</div>
-            <div>
+          <h1>Post Announcements</h1>
+          <hr>
+          <div class="container-fluid">
+            <form method="POST" action="createCard.php">
 
-              Barangay: <select id="barangay" class="custom-dropdown" onchange="initMap()">
 
-                <option value="--">--</option>
-                <option value="Santolan">Santolan</option>
-                <option value="Manggahan">Manggahan</option>
-                <option value="Dela Paz">Dela Paz</option>
-                <option value="Sta. Lucia">Sta. Lucia</option>
-                <option value="San Miguel">San Miguel</option>
-                <option value="Pinagbuhatan">Pinagbuhatan</option>
-                <option value="Maybungga">Maybungga</option>
-                <option value="Rosario">Rosario</option>
-              </select>
+              Title:<br><input type="text" id="what" class="custom-text" required> <br>
+              Where:<br><input type="text" id="where" class="custom-text" required> <br>
+              When: <br><input type="date" id="when" class="custom-text"><br>
+              Start Time:<br><input type="time" id="startTime" class="custom-text" required> <br>
+              <p id=message1></p>
+              End Time:<br><input type="time" id="endTime" class="custom-text" required> <br>
+              <p id=message2></p>
+
 
               <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start: <input class="date-dropdown" type="date"
-                id="startDate" onchange="initMap()">
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End: <input class="date-dropdown" type="date"
-                id="endDate" onchange="initMap()">
-            </div>
+              <p>Description</p>
+              <textarea rows="10" cols="100" id="message" maxlength="300"></textarea>
 
-            <div class="card-body">
-              <div id="map" style="width:100%;height:400px;"></div>
+              <p>Character Limit is 300. You have <span id="wordCount">300</span> characters
+                remaining.<br>
+                <input type="file" id="file" accept="image/*" />
+              </p>
 
+              <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary" id="uploadButton"
+                onclick="postProgramDist()">
+          </div>
+          <!-- /.container-fluid -->
+
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Pasigueno Assistant 2019</span>
             </div>
           </div>
-        </div>
-        <!-- /.container-fluid -->
+        </footer>
+        <!-- End of Footer -->
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Pasigueno Assistant 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Are you sure you want to log-out?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Are you sure you want to log-out?</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--Firebase Core + Dependent Scripts (must be on all pages)-->
-  <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
-  <script src="../js/firebase.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/userInfo.js"></script>
+    <!--Firebase Core + Dependent Scripts (must be on all pages)-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/userInfo.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9jb6--NfLfSn3SCresxshyhfwKMi_34&callback=initMap">
-  </script>
-  <script src="../js/disthomeMap.js"></script>
-
+    <!--JS Script(s) for this Page-->
+    <script src="../js/postProgramDist.js"></script>
+    <script src="../js/textLimiter.js"></script>
 
 </body>
 

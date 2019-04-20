@@ -30,7 +30,7 @@ function reports() {
                                             "</div></div></div>");
 
                                         $('div.chat_list').on('click', function () { //populate chatbox and determine clicked user
-                                          var $cl = $(this).closest('div.chat_list');
+                                            var $cl = $(this).closest('div.chat_list');
                                             $chtName = $cl.attr('id');
                                             $('div.chat_list').removeClass("unread_chat");
                                             $('p.unread_username').removeClass("unread_username")
@@ -49,7 +49,7 @@ function reports() {
                                                       var status = snaps.child("Status").val();
                                                       var photoURL = snaps.child("PhotoURL").val();
                                       
-                                                      $("#tbody_pending").prepend("<tr><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
+                                                      $("#tbody_pending").prepend("<tr><td id='ky'>" + ky + "</td><td>" + date + "</td><td>" + category + "</td><td>" + location + "</td><td>" + report + "</td><td>" +
                                                       "<button class='openmodals' onclick='openMap()'>View</button>" +
                                                       "<div class='modals myModal'>" +
                                                       "<div class='modals-content'>" +
@@ -67,12 +67,15 @@ function reports() {
                                                       "</div>" +
                                                       "</div>"+
                                                       "</div>"+"</td></tr>")
-                                                        updateScroll();
                                                     });
                                                 }
                                             });
 
                                         })
+                                    }
+                                    else{
+                                        $("#people").empty();
+                                        $("people").append("No Reporters.")
                                     }
 
                                 })
@@ -94,4 +97,5 @@ function reports() {
 
 
 }
+
 window.onload = reports();

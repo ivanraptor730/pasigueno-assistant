@@ -49,7 +49,7 @@ function initMap() {
                     var a = document.getElementById("category").value;
                     var reportIDs = document.getElementById("reportID").value;
 
-                    var dbRef = firebase.database().ref('reports');
+                    var dbRef = firebase.database().ref('reports/' + brgy);
 
                     if (startDate != "" && endDate != "" && a == "--" || startDate != null && endDate != null && a == "--") {
 

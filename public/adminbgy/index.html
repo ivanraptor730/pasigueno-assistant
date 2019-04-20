@@ -19,6 +19,7 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
   <link href="../css/index.css" rel="stylesheet">
+  <link href="../css/announcement.css" rel="stlesheet">
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 
@@ -65,11 +66,11 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Reports:</h6>
             <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
-            <a class="collapse-item" href="post-programs.html">Post Programs</a>
+            <a class="collapse-item" href="post-programs.html">Post to Newsfeed</a>
           </div>
         </div>
       </li>
-      
+
       <!-- Nav Item - Reports -->
       <li class="nav-item">
         <a class="nav-link" href="reports.html">
@@ -199,7 +200,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i
-                    class='fa fa-spinner fa-spin'></i> Loading...</span>
+                    class='fa fa-spinner fa-spin'></i>Loading...</span>
                 <img class="img-profile rounded-circle"
                   src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
@@ -224,21 +225,32 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <h1>Overview</h1>
+          <h1>Dashboard</h1>
           <hr>
-          <div class="card mb-3">
+          <div class="card mb-3 float-left" id="dash">
+            <div class="card-header text-white bg-primary">
+              <i class="fas fa-fw fa-info-circle"></i>
+              District Office Announcements</div>
+            <div class="container-fluid" id="posts-body">
+              <br>
+              <div class="card-body bg-gray-200">
+                <div class="panel panel-default">
+                  <span class="panel-body" id="pnl-body">
+                    <br><i class='fa fa-spinner fa-spin'></i> Loading Announcements...
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3 float-right" id="dash">
             <div class="card-header text-white bg-primary">
               <i class="fas fa-map text-white"></i>
               Map Report History</div>
 
             <div class="container-fluid">
               <br>
-              Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Start Date:<br> <select id="category" class="custom-dropdown" onchange="initMap()">
+              Category: <select id="category" class="custom-dropdown" onchange="initMap()">
                 <img src="../img/logo.png" width="100" height="50">
                 <option class="form-control-user" value="--">--</option>
                 <option value="Peace and Order (Neighborhood)">Neighborhood</option>
@@ -248,29 +260,20 @@
                 <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
                 <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
                 <option value="Others">Others</option>
-              </select>&nbsp;&nbsp;&nbsp;<input type="date" class="date-dropdown" onchange="initMap()"
-                id="startDate"></input>
+              </select><br>
+              Search Report Id: <input type="text" class="custom-text" onchange="initMap()" id="reportID"></input><br>
+              Start Date: <input type="date" class="date-dropdown" onchange="initMap()" id="startDate"></input><br>
+              End Date: <input type="date" class="date-dropdown" onchange="initMap()" id="endDate"></input>
               <br>
-
-              Search Report Id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              End Date:<br> <input type="text" class="custom-text" onchange="initMap()" id="reportID"></input>
-              &nbsp;&nbsp;<input type="date" class="date-dropdown" onchange="initMap()" id="endDate"></input>
-              <br>
-
               <div class="card-body">
-                <div id="map" style="width:100%;height:400px;"><i class='fa fa-spinner fa-spin'></i> Loading Maps...
-                </div>
+                <div id="map" style="width:100%;height:400px;"><i class='fa fa-spinner fa-spin'></i>Loading Maps...</div>
 
+                <b>Legend: </b>
+                <p>1. Pending Reports: <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"></p>
+                <p>2. Responding Reports: <img src="http://maps.google.com/mapfiles/ms/icons/orange-dot.png"></p>
+                <p>3. Responded Reports: <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"></p>
+  
               </div>
-
-              <b>Legend: </b>
-              <p>1. Pending Reports: <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"></p>
-              <p>2. Responding Reports: <img src="http://maps.google.com/mapfiles/ms/icons/orange-dot.png"></p>
-              <p>3. Responded Reports: <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"></p>
-
             </div>
           </div>
         </div>
@@ -280,7 +283,7 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer bg-white" id="foot">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Pasigueno Assistant 2019</span>
@@ -341,6 +344,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9jb6--NfLfSn3SCresxshyhfwKMi_34&callback=initMap">
   </script>
   <script src="../js/homeMaps.js"></script>
+  <script src="../js/viewAnnouncements.js"></script>
   <script src="../js/notificationsHandler.js"></script>
 </body>
 

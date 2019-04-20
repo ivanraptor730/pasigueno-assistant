@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Account Signup | Pasigueno Assistant</title>
+  <title>Feedback | Pasigueno Assistant</title>
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,11 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
   <link href="../css/index.css" rel="stylesheet">
+  <link href="../css/modal.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
   <link rel="icon" type="image/png" href="../img/favicon.png" />
+
 </head>
 
 <body id="page-top">
@@ -43,7 +47,7 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Feedback</span></a>
       </li>
 
       <!-- Divider -->
@@ -62,7 +66,7 @@
       </li>
 
       <!-- Nav Item - Statistics Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStats" aria-expanded="true"
           aria-controls="collapseStats">
           <i class="fas fa-fw fa-chart-bar"></i>
@@ -72,7 +76,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Statistics:</h6>
             <a class="collapse-item" href="statistics.html">Report Statistics</a>
-            <a class="collapse-item" href="FeedbackStatistics.html">Feedback Statistics</a>
+            <a class="collapse-item active" href="FeedbackStatistics.html">Feedback Statistics</a>
           </div>
         </div>
       </li>
@@ -87,7 +91,7 @@
       </div>
 
       <!-- Nav Item - Accounts Collapse Menu -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
           aria-expanded="true" aria-controls="collapseAccounts">
           <i class="fas fa-fw fa-user"></i>
@@ -96,7 +100,7 @@
         <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Reports:</h6>
-            <a class="collapse-item active" href="signup.html">Account Registration</a>
+            <a class="collapse-item" href="signup.html">Account Registration</a>
             <a class="collapse-item" href="viewSignup.html">View Accounts</a>
           </div>
         </div>
@@ -136,8 +140,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i
-                    class='fa fa-spinner fa-spin'></i>Loading...</span>
+                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
                 <img class="img-profile rounded-circle"
                   src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
@@ -160,149 +163,80 @@
         </nav>
         <!-- End of Topbar -->
 
+
         <!-- Begin Page Content -->
+
         <div class="container-fluid">
+          Activity Title: <input type="text" class="custom-text" id="activityName">
+          Barangay:<select id="Berengey" class="custom-dropdown">
+            <option>---</option>
+            <option>Santolan</option>
+            <option>Pinagbuhatan</option>
+            <option>Manggahan</option>
+            <option>Maybunga</option>
+            <option>Sta. Lucia</option>
+            <option>Rosario</option>
+            <option>Dela Paz</option>
+            <option>San Miguel</option>
+          </select>
+          <button class="button" onclick="onBarangayChange()">Search</button>
 
-          <h3>Sign up</h3>
-          <p>Please fill in this form to create an account!</p><br>
+          <br><br>
+          <p>Activity Title: <strong><span id="activityTitle"></span></strong></p>
           <table>
-            <tr>
-              <td>Fullname:
-                <input type="text" id="fullname" size="60" required class="custom-text">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>Barangay:
-                <select id="barangay" class="custom-dropdown">
-                  <option>---</option>
-                  <option>Santolan</option>
-                  <option>Pinagbuhatan</option>
-                  <option>Manggahan</option>
-                  <option>Maybunga</option>
-                  <option>Sta. Lucia</option>
-                  <option>Rosario</option>
-                  <option>Dela Paz</option>
-                  <option>San Miguel</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr></tr>
-            <td>Address: &nbsp;
-              <input type="text" name="address" id="address" required class="custom-text">
-            </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
 
-            <td>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="email" name="usernames" id="usernames" required class="custom-text">
-            </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>Password:
-                <input type="password" name="password" id="password" required class="custom-text">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>Question:
-                <select id="question" class="custom-dropdown">
-                  <option>---</option>
-                  <option>Maiden name of mother</option>
-                  <option>Favorite Food</option>
-                  <option>Favorite Number</option>
-                  <option>Name of dog</option>
-                  <option>Favorite sport</option>
-                  <option>Name of brother</option>
-                  <option>Name of sister</option>
-                  <option>Name of father</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Answer: <input type="text" id="answer" required class="custom-text">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>User type:
-                <select name="userType" id="userType" required class="custom-dropdown">
+            <tbody>
+              <tr class="hotel_a">
+                <td>
+                  <div class="stars-outer">
+                    <div class="stars-inner"></div>
+                  </div>
+                </td>
+              </tr>
 
-                  <option value="Admin">Barangay Administrator</option>
-                  <option value="District">District Admin</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>
-
-                <input type="submit" id="submit" class="btn btn-submit pull-right bg-primary text-white" value="Submit"
-                  onclick="submitClick()">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                &nbsp;
-              </td>
-            </tr>
-
+            </tbody>
           </table>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Pasigueno Assistant 2019</span>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Message</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_feedback">
+                  <tr>
+                    <td colspan="3" class="text-center"><b>Loading Feedback ...</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
 
+
+      </div>
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- /.container-fluid -->
+
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
@@ -349,27 +283,124 @@
   <script src="../js/sb-admin-2.min.js"></script>
 
   <!-- Page level custom scripts -->
-
-  <script src="../js/SignUpDist.js"></script>
-
-  <script src="../js/firebase-2.js"></script>
   <script>
-    $('#userType').change(function () {
-      if ($(this).val() != "Barangay Administrator") {
-        $('#barangay').prop("disabled", true);
+    window.onload = function onload() {
 
+      $("#tbody_feedback").empty();
+      $("#tbody_feedback").append("<td id='nullRecords' colspan=3 class='text-center'><b>No Feedback.</b></td>");
+    }
 
-        document.getElementById('barangay').innerHTML =
-          "Barangay:<select id='barangay'><option>---</option><option>Santolan</option><option>Pinagbuhatan</option><option>Manggahan</option><option>Maybunga</option><option>Sta. Lucia</option><option>Rosario</option><option>Dela Paz</option><option>San Miguel</option></select>";
+    function onBarangayChange() {
+
+      var activityName = document.getElementById("activityName").value;
+      var brgy = document.getElementById("Berengey").value;
+      if (activityName == "" || brgy == "---") {
+        alert("Both fields must be filled up");
+      } else {
+        var counter1 = 0;
+        var counter2 = 0;
+        var counter3 = 0;
+        var counter4 = 0;
+        var counter5 = 0;
+        var counter6 = 0;
+        var counter7 = 0;
+        var counter8 = 0;
+        var counter9 = 0;
+        var rootRef = firebase.database().ref("activityfeedback").orderByChild("Barangay").equalTo(brgy);
+        rootRef.on("value", snap => {
+          if (snap.exists()) {
+
+            $("#tbody_feedback").html("");
+            snap.forEach(snap => {
+              var Rate = snap.child("Rating").val();
+              var name = snap.child("Fullname").val();
+              var message = snap.child("Feedback").val();
+              var rating1 = snap.child("Rating").val();
+              var title = snap.child("AnnouncementTitle").val();
+              if (activityName.toLowerCase() == title.toLowerCase()) {
+                if (Rate == "1.0") {
+                  counter1++;
+                }
+                if (Rate == "1.5") {
+                  counter2++;
+                }
+                if (Rate == "2.0") {
+                  counter3++;
+                }
+                if (Rate == "2.5") {
+                  counter4++;
+                }
+                if (Rate == "3.0") {
+                  counter5++;
+                }
+                if (Rate == "3.5") {
+                  counter6++;
+                }
+                if (Rate == "4.0") {
+                  counter7++;
+                }
+                if (Rate == "4.5") {
+                  counter8++;
+                }
+                if (Rate == "5.0") {
+                  counter9++;
+                }
+                document.getElementById("activityTitle").innerHTML = title;
+                var ret = 1 * parseFloat(counter1) + 1.5 * parseFloat(counter2) + 2 * parseFloat(counter3) +
+                  2.5 * parseFloat(counter4) + 3 * parseFloat(counter5) + 3.5 * parseFloat(counter6) + 4 *
+                  parseFloat(counter7) + 4.5 * parseFloat(counter8) + 5 * parseFloat(counter9);
+                var ings = counter1 + counter2 + counter3 + counter4 + counter5 + counter6 + counter7 +
+                  counter8 + counter9;
+                var total = parseFloat(ret) / parseFloat(ings);
+
+                $("#tbody_feedback").append("<tr><td class='ky'>" + name + "</td><td>" + message + "</td><td>" +
+                  rating1 + "</td></tr>")
+                const ratings = {
+                  hotel_a: total,
+                };
+                // total number of stars
+                const starTotal = 5;
+
+                for (const rating in ratings) {
+                  const starPercentage = (ratings[rating] / starTotal) * 100;
+                  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+                  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+                }
+
+              } else {
+                const ratings = {
+                  hotel_a: 0,
+                };
+                const starTotal = 5;
+                for (const rating in ratings) {
+                  const starPercentage = (ratings[rating] / starTotal) * 100;
+                  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+                  document.querySelector(`.${rating} .stars-inner`).style.width = 0;
+                }
+                $("#tbody_feedback").empty();
+                $("#tbody_feedback").append(
+                  "<td id='nullRecords' colspan=3 class='text-center'><b>No Feedback.</b></td>");
+              }
+            });
+          } else {
+            const ratings = {
+              hotel_a: 0,
+            };
+            const starTotal = 5;
+            for (const rating in ratings) {
+              const starPercentage = (ratings[rating] / starTotal) * 100;
+              const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+              document.querySelector(`.${rating} .stars-inner`).style.width = 0;
+            }
+            $("#tbody_feedback").empty();
+            $("#tbody_feedback").append(
+              "<td id='nullRecords' colspan=3 class='text-center'><b>No Feedback.</b></td>");
+          }
+
+        });
+
       }
-      if ($(this).val() != "District Admin") {
-
-        $('#barangay').prop("disabled", false);
-        document.getElementById('barangay').innerHTML =
-          "Barangay:<select id='barangay'><option>---</option><option>Santolan</option><option>Pinagbuhatan</option><option>Manggahan</option><option>Maybunga</option><option>Sta. Lucia</option><option>Rosario</option><option>Dela Paz</option><option>San Miguel</option></select>";
-
-      }
-    });
+    }
   </script>
 
 

@@ -12,13 +12,14 @@
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
   <link href="../css/index.css" rel="stylesheet">
-  
+
   <link href="../css/modal.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
@@ -28,75 +29,91 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-       <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-          <img src="../img/logo.png" width="100px" height="50px">
-          <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <img src="../img/logo.png" width="100px" height="50px">
+        <div class="sidebar-brand-text mx-3">Pasigueno Assistant</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Barangay
+      </div>
+
+      <!-- Nav Item - Post Announcements -->
+      <li class="nav-item">
+        <a class="nav-link" href="post-announcements.html">
+          <i class="fas fa-fw fa-plus-square"></i>
+          <span>Post Announcements</span></a>
+      </li>
+
+      <!-- Nav Item - Statistics Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStats" aria-expanded="true"
+          aria-controls="collapseStats">
+          <i class="fas fa-fw fa-chart-bar"></i>
+          <span>Statistics</span>
         </a>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-  
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-  
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          Barangay
+        <div id="collapseStats" class="collapse" aria-labelledby="headingStats" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Statistics:</h6>
+            <a class="collapse-item" href="statistics.html">Report Statistics</a>
+            <a class="collapse-item" href="FeedbackStatistics.html">Feedback Statistics</a>
+          </div>
         </div>
-  
-        <!-- Nav Item - Newsfeed Collapse Menu -->
-        <li class="nav-item ">
-            <a class="nav-link" href="statistics.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Statistics</span>
-            </a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-  
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          System
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        System
+      </div>
+
+      <!-- Nav Item - Accounts Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+          aria-expanded="true" aria-controls="collapseAccounts">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Accounts</span>
+        </a>
+        <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Reports:</h6>
+            <a class="collapse-item" href="signup.html">Account Registration</a>
+            <a class="collapse-item active" href="viewSignup.html">View Accounts</a>
+          </div>
         </div>
-  
-        <!-- Nav Item - Accounts Collapse Menu -->
-        <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts" aria-expanded="true"
-              aria-controls="collapseAccounts">
-              <i class="fas fa-fw fa-user"></i>
-              <span>Accounts</span>
-            </a>
-            <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Reports:</h6>
-                <a class="collapse-item" href="signup.html">Account Registration</a>
-                <a class="collapse-item active" href="viewSignup.html">View Accounts</a>
-              </div>
-            </div>
-          </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-  
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-  
-      </ul>
-      <!-- End of Sidebar -->
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -113,7 +130,7 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-          
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -121,8 +138,10 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">Loading...</span>
-                <img class="img-profile rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
+                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i
+                    class='fa fa-spinner fa-spin'></i>Loading...</span>
+                <img class="img-profile rounded-circle"
+                  src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -142,42 +161,43 @@
 
         </nav>
         <!-- End of Topbar -->
- <!-- Begin Page Content -->
-                <div class="container-fluid">
- 
-                    <div class="card mb-3">
-                        <div class="card-header text-white bg-primary">
-                            <i class="fas fa-table"></i>
-                            Accounts
-                            <div class="float-right">
-                              Search by Full Name: <input type="text" id="myInput" onkeyup="myFunction()">
-                          </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Full Name</th>
-                                        <th>Email Address</th>
-                                        <th>Barangay</th>
-                                        <th>Address</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table_body">
-                                    <tr>
-                                      <td colspan = "6">Loading <Accounts class=""></Accounts></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <div class="card mb-3">
+            <div class="card-header text-white bg-primary">
+              <i class="fas fa-table"></i>
+              Accounts
+              <div class="float-right">
+                Search by Full Name: <input type="text" id="myInput" onkeyup="myFunction()">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
+                    <th>Barangay</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="table_body">
+                  <tr>
+                    <td colspan="6">Loading <Accounts class=""></Accounts>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
 
         <!-- /.container-fluid -->
 
@@ -208,7 +228,8 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,90 +264,89 @@
   <script src="../js/sb-admin-2.min.js"></script>
 
   <!-- Page level custom scripts -->
- 
+
   <script>
- 
-window.onload=  function signUp() {
-    window.setInterval(function () {
-    var modals = document.getElementsByClassName('modals');
-    // Get the button that opens the modal
-    var btns = document.getElementsByClassName("openmodals");
-    var spans = document.getElementsByClassName("closes");
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].onclick = function () {
-        modals[i].style.display = "block";
-      }
-    }
-    for (let i = 0; i < spans.length; i++) {
-      spans[i].onclick = function () {
-        modals[i].style.display = "none";
-      }
-    }
-  }, 1000);
-        var rootRef = firebase.database().ref("users");
-    rootRef.on("value", snap => {
-        if (snap.exists()) {
-            $("#table_body").html("");
-            snap.forEach(snap => {
-                var key = snap.key;
-                var FullName = snap.child("FullName").val();
-                var EmailAdd = snap.child("EmailAddress").val();
-                var Barangay = snap.child("Barangay").val();
-                var Address = snap.child("Address").val();
-                var Status = snap.child("Status").val();
-                var UserID = snap.child("UserID").val();
-                
-                        
-                $("#table_body").append("<tr><td class='ky' hidden>" + key + "</td><td>" + FullName+"</td><td>"
-                    +EmailAdd  + "</td><td>" 
-                    + Barangay + "</td><td>" 
-                    + Address + "</td><td>" 
-                    + Status + "</td><td>" +
-                    "<button class='openmodals myBtn'>View</button>" +
-                    "<div class='modals myModal'>" +
-                    "<div class='modals-content'>" +
-                    "<div class='modals-header'>" +
-                    "<h2>" + FullName + "</h2>" +
-                    "<span class='closes'>&times;</span>" +
-                    "</div>" +
-                    "<p><b>User ID: </b>" + UserID + "</p>" +
-                    "<p><b>Barangay: </b>" + Barangay + " </p>" +
-                    "<p><b>Username: </b>" + EmailAdd + " </p>" +
-                    "<p><b>Address: </b>" + Address + " </p>" +
-                    "<p><b>Status: </b>" + Status + " </p>" +
-                    "</div>" +
-                    "</div></td></tr>")
-            })
-        } else {
-            $("#table_body").append("<td id='nullRecords'colspan=7>No Pending Forms.</td>")
-        }
-    }); 
-   
-
-
-}
-
-  </script>
-     <script>
-      function myFunction() {
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("dataTable");
-          tr = table.getElementsByTagName("tr");
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            }       
+    window.onload = function signUp() {
+      window.setInterval(function () {
+        var modals = document.getElementsByClassName('modals');
+        // Get the button that opens the modal
+        var btns = document.getElementsByClassName("openmodals");
+        var spans = document.getElementsByClassName("closes");
+        for (let i = 0; i < btns.length; i++) {
+          btns[i].onclick = function () {
+            modals[i].style.display = "block";
           }
         }
-</script>
-</body> 
+        for (let i = 0; i < spans.length; i++) {
+          spans[i].onclick = function () {
+            modals[i].style.display = "none";
+          }
+        }
+      }, 1000);
+      var rootRef = firebase.database().ref("users");
+      rootRef.on("value", snap => {
+        if (snap.exists()) {
+          $("#table_body").html("");
+          snap.forEach(snap => {
+            var key = snap.key;
+            var FullName = snap.child("FullName").val();
+            var EmailAdd = snap.child("EmailAddress").val();
+            var Barangay = snap.child("Barangay").val();
+            var Address = snap.child("Address").val();
+            var Status = snap.child("Status").val();
+            var UserID = snap.child("UserID").val();
+
+
+            $("#table_body").append("<tr><td class='ky' hidden>" + key + "</td><td>" + FullName +
+              "</td><td>" +
+              EmailAdd + "</td><td>" +
+              Barangay + "</td><td>" +
+              Address + "</td><td>" +
+              Status + "</td><td>" +
+              "<button class='openmodals myBtn'>View</button>" +
+              "<div class='modals myModal'>" +
+              "<div class='modals-content'>" +
+              "<div class='modals-header'>" +
+              "<h2>" + FullName + "</h2>" +
+              "<span class='closes'>&times;</span>" +
+              "</div>" +
+              "<p><b>User ID: </b>" + UserID + "</p>" +
+              "<p><b>Barangay: </b>" + Barangay + " </p>" +
+              "<p><b>Username: </b>" + EmailAdd + " </p>" +
+              "<p><b>Address: </b>" + Address + " </p>" +
+              "<p><b>Status: </b>" + Status + " </p>" +
+              "</div>" +
+              "</div></td></tr>")
+          })
+        } else {
+          $("#table_body").append("<td id='nullRecords'colspan=7>No Pending Forms.</td>")
+        }
+      });
+
+
+
+    }
+  </script>
+  <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("dataTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</body>
 
 </html>

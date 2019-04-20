@@ -2,7 +2,7 @@
   $('#login').on('click', function (e) {
     $("#loginEmail").attr('readonly');
     $("#loginPassword").attr('readonly');
-    document.getElementById("login").innerHTML="<i class='fa fa-spinner fa-spin'></i> Logging In...";
+    document.getElementById("login").innerHTML="<i class='fa fa-spinner fa-spin'></i>Logging In...";
     e.preventDefault();
     if( $('#loginEmail').val() != '' && $('#loginPassword').val() != '' ){
       //login the user
