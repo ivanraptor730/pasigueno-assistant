@@ -233,7 +233,7 @@
               District Office Announcements</div>
             <div class="container-fluid" id="posts-body">
               <br>
-              <div class="card-body bg-gray-200">
+              <div class="card-body">
                 <div class="panel panel-default">
                   <span class="panel-body" id="pnl-body">
                     <br><i class='fa fa-spinner fa-spin'></i> Loading Announcements...
@@ -253,13 +253,16 @@
               Category: <select id="category" class="custom-dropdown" onchange="initMap()">
                 <img src="../img/logo.png" width="100" height="50">
                 <option class="form-control-user" value="--">--</option>
-                <option value="Peace and Order (Neighborhood)">Neighborhood</option>
-                <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
-                <option value="Peace and Order (Robbery)">Robbery</option>
-                <option value="Clean and Green (Waste)">Waste</option>
-                <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
-                <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
-                <option value="Others">Others</option>
+                <option value="Neighborhood">Neighborhood</option>
+                <option value="IllegalDrugs">Illegal Drugs</option>
+                <option value="Robbery">Robbery</option>
+                <option value="Waste">Waste</option>
+                <option value="CloggedCanal">Clogged Canal</option>
+                <option value="IllegalSmoking">Illegal Smoking</option>
+                <option value="UnfinishConstruction">Unfinished Construction</option>
+                <option value="ObstructionOfPublicRoads">Obstruction of Public Roads</option>
+                <option value="MissingPerson">Missing Person</option>
+                <option value="Other">Others</option>
               </select><br>
               Search Report Id: <input type="text" class="custom-text" onchange="initMap()" id="reportID"></input><br>
               Start Date: <input type="date" class="date-dropdown" onchange="initMap()" id="startDate"></input><br>

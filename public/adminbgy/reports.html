@@ -67,7 +67,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
                         <a class="collapse-item" href="view-programs.html">View Newsfeed Items</a>
-                        <a class="collapse-item" href="post-programs.html">Post to Newsfeed</a>
+                        <a class="collapse-item" href="post-programs.html">Post Programs</a>
                     </div>
                 </div>
             </li>
@@ -206,8 +206,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span id="userName"
-                                    class="mr-2 d-none d-lg-inline text-gray-600 small"><i class='fa fa-spinner fa-spin'></i>Loading...</span>
+                                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i
+                                        class='fa fa-spinner fa-spin'></i> Loading...</span>
                                 <img class="img-profile rounded-circle"
                                     src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
                             </a>
@@ -231,27 +231,30 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>Reports Center</h1><div class="float-right">Search by ID: <input type="text" id="myInput" onkeyup="myFunction()"
-                        title="Type in a name">
-                    Category: <select id="categorychange" onchange="onChangeCategory()">
+                    <h1>Reports Center</h1>
+                    <div class="float-right">Search by ID: <input type="text" id="myInput" onkeyup="myFunction()"
+                            title="Type in a name">
+                        Category: <select id="categorychange" onchange="onChange()">
 
-                        <option value="--">--</option>
-                        <option value="Peace and Order (Neighborhood)">Neighborhood</option>
-                        <option value="Peace and Order (Illegal Drugs)">Illegal Drugs</option>
-                        <option value="Peace and Order (Robbery)">Robbery</option>
-                        <option value="Clean and Green (Waste)">Waste</option>
-                        <option value="Clean and Green (Clogged Canal)">Clogged Canal</option>
-                        <option value="Clean and Green (Illegal Smoking)">Illegal Smoking</option>
-                        <option value="Others">Others</option>
-                    </select>
-                    Report Status: <select id="statuschange" onchange="onChangeStatus()">
-
-                        <option value="--">--</option>
-                        <option value="Peace and Order (Neighborhood)">Pending</option>
-                        <option value="Peace and Order (Illegal Drugs)">Ongoing</option>
-                        <option value="Peace and Order (Robbery)">Completed</option>
-                        <option value="Clean and Green (Waste)">Spam</option>
-                    </select></div>
+                            <option value="--">--</option>
+                            <option value="Neighborhood">Neighborhood</option>
+                            <option value="IllegalDrugs">Illegal Drugs</option>
+                            <option value="Robbery">Robbery</option>
+                            <option value="Waste">Waste</option>
+                            <option value="CloggedCanal">Clogged Canal</option>
+                            <option value="IllegalSmoking">Illegal Smoking</option>
+                            <option value="UnfinishConstruction">Unfinish Construction</option>
+                            <option value="ObstructionOfPublicRoads">Obstruction of Public Roads</option>
+                            <option value="MissingPerson">Missing Person</option>
+                            <option value="Other">Others</option>
+                        </select>
+                        Report Status: <select id="statuschange" onchange="onChange()">
+                            <option value="--">--</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Spam">Spam</option>
+                        </select></div>
                     <br>
                     <hr>
                     <div class="messaging">
@@ -265,7 +268,8 @@
                                 <!--People-->
                                 <div id="people" class="inbox_chat">
                                     <br>
-                                    <h6 class="text-center">Loading Citizens...</h6>
+                                    <h6 class="text-center"><i class='fa fa-spinner fa-spin'></i> Loading Citizens...
+                                    </h6>
                                 </div>
                             </div>
                             <!--Chatbox-->
@@ -292,75 +296,77 @@
                             </div>
                         </div>
                     </div>
-                <!-- /.container-fluid -->
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Pasigueno Assistant 2019</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Pasigueno Assistant 2019</span>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Are you sure you want to log-out?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Are you sure you want to log-out?</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
-                </div>
             </div>
         </div>
-    </div>
 
 
-    <!--Firebase Core + Dependent Scripts (must be on all pages)-->
-    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
-    <script src="../js/firebase.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/userInfo.js"></script>
+        <!--Firebase Core + Dependent Scripts (must be on all pages)-->
+        <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+        <script src="../js/firebase.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/userInfo.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/notificationsHandler.js"></script>
-    <script src="../js/reportsTable.js"></script>
-    <script src="../js/reportsModal.js"></script>
-    <script src="../js/reportsFunctions.js"></script>
-    <script src="../js/loadScreen.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="../js/notificationsHandler.js"></script>
+        <script src="../js/reportsTable.js"></script>
+        <script src="../js/reportsModal.js"></script>
+        <script src="../js/reportsFunctions.js"></script>
+        <script src="../js/loadScreen.js"></script>
+        <script src="../js/onChange.js"></script>
+
 </body>
 
 </html>

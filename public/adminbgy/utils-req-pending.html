@@ -205,7 +205,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i class='fa fa-spinner fa-spin'></i>Loading...</span>
+                <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"><i class='fa fa-spinner fa-spin'></i> Loading...</span>
                 <img class="img-profile rounded-circle"
                   src="https://pngimage.net/wp-content/uploads/2018/05/admin-image-png-3.png">
               </a>
@@ -230,18 +230,26 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                        <div class="float-right">
+                                <table>
+                                    <tr>
+                                    <td><p>Hall:<label class="switch">
+                                        <input type="checkbox" id="slider">
+                                        <span class="slider round"></span>
+                                      </label></p></td>
+                                      <td><p>Tent:<label class="switch">
+                                            <input type="checkbox" id="slider2">
+                                            <span class="slider round"></span>
+                                          </label></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                     <h1>Services Requests</h1>
+                   
                     <hr>
                     <p id="message1"></p>
                     <!-- DataTables Example -->
-                    <p>Hall:<label class="switch">
-                        <input type="checkbox" id="slider">
-                        <span class="slider round"></span>
-                      </label></p>
-                      <p>Tent:<label class="switch">
-                            <input type="checkbox" id="slider2">
-                            <span class="slider round"></span>
-                          </label></p>
                     <div class="card mb-3">
                         <div class="card-header text-white bg-primary">
                             <i class="fas fa-table"></i>
@@ -273,7 +281,7 @@
                                 </thead>
                                 <tbody id="table_body1">
                                     <tr>
-                                        <td colspan="7" class="text-center"><i class='fa fa-spinner fa-spin'></i> <b>Loading Forms... Requests...</b></td>
+                                        <td colspan="7" class="text-center"><i class='fa fa-spinner fa-spin'></i> <b>Loading Requests...</b></td>
                                     </tr>
                                 </tbody>
                             </table>

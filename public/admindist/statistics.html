@@ -275,32 +275,44 @@
           indexLabelFontColor: "#5A5757",
           indexLabelPlacement: "outside",
           dataPoints: [{
-              label: "Peace nd Order (Neighborhood)",
-              y: 0
+              label: "Neighborhood",
+              y: 0,
             },
             {
-              label: "Peace and Order (Illegal Drugs)",
-              y: 0
+              label: "Illegal Drugs",
+              y: 0,
             },
             {
-              label: "Peace and Order (Robbery)",
-              y: 0
+              label: "Robbery",
+              y: 0,
             },
             {
-              label: "Clean and Green (Waste)",
-              y: 0
+              label: "Waste",
+              y: 0,
             },
             {
-              label: "Clean and Green (Clogged Canal)",
-              y: 0
+              label: "Clogged Canal",
+              y: 0,
             },
             {
-              label: "Clean and Green (Illegal Smoking)",
-              y: 0
+              label: "Illegal Smoking",
+              y: 0,
+            },
+            {
+              label: "Unfinish Construction",
+              y: 0,
+            },
+            {
+              label: "Obstruction Of Public Roads",
+              y: 0,
+            },
+            {
+              label: "Missing Person",
+              y: 0,
             },
             {
               label: "Others",
-              y: 0
+              y: 0,
             }
           ]
         }]
@@ -314,6 +326,7 @@
       var barangay1 = document.getElementById("barangay").value;
       var start = document.getElementById("startDate").value;
       var end = document.getElementById("endDate").value;
+
       var counter1 = 0;
       var counter2 = 0;
       var counter3 = 0;
@@ -321,7 +334,9 @@
       var counter5 = 0;
       var counter6 = 0;
       var counter7 = 0;
-
+      var counter8 = 0;
+      var counter9 = 0;
+      var counter10 = 0;
       if (Date.parse(start) > Date.parse(end)) {
         alert("End date must be later than start date. \nPlease Try again.");
       }
@@ -329,96 +344,127 @@
 error message pag invalid yung date na ininput
        }*/
       if (start == null && end == null && barangay1 != "--" || start == "" && end == "" && barangay1 != "--") {
-        var rootRef = firebase.database().ref("reports").orderByChild("Barangay").equalTo(barangay1);
+        var rootRef = firebase.database().ref("reports/" + barangay1);
         rootRef.on("value", snap => {
           if (snap.exists()) {
-            $("#chartContainer").html("");
+            loadError();
             snap.forEach(snap => {
               var key = snap.key;
-              var barangay = snap.child("Barangay").val();
-              var date = snap.child("Date").val();
-              var category = snap.child("Category").val();
 
-              if (barangay == barangay1) {
-                if (category == "Peace and Order (Neighborhood)") {
-                  counter1++;
+              var rootRef1 = firebase.database().ref("reports/" + barangay1 + "/" + key);
+              rootRef1.on("value", snapsh => {
+                if (snapsh.exists()) {
+                  loadError();
+                  snap.forEach(snapsh => {
 
-                }
-                if (category == "Peace and Order (Illegal Drugs)") {
-                  counter2++;
-                }
-                if (category == "Peace and Order (Robbery)") {
-                  counter3++;
-                }
-                if (category == "Clean and Green (Waste)") {
-                  counter4++;
-                }
-                if (category == "Clean and Green (Clogged Canal)") {
-                  counter5++;
-                }
-                if (category == "Clean and Green (Illegal Smoking)") {
-                  counter6++;
-                }
-                if (category == "Others") {
-                  counter7++;
-                }
-              }
-              var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: true,
-                theme: "light1", // "light1", "light2", "dark1", "dark2"
-                axisX: {
-                  labelMaxWidth: 140,
-                  labelWrap: true, // change it to false
-                  interval: 1,
-                },
+                    var barangay = snapsh.child("Barangay").val();
+                    var date = snapsh.child("Date").val();
+                    var category = snapsh.child("Category").val();
 
-                title: {
-                  text: "Report Statistics"
-                },
+                    if (category == "Neighborhood") {
+                      counter1++;
 
-                data: [{
-                  type: "column", //change type to bar, line, area, pie, etc
-                  indexLabel: "{y}", //Shows y value on all Data Points
-                  indexLabelFontColor: "#5A5757",
-                  indexLabelPlacement: "outside",
-                  dataPoints: [{
-                      label: "Peace and Order (Neighborhood)",
-                      y: counter1,
-                    },
-                    {
-                      label: "Peace and Order (Illegal Drugs)",
-                      y: counter2,
-                    },
-                    {
-                      label: "Peace and Order (Robbery)",
-                      y: counter3,
-                    },
-                    {
-                      label: "Clean and Green (Waste)",
-                      y: counter4,
-                    },
-                    {
-                      label: "Clean and Green (Clogged Canal)",
-                      y: counter5,
-                    },
-                    {
-                      label: "Clean and Green (Illegal Smoking)",
-                      y: counter6,
-                    },
-                    {
-                      label: "Others",
-                      y: counter7,
                     }
-                  ]
+                    if (category == "IllegalDrugs") {
+                      counter2++;
+                    }
+                    if (category == "Robbery") {
+                      counter3++;
+                    }
+                    if (category == "Waste") {
+                      counter4++;
+                    }
+                    if (category == "CloggedCanal") {
+                      counter5++;
+                    }
+                    if (category == "IllegalSmoking") {
+                      counter6++;
+                    }
+                    if (category == "UnfinishConstruction") {
+                      counter7++;
+                    }
+                    if (category == "ObstructionOfPublicRoads") {
+                      counter8++;
+                    }
+                    if (category == "MissingPerson") {
+                      counter9++;
+                    }
+                    if (category == "Other") {
+                      counter10++;
+                    }
+
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                      animationEnabled: true,
+                      exportEnabled: true,
+                      theme: "light1", // "light1", "light2", "dark1", "dark2"
+                      axisX: {
+                        labelMaxWidth: 140,
+                        labelWrap: true, // change it to false
+                        interval: 1,
+                      },
+
+                      title: {
+                        text: "Report Statistics"
+                      },
+
+                      data: [{
+                        type: "column", //change type to bar, line, area, pie, etc
+                        indexLabel: "{y}", //Shows y value on all Data Points
+                        indexLabelFontColor: "#5A5757",
+                        indexLabelPlacement: "outside",
+                        dataPoints: [{
+                            label: "Neighborhood",
+                            y: counter1,
+                          },
+                          {
+                            label: "Illegal Drugs",
+                            y: counter2,
+                          },
+                          {
+                            label: "Robbery",
+                            y: counter3,
+                          },
+                          {
+                            label: "Waste",
+                            y: counter4,
+                          },
+                          {
+                            label: "Clogged Canal",
+                            y: counter5,
+                          },
+                          {
+                            label: "Illegal Smoking",
+                            y: counter6,
+                          },
+                          {
+                            label: "Unfinish Construction",
+                            y: counter7,
+                          },
+                          {
+                            label: "Obstruction Of Public Roads",
+                            y: counter8,
+                          },
+                          {
+                            label: "Missing Person",
+                            y: counter9,
+                          },
+                          {
+                            label: "Others",
+                            y: counter10,
+                          }
+                        ]
 
 
-                }]
-              });
-              chart.render();
+                      }]
+                    });
+
+                    chart.render();
 
 
 
+                  })
+                }
+              })
             })
 
           } else {
@@ -440,27 +486,39 @@ error message pag invalid yung date na ininput
                 indexLabelFontColor: "#5A5757",
                 indexLabelPlacement: "outside",
                 dataPoints: [{
-                    label: "Peace and Order (Neighborhood)",
+                    label: "Neighborhood",
                     y: 0,
                   },
                   {
-                    label: "Peace and Order (Illegal Drugs)",
+                    label: "Illegal Drugs",
                     y: 0,
                   },
                   {
-                    label: "Peace and Order (Robbery)",
+                    label: "Robbery",
                     y: 0,
                   },
                   {
-                    label: "Clean and Green (Waste)",
+                    label: "Waste",
                     y: 0,
                   },
                   {
-                    label: "Clean and Green (Clogged Canal)",
+                    label: "Clogged Canal",
                     y: 0,
                   },
                   {
-                    label: "Clean and Green (Illegal Smoking)",
+                    label: "Illegal Smoking",
+                    y: 0,
+                  },
+                  {
+                    label: "Unfinish Construction",
+                    y: 0,
+                  },
+                  {
+                    label: "Obstruction Of Public Roads",
+                    y: 0,
+                  },
+                  {
+                    label: "Missing Person",
                     y: 0,
                   },
                   {
@@ -474,90 +532,120 @@ error message pag invalid yung date na ininput
           }
         });
       } else {
-        var rootRef = firebase.database().ref("reports").orderByChild("Date").startAt(start).endAt(end);
+        var rootRef = firebase.database().ref("reports/" + barangay1);
         rootRef.on("value", snap => {
           if (snap.exists()) {
-
-            $("#chartContainer").html("");
+            loadError();
             snap.forEach(snap => {
               var key = snap.key;
-              var barangay = snap.child("Barangay").val();
-              var date = snap.child("Date").val();
-              var category = snap.child("Category").val();
-              if (category == "Peace and Order (Neighborhood)") {
-                counter1++;
+              alert(start + end);
+              var rootRef1 = firebase.database().ref("reports/" + barangay1 + "/" + key).orderByChild("Date")
+                .startAt(start).endAt(end);
+              rootRef1.on("value", snapsh => {
+                if (snapsh.exists()) {
+                  loadError();
+                  snap.forEach(snapsh => {
+                    var barangay = snapsh.child("Barangay").val();
+                    var date = snapsh.child("Date").val();
+                    var category = snapsh.child("Category").val();
+                    if (category == "Neighborhood") {
+                      counter1++;
 
-              }
-              if (category == "Peace and Order (Illegal Drugs)") {
-                counter2++;
-              }
-              if (category == "Peace and Order (Robbery)") {
-                counter3++;
-              }
-              if (category == "Clean and Green (Waste)") {
-                counter4++;
-              }
-              if (category == "Clean and Green (Clogged Canal)") {
-                counter5++;
-              }
-              if (category == "Clean and Green (Illegal Smoking)") {
-                counter6++;
-              }
-              if (category == "Others") {
-                counter7++;
-              }
-
-              var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: true,
-                axisX: {
-                  labelMaxWidth: 140,
-                  labelWrap: true, // change it to false
-                  interval: 1,
-                },
-                theme: "light1", // "light1", "light2", "dark1", "dark2"
-                title: {
-                  text: "Report Statistics    "
-                },
-                data: [{
-                  type: "column", //change type to bar, line, area, pie, etc
-                  indexLabel: "{y}", //Shows y value on all Data Points
-                  indexLabelFontColor: "#5A5757",
-                  indexLabelPlacement: "inside",
-                  dataPoints: [{
-                      label: "Peace and Order (Neighborhood)",
-                      y: counter1,
-                    },
-                    {
-                      label: "Peace and Order (Illegal Drugs)",
-                      y: counter2,
-                    },
-                    {
-                      label: "Peace and Order (Robbery)",
-                      y: counter3,
-                    },
-                    {
-                      label: "Clean and Green (Waste)",
-                      y: counter4,
-                    },
-                    {
-                      label: "Clean and Green (Clogged Canal)",
-                      y: counter5,
-                    },
-                    {
-                      label: "Clean and Green (Illegal Smoking)",
-                      y: counter6,
-                    },
-                    {
-                      label: "Others",
-                      y: counter7,
+                    }
+                    if (category == "IllegalDrugs") {
+                      counter2++;
+                    }
+                    if (category == "Robbery") {
+                      counter3++;
+                    }
+                    if (category == "Waste") {
+                      counter4++;
+                    }
+                    if (category == "CloggedCanal") {
+                      counter5++;
+                    }
+                    if (category == "IllegalSmoking") {
+                      counter6++;
+                    }
+                    if (category == "UnfinishConstruction") {
+                      counter7++;
+                    }
+                    if (category == "ObstructionOfPublicRoads") {
+                      counter8++;
+                    }
+                    if (category == "MissingPerson") {
+                      counter9++;
+                    }
+                    if (category == "Other") {
+                      counter10++;
                     }
 
-                  ]
-                }]
-              });
-              chart.render();
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                      animationEnabled: true,
+                      exportEnabled: true,
+                      axisX: {
+                        labelMaxWidth: 140,
+                        labelWrap: true, // change it to false
+                        interval: 1,
+                      },
+                      theme: "light1", // "light1", "light2", "dark1", "dark2"
+                      title: {
+                        text: "Report Statistics    "
+                      },
+                      data: [{
+                        type: "column", //change type to bar, line, area, pie, etc
+                        indexLabel: "{y}", //Shows y value on all Data Points
+                        indexLabelFontColor: "#5A5757",
+                        indexLabelPlacement: "inside",
+                        dataPoints: [{
+                            label: "Neighborhood",
+                            y: counter1,
+                          },
+                          {
+                            label: "Illegal Drugs",
+                            y: counter2,
+                          },
+                          {
+                            label: "Robbery",
+                            y: counter3,
+                          },
+                          {
+                            label: "Waste",
+                            y: counter4,
+                          },
+                          {
+                            label: "Clogged Canal",
+                            y: counter5,
+                          },
+                          {
+                            label: "Illegal Smoking",
+                            y: counter6,
+                          },
+                          {
+                            label: "Unfinish Construction",
+                            y: counter7,
+                          },
+                          {
+                            label: "Obstruction Of Public Roads",
+                            y: counter8,
+                          },
+                          {
+                            label: "Missing Person",
+                            y: counter9,
+                          },
+                          {
+                            label: "Others",
+                            y: counter10,
+                          }
 
+                        ]
+                      }]
+                    });
+                    chart.render();
+
+                  })
+                }
+              })
 
 
             })
@@ -581,27 +669,39 @@ error message pag invalid yung date na ininput
                 indexLabelFontColor: "#5A5757",
                 indexLabelPlacement: "outside",
                 dataPoints: [{
-                    label: "Peace and Order (Neighborhood)",
+                    label: "Neighborhood",
                     y: 0,
                   },
                   {
-                    label: "Peace and Order (Illegal Drugs)",
+                    label: "Illegal Drugs",
                     y: 0,
                   },
                   {
-                    label: "Peace and Order (Robbery)",
+                    label: "Robbery",
                     y: 0,
                   },
                   {
-                    label: "Clean and Green (Waste)",
+                    label: "Waste",
                     y: 0,
                   },
                   {
-                    label: "Clean and Green (Clogged Canal)",
+                    label: "Clogged Canal",
                     y: 0,
                   },
                   {
-                    label: "Clean and Green (Illegal Smoking)",
+                    label: "Illegal Smoking",
+                    y: 0,
+                  },
+                  {
+                    label: "Unfinish Construction",
+                    y: 0,
+                  },
+                  {
+                    label: "Obstruction Of Public Roads",
+                    y: 0,
+                  },
+                  {
+                    label: "Missing Person",
                     y: 0,
                   },
                   {
@@ -617,12 +717,61 @@ error message pag invalid yung date na ininput
         });
       }
     }
+
+    function loadError() {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "light1", // "light1", "light2", "dark1", "dark2"
+        axisX: {
+          labelMaxWidth: 140,
+          labelWrap: true, // change it to false
+          interval: 1,
+        },
+        title: {
+          text: "Report Statistics    "
+        },
+        data: [{
+          type: "column", //change type to bar, line, area, pie, etc
+          indexLabel: "{y}", //Shows y value on all Data Points
+          indexLabelFontColor: "#5A5757",
+          indexLabelPlacement: "outside",
+          dataPoints: [{
+              label: "Peace and Order (Neighborhood)",
+              y: 0,
+            },
+            {
+              label: "Peace and Order (Illegal Drugs)",
+              y: 0,
+            },
+            {
+              label: "Peace and Order (Robbery)",
+              y: 0,
+            },
+            {
+              label: "Clean and Green (Waste)",
+              y: 0,
+            },
+            {
+              label: "Clean and Green (Clogged Canal)",
+              y: 0,
+            },
+            {
+              label: "Clean and Green (Illegal Smoking)",
+              y: 0,
+            },
+            {
+              label: "Others",
+              y: 0,
+            }
+
+          ]
+        }]
+      });
+      chart.render();
+    }
   </script>
 
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-
-
 </body>
-
 </html>

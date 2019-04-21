@@ -60,7 +60,7 @@
           <i class="fas fa-fw fa-plus-square"></i>
           <span>Post Announcements</span></a>
       </li>
-      
+
       <!-- Nav Item - Statistics Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStats" aria-expanded="true"
@@ -165,25 +165,13 @@
           <h1>Post Announcements</h1>
           <hr>
           <div class="container-fluid">
-            <form method="POST" action="createCard.php">
-
-
               Title:<br><input type="text" id="what" class="custom-text" required> <br>
-              Where:<br><input type="text" id="where" class="custom-text" required> <br>
-              When: <br><input type="date" id="when" class="custom-text"><br>
-              Start Time:<br><input type="time" id="startTime" class="custom-text" required> <br>
-              <p id=message1></p>
-              End Time:<br><input type="time" id="endTime" class="custom-text" required> <br>
-              <p id=message2></p>
-
-
               <br>
               <p>Description</p>
               <textarea rows="10" cols="100" id="message" maxlength="300"></textarea>
 
-              <p>Character Limit is 300. You have <span id="wordCount">300</span> characters
-                remaining.<br>
-                <input type="file" id="file" accept="image/*" />
+              <p>Character Limit is 300.<br> You have <span id="wordCount">300</span> characters
+                remaining.
               </p>
 
               <input type="button" value="Submit" class="btn btn-submit pull-right bg-primary" id="uploadButton"
