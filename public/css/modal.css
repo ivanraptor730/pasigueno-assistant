@@ -146,7 +146,7 @@
 
   #takeActionApproved {
     background-color: green;
-    text-decoration-color: white;
+    text-decoration-color: white; 
     color: white;
     border-block-end-color: green;
     width: 400px;

@@ -3,7 +3,7 @@ $(function () { //Respond to forms
         var $row = $(this).closest("tr");
         var $id = $row.find(".ky").text();
 
-        var r = confirm("Do you want to approved on Report ID " + $id + "?");
+        var r = confirm("Do you want to approved on Request ID " + $id + "?");
         if (r == true) {
             
     firebase.auth().onAuthStateChanged(function (user) {
@@ -24,7 +24,7 @@ $(function () { //Respond to forms
                 Status: "Approved",
                 Barangay_Status: barangay +"_Approved",
             });
-            alert('Updated Report Status of ID ' + $id);
+            alert('Updated Request Status of ID ' + $id);
                 });
             });
         }
@@ -35,7 +35,7 @@ $(function () { //Respond to forms
         var $row = $(this).closest("tr");
         var $id = $row.find(".ky").text();
 
-        var r = confirm("Do you want to Declined on Report ID " + $id + "?");
+        var r = confirm("Do you want to Declined on Request ID " + $id + "?");
         if (r == true) {  
              firebase.auth().onAuthStateChanged(function (user) {
         
@@ -55,7 +55,7 @@ $(function () { //Respond to forms
                     Status: "Declined",
                     Barangay_Status: barangay +"_Declined",
                 });
-                alert('Updated Report Status of ID ' + $id);
+                alert('Updated Request Status of ID ' + $id);
                     });
                 });
             }
@@ -63,11 +63,11 @@ $(function () { //Respond to forms
         }
     });
 //Respond to services
-        $("#table_body1").delegate("tr #takeActionApproved1", "click", function (e) {
+        $("#table_body1").delegate("tr #takeActionApproved", "click", function (e) {
             var $row = $(this).closest("tr");
             var $id = $row.find(".ky").text();
     
-            var r = confirm("Do you want to approved on Report ID " + $id + "?");
+            var r = confirm("Approve Request ID " + $id + "?");
             if (r == true) {
                 
         firebase.auth().onAuthStateChanged(function (user) {
@@ -88,19 +88,19 @@ $(function () { //Respond to forms
                     Status: "Approved",
                     Barangay_Status: barangay +"_Approved",
                 });
-                alert('Updated Report Status of ID ' + $id);
+                alert('Updated Request Status of ID ' + $id);
                     });
                 });
             }
         });
             } 
         });
-        $("#table_body1").delegate("tr #Declined1", "click", function (e) {
+        $("#table_body1").delegate("tr #takeActionDeclined", "click", function (e) {
             var $row = $(this).closest("tr");
             var $id = $row.find(".ky").text();
     
-            var r = confirm("Do you want to Declined on Report ID " + $id + "?");
-            if (r == true) {   firebase.auth().onAuthStateChanged(function (user) {
+            var r = confirm("Do you want to Decline Request ID " + $id + "?");
+            if (r == true) { firebase.auth().onAuthStateChanged(function (user) {
             
                 if (user) {
                     var userId = firebase.auth().currentUser.uid;
@@ -118,7 +118,7 @@ $(function () { //Respond to forms
                         Status: "Declined",
                         Barangay_Status: barangay +"_Declined",
                     });
-                    alert('Updated Report Status of ID ' + $id);
+                    alert('Updated Request Status of ID ' + $id);
                         });
                     });
                 }

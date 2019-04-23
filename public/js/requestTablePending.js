@@ -249,7 +249,7 @@ window.onload = requestUtilsTablePending();
                 "<p><b>Return Date: </b>" + returnDate + " </p>" +
                 "<p><b>Return Time: </b>" + returnTime + " </p>" +
                 "<p><b>Status: </b>" + status + " </p>" +
-                "<b>Actions:</b><br> <button id='takeActionApproved1'>Approve</button><br> <button id='Declined1'>Decline</button>" +
+                "<b>Actions:</b><br> <button id='takeActionApproved'>Approve</button><br> <button id='takeActionDeclined'>Decline</button>" +
                 "</div>" +
                 "</div></td></tr>")
                 }else {

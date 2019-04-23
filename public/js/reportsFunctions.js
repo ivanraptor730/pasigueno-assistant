@@ -36,7 +36,7 @@ $(function () { //Respond to Reports
                 date: dateToday,
                 time: timeToday,
                 name: "Barangay " + brgy + " Admin",
-                message: "We have successfully viewed your report, and we are now looking into it. We will update the status of your report once we have resolved it. Thank You!",
+                message: "We have successfully viewed your report with the ID " + $id + ", and we are now looking into it. We will update the status of your report once we have resolved it. Thank You! This is an Automated Message.",
                 uid: userId
               });
               //}else{}
@@ -81,7 +81,7 @@ $(function () { //Respond to Reports
                 date: dateToday,
                 time: timeToday,
                 name: "Barangay " + brgy + " Admin",
-                message: "We have successfully responded to your report.Thank you for your cooperation!",
+                message: "We have successfully responded to your report with the ID of  " + $id + ". Thank You! This is an Automated Message.",
                 uid: userId
               });
               //}else{}
@@ -126,7 +126,7 @@ $(function () { //Respond to Reports
                 date: dateToday,
                 time: timeToday,
                 name: "Barangay " + brgy + " Admin",
-                message: "Sorry but we mark your report as spamed.Thank you for your cooperation!",
+                message: "Sorry, after thorough verification, your report with the ID of  " + $id + " has been determined to be Spam. For any other concerns, please contact us thru Direct Message. Thank You! This is an Automated Message.",
                 uid: userId
               });
               //}else{}

@@ -74,15 +74,16 @@ function reports() {
 
                                         })
                                     } else {
-                                        $("#people").empty();
-                                        $("people").append("No Reporters.")
+                                        $("#tbody_pending").empty();
+                                        $("#tbody_pending").append("<td id='nullRecords'colspan=6>No Reports.</td>")
                                     }
 
                                 })
+
                             });
                         } else {
-                            $("#tbody_messages").empty();
-                            $("#tbody_messages").append("<td id='nullRecords'colspan=6>No Reporters.</td>");
+                            $("#people").empty();
+                            $("#people").append("No Citizens... Yet.");
                         }
                     });
                     var thread = firebase.database().ref("reports/" + brgy); //populates chat list from that barangay (names)

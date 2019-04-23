@@ -65,10 +65,10 @@ window.onload =function viewFeedBacks() {
 
 window.setInterval(
     function () {
-      var modals = document.getElementsByClassName('modal');
+      var modals = document.getElementsByClassName('modals');
       // Get the button that opens the modal
-      var btns = document.getElementsByClassName("openmodal");
-      var spans = document.getElementsByClassName("close");
+      var btns = document.getElementsByClassName("openmodals");
+      var spans = document.getElementsByClassName("closes");
       for (let i = 0; i < btns.length; i++) {
         btns[i].onclick = function () {
           modals[i].style.display = "block";

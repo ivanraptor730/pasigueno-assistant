@@ -38,26 +38,50 @@ function accountMng() {
                   Question = snap.child("Question2").val();
                 }
                 if (Barangay == barangay) {
-                  $("#table_account").append("<tr><td class='ky' >" + key +
-                    "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" +
-                    emailAdd + "</td><td>" + Address + "</td><td>" + status + "</td><td>" +
-                    "<button class='openmodals myBtn'>View</button>" +
-                    "<div class='modals myModal'>" +
-                    "<div class='modals-content'>" +
-                    "<div class='modals-header'>" +
-                    "<h2>" + FullName + "</h2>" +
-                    "<span class='closes'>&times;</span>" +
-                    "</div>" +
-                    "<p><b>User ID: </b>" + UserID + "</p>" +
-                    "<p><b>Barangay: </b>" + Barangay + " </p>" +
-                    "<p><b>Full name: </b>" + FullName + " </p>" +
-                    "<p><b>Address: </b>" + Address + " </p>" +
-                    "<p><b>Username: </b>" + emailAdd + " </p>" +
-                    "<p><b>" + Question + "</b> " + Answer + " </p>" +
-                    "<p><b>Status: </b>" + status + " </p>" +
-                    "<b>Actions:</b> <button id='accntApproved'>Activate</button><button id='accntDeclined'>Decline</button><button id='accntBlock'>Block</button><br>" +
-                    "</div>" +
-                    "</div></td></tr>")
+                  if (status == "Approved") {
+                    $("#table_account").prepend("<tr><td class='ky' >" + key +
+                      "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" +
+                      emailAdd + "</td><td>" + Address + "</td><td>" + status + "</td><td>" +
+                      "<button class='openmodals myBtn'>View</button>" +
+                      "<div class='modals myModal'>" +
+                      "<div class='modals-content'>" +
+                      "<div class='modals-header'>" +
+                      "<h2>" + FullName + "</h2>" +
+                      "<span class='closes'>&times;</span>" +
+                      "</div>" +
+                      "<p><b>User ID: </b>" + UserID + "</p>" +
+                      "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                      "<p><b>Full name: </b>" + FullName + " </p>" +
+                      "<p><b>Address: </b>" + Address + " </p>" +
+                      "<p><b>Username: </b>" + emailAdd + " </p>" +
+                      "<p><b>" + Question + "</b> " + Answer + " </p>" +
+                      "<p><b>Status: </b>" + status + " </p>" +
+                      "<b>Actions:</b><button id='accntBlock'>Block</button><br>" +
+                      "</div>" +
+                      "</div></td></tr>")
+                  }
+                  if (status == "Blocked") {
+                    $("#table_account").prepend("<tr><td class='ky' >" + key +
+                      "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" +
+                      emailAdd + "</td><td>" + Address + "</td><td>" + status + "</td><td>" +
+                      "<button class='openmodals myBtn'>View</button>" +
+                      "<div class='modals myModal'>" +
+                      "<div class='modals-content'>" +
+                      "<div class='modals-header'>" +
+                      "<h2>" + FullName + "</h2>" +
+                      "<span class='closes'>&times;</span>" +
+                      "</div>" +
+                      "<p><b>User ID: </b>" + UserID + "</p>" +
+                      "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                      "<p><b>Full name: </b>" + FullName + " </p>" +
+                      "<p><b>Address: </b>" + Address + " </p>" +
+                      "<p><b>Username: </b>" + emailAdd + " </p>" +
+                      "<p><b>" + Question + "</b> " + Answer + " </p>" +
+                      "<p><b>Status: </b>" + status + " </p>" +
+                      "<b>Actions:</b> <button id='accntApproved'>Activate</button><br>" +
+                      "</div>" +
+                      "</div></td></tr>")
+                  }
                 }
               })
             } else {
@@ -121,26 +145,50 @@ function onChangeManageAccount() {
                     Question = snap.child("Question2").val();
                   }
                   if (Barangay == barangay) {
-                    $("#table_account").append("<tr><td class='ky' >" + key +
-                      "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" +
-                      emailAdd + "</td><td>" + Address + "</td><td>" + status + "</td><td>" +
-                      "<button class='openmodal myBtn'>View</button>" +
-                      "<div class='modals myModal'>" +
-                      "<div class='modals-content'>" +
-                      "<div class='modals-header'>" +
-                      "<h2>" + FullName + "</h2>" +
-                      "<span class='closes'>&times;</span>" +
-                      "</div>" +
-                      "<p><b>User ID: </b>" + UserID + "</p>" +
-                      "<p><b>Barangay: </b>" + Barangay + " </p>" +
-                      "<p><b>Full name: </b>" + FullName + " </p>" +
-                      "<p><b>Address: </b>" + Address + " </p>" +
-                      "<p><b>Username: </b>" + emailAdd + " </p>" +
-                      "<p><b>" + Question + "</b> " + Answer + " </p>" +
-                      "<p><b>Status: </b>" + status + " </p>" +
-                      "<b>Actions:</b> <button id='accntApproved'>Activate</button><button id='accntDeclined'>Decline</button><button id='accntBlock'>Block</button><br>" +
-                      "</div>" +
-                      "</div></td></tr>")
+                    if (status == "Approved") {
+                      $("#table_account").prepend("<tr><td class='ky' >" + key +
+                        "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" +
+                        emailAdd + "</td><td>" + Address + "</td><td>" + status + "</td><td>" +
+                        "<button class='openmodals myBtn'>View</button>" +
+                        "<div class='modals myModal'>" +
+                        "<div class='modals-content'>" +
+                        "<div class='modals-header'>" +
+                        "<h2>" + FullName + "</h2>" +
+                        "<span class='closes'>&times;</span>" +
+                        "</div>" +
+                        "<p><b>User ID: </b>" + UserID + "</p>" +
+                        "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                        "<p><b>Full name: </b>" + FullName + " </p>" +
+                        "<p><b>Address: </b>" + Address + " </p>" +
+                        "<p><b>Username: </b>" + emailAdd + " </p>" +
+                        "<p><b>" + Question + "</b> " + Answer + " </p>" +
+                        "<p><b>Status: </b>" + status + " </p>" +
+                        "<b>Actions:</b><button id='accntBlock'>Block</button><br>" +
+                        "</div>" +
+                        "</div></td></tr>")
+                    }
+                    if (status == "Blocked") {
+                      $("#table_account").prepend("<tr><td class='ky' >" + key +
+                        "</td><td class='uid' hidden>" + UserID + "</td><td>" + FullName + "</td><td>" +
+                        emailAdd + "</td><td>" + Address + "</td><td>" + status + "</td><td>" +
+                        "<button class='openmodals myBtn'>View</button>" +
+                        "<div class='modals myModal'>" +
+                        "<div class='modals-content'>" +
+                        "<div class='modals-header'>" +
+                        "<h2>" + FullName + "</h2>" +
+                        "<span class='closes'>&times;</span>" +
+                        "</div>" +
+                        "<p><b>User ID: </b>" + UserID + "</p>" +
+                        "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                        "<p><b>Full name: </b>" + FullName + " </p>" +
+                        "<p><b>Address: </b>" + Address + " </p>" +
+                        "<p><b>Username: </b>" + emailAdd + " </p>" +
+                        "<p><b>" + Question + "</b> " + Answer + " </p>" +
+                        "<p><b>Status: </b>" + status + " </p>" +
+                        "<b>Actions:</b> <button id='accntApproved'>Activate</button><br>" +
+                        "</div>" +
+                        "</div></td></tr>")
+                    }
                   }
                 })
               } else {
