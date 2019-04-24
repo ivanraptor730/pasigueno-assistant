@@ -175,20 +175,31 @@
             <div class="card-header text-white bg-primary">
               <i class="fas fa-table"></i>
               Accounts
-              <div class="float-right">
-                Search by Full Name: <input type="text" id="myInput" onkeyup="myFunction()">
-              </div>
+
             </div>
 
           </div>
+          Barangay: <select id="Berengey" class="custom-dropdown" onchange="onSignupChange()">
+            <option>---</option>
+            <option>Santolan</option>
+            <option>Pinagbuhatan</option>
+            <option>Manggahan</option>
+            <option>Maybunga</option>
+            <option>Sta. Lucia</option>
+            <option>Rosario</option>
+            <option>Dela Paz</option>
+            <option>San Miguel</option>
+          </select>
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Fullname" class="custom-text">
 
           <div class="card-body">
-            <div class="table-responsive">
+
+            <div class="table-responsive" id="table-scroll">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Full Name</th>
-                    <th>Email Address</th>
+                    <th>Username</th>
                     <th>Barangay</th>
                     <th>Address</th>
                     <th>Status</th>
@@ -204,157 +215,152 @@
               </table>
             </div>
           </div>
+          <!-- /.container-fluid -->
         </div>
+        <!-- End of Main Content -->
 
-        <!-- /.container-fluid -->
-
-
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Pasigueno Assistant 2019</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
 
       </div>
-      <!-- End of Main Content -->
+      <!-- End of Content Wrapper -->
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Pasigueno Assistant 2019</span>
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Are you sure you want to log-out?</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
           </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Are you Sure?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Are you sure you want to log-out?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <button class="btn btn-danger" onclick="mainApp.logout();">Logout</button>
-        </div>
       </div>
     </div>
-  </div>
 
-  <!--Firebase Core + Dependent Scripts (must be on all pages)-->
-  <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
-  <script src="../js/firebase.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/userInfo.js"></script>
+    <!--Firebase Core + Dependent Scripts (must be on all pages)-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/userInfo.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
 
-  <!-- Page level custom scripts -->
+    <!-- Page level custom scripts -->
 
-  <script>
-    window.onload = function signUp() {
-      window.setInterval(function () {
-        var modals = document.getElementsByClassName('modals');
-        // Get the button that opens the modal
-        var btns = document.getElementsByClassName("openmodals");
-        var spans = document.getElementsByClassName("closes");
-        for (let i = 0; i < btns.length; i++) {
-          btns[i].onclick = function () {
-            modals[i].style.display = "block";
+    <script>
+      window.onload = function signUp() {
+        window.setInterval(function () {
+          var modals = document.getElementsByClassName('modals');
+          // Get the button that opens the modal
+          var btns = document.getElementsByClassName("openmodals");
+          var spans = document.getElementsByClassName("closes");
+          for (let i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+              modals[i].style.display = "block";
+            }
           }
-        }
-        for (let i = 0; i < spans.length; i++) {
-          spans[i].onclick = function () {
-            modals[i].style.display = "none";
+          for (let i = 0; i < spans.length; i++) {
+            spans[i].onclick = function () {
+              modals[i].style.display = "none";
+            }
           }
-        }
-      }, 1000);
-      var rootRef = firebase.database().ref("users");
-      rootRef.on("value", snap => {
-        if (snap.exists()) {
-          $("#table_body").html("");
-          snap.forEach(snap => {
-            var key = snap.key;
-            var FullName = snap.child("FullName").val();
-            var EmailAdd = snap.child("EmailAddress").val();
-            var Barangay = snap.child("Barangay").val();
-            var Address = snap.child("Address").val();
-            var Status = snap.child("Status").val();
-            var UserID = snap.child("UserID").val();
+        }, 1000);
+        var rootRef = firebase.database().ref("users");
+        rootRef.on("value", snap => {
+          if (snap.exists()) {
+            $("#table_body").html("");
+            snap.forEach(snap => {
+              var key = snap.key;
+              var FullName = snap.child("FullName").val();
+              var EmailAdd = snap.child("EmailAddress").val();
+              var Barangay = snap.child("Barangay").val();
+              var Address = snap.child("Address").val();
+              var Status = snap.child("Status").val();
+              var UserID = snap.child("UserID").val();
 
 
-            $("#table_body").append("<tr><td class='ky' hidden>" + key + "</td><td>" + FullName +
-              "</td><td>" +
-              EmailAdd + "</td><td>" +
-              Barangay + "</td><td>" +
-              Address + "</td><td>" +
-              Status + "</td><td>" +
-              "<button class='openmodals myBtn'>View</button>" +
-              "<div class='modals myModal'>" +
-              "<div class='modals-content'>" +
-              "<div class='modals-header'>" +
-              "<h2>" + FullName + "</h2>" +
-              "<span class='closes'>&times;</span>" +
-              "</div>" +
-              "<p><b>User ID: </b>" + UserID + "</p>" +
-              "<p><b>Barangay: </b>" + Barangay + " </p>" +
-              "<p><b>Username: </b>" + EmailAdd + " </p>" +
-              "<p><b>Address: </b>" + Address + " </p>" +
-              "<p><b>Status: </b>" + Status + " </p>" +
-              "</div>" +
-              "</div></td></tr>")
-          })
-        } else {
-          $("#table_body").append("<td id='nullRecords'colspan=7>No Pending Forms.</td>")
-        }
-      });
-
-
-
-    }
-  </script>
-  <script>
-    function myFunction() {
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("dataTable");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
+              $("#table_body").append("<tr><td class='ky' hidden>" + key + "</td><td>" + FullName +
+                "</td><td>" +
+                EmailAdd + "</td><td>" +
+                Barangay + "</td><td>" +
+                Address + "</td><td>" +
+                Status + "</td><td>" +
+                "<button class='openmodals myBtn'>View</button>" +
+                "<div class='modals myModal'>" +
+                "<div class='modals-content'>" +
+                "<div class='modals-header'>" +
+                "<h2>" + FullName + "</h2>" +
+                "<span class='closes'>&times;</span>" +
+                "</div>" +
+                "<p><b>User ID: </b>" + UserID + "</p>" +
+                "<p><b>Barangay: </b>" + Barangay + " </p>" +
+                "<p><b>Username: </b>" + EmailAdd + " </p>" +
+                "<p><b>Address: </b>" + Address + " </p>" +
+                "<p><b>Status: </b>" + Status + " </p>" +
+                "</div>" +
+                "</div></td></tr>")
+            })
           } else {
-            tr[i].style.display = "none";
+            $("#table_body").append("<td id='nullRecords'colspan=7>No Pending Forms.</td>")
+          }
+        });
+
+
+
+      }
+    </script>
+    <script>
+      function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
           }
         }
       }
-    }
-  </script>
-  <script src="../js/notifsDist.js"></script>
+    </script>
+    <script src="../js/notifsDist.js"></script>
 </body>
 
 </html>

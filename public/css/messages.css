@@ -217,3 +217,32 @@ img {
 	height: 516px;
 	overflow-y: scroll;
 }
+
+#msg_container{
+	overflow-y: auto;
+}
+
+.table-wrapper
+{
+	height: 730px;
+	width: 880px;
+	overflow-x: auto;
+	overflow-y: scroll;
+	zoom: 85%;
+}
+
+#line{
+	width: 30%;
+}
+
+#reportbox{
+	width: 100%;
+}
+
+#dataTable{
+	width: 150%;
+}
+
+.reprts{
+	padding: 0 auto;
+}

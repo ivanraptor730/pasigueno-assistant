@@ -1,7 +1,8 @@
-function submitClick() {
+function submitClick() { 
     var fullname = document.getElementById("fullname");
     var barangay = document.getElementById("barangay");
-    var username = document.getElementById("usernames").value.trim();
+    var usernames = document.getElementById("usernames").value.trim();
+    var username = usernames + "@gmail.com";
     var address = document.getElementById("address");
     var password = document.getElementById("password");
 

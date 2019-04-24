@@ -10,7 +10,7 @@ function viewAnnouncements() {
                 var poster = snap.child("PostedBy").val();
                 var time = snap.child("TimePosted").val();
                 var datetime = date + " " + time;
-                $("#pnl-body").append("<section class='post-heading'>" +
+                $("#pnl-body").prepend("<section class='post-heading'>" +
                     "<div class='row'>" +
                     "<div class='col-md-11'>" +
                     "  <div class='media'>" +

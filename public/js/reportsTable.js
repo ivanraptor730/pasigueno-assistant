@@ -67,7 +67,7 @@ function reports() {
                                                             "<button id='img' onclick=window.open('" + photoURL + "')><i class='fas fa-camera'></i> View Report Image FullScreen</button>" +
                                                             "</div>" +
                                                             "</div>" +
-                                                            "</div>" + "</td></tr>")
+                                                            "</div>" + "</td></tr>");
                                                     });
                                                 }
                                             });
@@ -99,6 +99,11 @@ function reports() {
 
 }
 
+function updateScroll() {
+    var element = document.getElementById("msg_container");
+    element.scrollTop = element.scrollHeight;
+}
+
 function myFunction() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
@@ -106,7 +111,7 @@ function myFunction() {
     table = document.getElementById("dataTable");
     tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
+        td = tr[i].getElementsByTagName("td")[1];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {

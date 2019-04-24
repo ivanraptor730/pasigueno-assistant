@@ -129,21 +129,22 @@
             </div>
 
             <!-- Nav Item - Accounts Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
-          aria-expanded="true" aria-controls="collapseAccounts">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Accounts</span>
-        </a>
-        <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header ">Account Management:</h6>
-            <a class="collapse-item" href="account-reg.html">Account Registration</a>
-            <a class="collapse-item" href="account-mng.html">Manage Accounts</a>
-            <a class="collapse-item" href="security-question.html">Security Question</a>
-          </div>
-        </div>
-      </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+                    aria-expanded="true" aria-controls="collapseAccounts">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Accounts</span>
+                </a>
+                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header ">Account Management:</h6>
+                        <a class="collapse-item" href="account-reg.html">Account Registration</a>
+                        <a class="collapse-item" href="account-mng.html">Manage Accounts</a>
+                        <a class="collapse-item" href="security-question.html">Security Question</a>
+                    </div>
+                </div>
+            </li>
 
 
             <!-- Divider -->
@@ -232,7 +233,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h1>Reports Center</h1>
-                    <div class="float-right">Search by ID: <input type="text" id="myInput" onkeyup="myFunction()"
+                    <div class="float-right">Search by date: <input type="text" id="myInput" onkeyup="myFunction()"
                             title="Type in a name">
                         Category: <select id="categorychange" onchange="onChange()">
 
@@ -259,9 +260,9 @@
                     <hr>
                     <div class="messaging">
                         <div class="inbox_msg">
-                            <div class="inbox_people">
+                            <div id="line" class="inbox_people">
                                 <div class="headind_srch">
-                                    <div class="recent_heading">
+                                    <div id="line" class="recent_heading">
                                         <h4>Reporters List</h4>
                                     </div>
                                 </div>
@@ -273,9 +274,9 @@
                                 </div>
                             </div>
                             <!--Chatbox-->
-                            <div id="chatbox" class="mesgs">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <div id="chatbox" class="reprts">
+                                <div class="table-wrapper table-responsive">
+                                    <table class="table table-bordered stick" id="dataTable">
                                         <thead>
                                             <tr>
                                                 <th>Report ID</th>
@@ -368,5 +369,4 @@
         <script src="../js/onChange.js"></script>
 
 </body>
-
 </html>

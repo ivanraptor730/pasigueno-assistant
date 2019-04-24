@@ -2,12 +2,14 @@
   $('#login').on('click', function (e) {
     $("#loginEmail").attr('readonly');
     $("#loginPassword").attr('readonly');
+    var login = $('#loginEmail').val();
+    var fakemail = "@gmail.com";
     document.getElementById("login").innerHTML="<i class='fa fa-spinner fa-spin'></i>Logging In...";
     e.preventDefault();
     if( $('#loginEmail').val() != '' && $('#loginPassword').val() != '' ){
       //login the user
       var data = {
-        email: $('#loginEmail').val(),
+        email: login+fakemail,
         password: $('#loginPassword').val()
       };
 

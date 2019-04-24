@@ -23,7 +23,8 @@ window.onload = setBarangay();
 function submitClick() {
     var fullname = document.getElementById("fullname");
     var barangay = document.getElementById("barangay");
-    var username = document.getElementById("username").value.trim();
+    var usernames = document.getElementById("username").value.trim();
+    var username = usernames + "@gmail.com";
     var address = document.getElementById("address");
     var password = document.getElementById("password").value;
     var userType = document.getElementById("userType");
@@ -44,9 +45,9 @@ function submitClick() {
         var newStoreRef = storesRef.push();
         newStoreRef.set({
             Address: addresss,
-            Name: fullnames,
+            FullName: fullnames,
             Barangay: barangays,
-            Username: username,
+            EmailAddress: username,
             UserType: userTypes,
             UserID: uid,
             Status: status,
@@ -67,14 +68,3 @@ function submitClick() {
         otherApp.auth().signOut();
     });
 }
-
-
-
-$('#userType').change(function () {
-    if ($(this).val() != "User") {
-        $('#question').prop("disabled", true);
-        document.getElementById('question').innerHTML = "Security Question:<select name='question' id='question' required><option value='---'>---</option><option value='Maiden name of mother'>Maiden name of mother</option><option value='Favorite food'>Favorite food</option><option value='Favorite number'>Favorite number</option><option value='Name of dog'>Name of dog</option><option value='Favorite sport'>Favorite sport</option><option value='Name of brother'>Name of brother</option><option value='Name of sister'>Name of sister</option><option value='Name of father'>Name of father</option> </select>";
-    } else {
-        $('#question').prop("disabled", false);
-    }
-});
