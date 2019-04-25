@@ -24,7 +24,7 @@ function requestFormsTableApproved() {
                                 var UserID = snap.child("UserID").val();
                                 var Barangay = snap.child("Barangay").val();
                                 var BirthDate = snap.child("Birthplace").val();
-                                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td id='usky'>" + FullName + "</td><td>" + Purpose + "</td>")
+                                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
                             })
                         } else {
                             $("#table_body").empty();
@@ -74,7 +74,7 @@ window.onload = requestFormsTableApproved();
                 var BirthDate = snap.child("Birthplace").val();
                 var status = snap.child("Status").val();
                 if(status=="Approved"){
-                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td id='usky'>" + FullName + "</td><td>" + Purpose + "</td>")
+                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
                 }
             })
             } else {
@@ -113,9 +113,54 @@ function requestUtilsTableApproved() {
                                 var startDate = snap.child("StartDate").val();
                                 var returnDate = snap.child("EndDate").val();
                                 var returnTime = snap.child("EndTime").val();
+                                var Barangay = snap.child("Barangay").val();
+                                var status = snap.child("Status").val();
+                                var Fullname = snap.child("Fullname").val();
+                                if(Category=="Tent"){
                                 $("#table_body1").prepend("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
-                                    returnDate + " " + returnTime + "</td></tr>")
+                                    returnDate + " " + returnTime + "</td><td>"  
+                                    +"<button class='openmodals myBtn'>View</button>" +
+                                    "<div class='modals myModal'>" +
+                                    "<div class='modals-content'>" +
+                                    "<div class='modals-header'>" +
+                                    "<h2>" + Category + "</h2>" +
+                                  "<span class='closes'>&times;</span>" +
+                                  "</div><br><br><br>" +
+                                  "<p><b>Full Name: </b>" + Fullname +
+                                  "<b> Barangay: </b>" + Barangay +
+                                  "<b> Date: </b>" + Dates + " </p>" +
+                                  "<p><b>Borrowed Date: </b>" + startDate + " </p>" +
+                                  "<p><b>Borrowed Time: </b>" + startTime + " </p>" +
+                                  "<p><b>Return Date: </b>" + returnDate + " </p>" +
+                                  "<p><b>Return Time: </b>" + returnTime + " </p>" +
+                                    "<p><b>Status: </b>" + status + " </p>" +
+                                    "<b>Actions:</b><button id='Returned'>Mark as Returned</button>"+
+                                    "</div>" +
+                                    "</div></td></tr>")
+                                }
+                                if(Category=="Multipurpose Hall"){
+                                  $("#table_body1").prepend("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
+                                    "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
+                                    returnDate + " " + returnTime + "</td><td>"  
+                                    +"<button class='openmodals myBtn'>View</button>" +
+                                    "<div class='modals myModal'>" +
+                                    "<div class='modals-content'>" +
+                                    "<div class='modals-header'>" +
+                                    "<h2>" + Category + "</h2>" +
+                                  "<span class='closes'>&times;</span>" +
+                                  "</div><br><br><br>" +
+                                  "<p><b>Full Name: </b>" + Fullname +
+                                  "<b> Barangay: </b>" + Barangay +
+                                  "<b> Date: </b>" + Dates + " </p>" +
+                                  "<p><b>Borrowed Date: </b>" + startDate + " </p>" +
+                                  "<p><b>Borrowed Time: </b>" + startTime + " </p>" +
+                                  "<p><b>Return Date: </b>" + returnDate + " </p>" +
+                                  "<p><b>Return Time: </b>" + returnTime + " </p>" +
+                                    "<p><b>Status: </b>" + status + " </p>" +
+                                    "</div>" +
+                                    "</div></td></tr>")
+                                }
                             })
                         } else {
                             $("#table_body1").empty();
@@ -148,9 +193,11 @@ window.onload = requestUtilsTableApproved();
         return firebase.database().ref('users/' + parentKey).once('value').then(function (snapshot) {
           brgy = (snapshot.val() && snapshot.val().Barangay) || 'Unknown';
           var bgy = brgy + "_" + categorys;
+        
           var rootRef = firebase.database().ref("request/services").orderByChild("Barangay_ServiceType").equalTo(bgy);
           rootRef.on("value", snap => {
             if (snap.exists()) {
+              
               $("#table_body1").empty();
               snap.forEach(snap => {
                 var key = snap.key;
@@ -161,17 +208,32 @@ window.onload = requestUtilsTableApproved();
                 var startDate = snap.child("StartDate").val();
                 var returnDate = snap.child("EndDate").val();
                 var returnTime = snap.child("EndTime").val();
-                
+                var Barangay = snap.child("Barangay").val();
                 var status = snap.child("Status").val();
+                var Fullname = snap.child("Fullname").val();
                 if(status=="Approved"){
-                  
-              $("#table_body1").empty();
+                
                 $("#table_body1").prepend("<tr><td class='ky'>" + key + "</td><td>" + Category + "</td><td>" + Dates +
                     "</td><td>" + Location + "</td><td>" + startDate + " " + startTime + "</td><td>" +
-                    returnDate + " " + returnTime + "</td></tr>")
-                }else {
-                  $("#table_body1").empty();
-                  $("#table_body1").prepend("<td id='nullRecords'colspan=7>No Approved Services Requests.</td>");
+                    returnDate + " " + returnTime + "</td><td>"  
+                    +"<button class='openmodals myBtn'>View</button>" +
+                    "<div class='modals myModal'>" +
+                    "<div class='modals-content'>" +
+                    "<div class='modals-header'>" +
+                    "<h2>" + Category + "</h2>" +
+                  "<span class='closes'>&times;</span>" +
+                  "</div><br><br><br>" + 
+                  "<p><b>Full Name: </b>" + Fullname +
+                  "<b> Barangay: </b>" + Barangay +
+                  "<b> Date: </b>" + Dates + " </p>" +
+                  "<p><b>Borrowed Date: </b>" + startDate + " </p>" +
+                  "<p><b>Borrowed Time: </b>" + startTime + " </p>" +
+                  "<p><b>Return Date: </b>" + returnDate + " </p>" +
+                  "<p><b>Return Time: </b>" + returnTime + " </p>" +
+                    "<p><b>Status: </b>" + status + " </p>" +
+                    "<b>Actions:</b><button id='Returned'>Mark as Returned</button>"+
+                    "</div>" +
+                    "</div></td></tr>")
                 }
             })
             } else {

@@ -171,11 +171,8 @@
         <!-- End of Topbar -->
 
 
-        <!-- Begin Page Content -->
-
         <div class="container-fluid">
-          Activity Title: <input type="text" class="custom-text" id="activityName">
-          Barangay:<select id="Berengey" class="custom-dropdown">
+          Barangay:<select id="Berengey" class="custom-dropdown" onchange="onFeedbackChange()">
             <option>---</option>
             <option>Santolan</option>
             <option>Pinagbuhatan</option>
@@ -186,6 +183,28 @@
             <option>Dela Paz</option>
             <option>San Miguel</option>
           </select>
+          <br><br>
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+
+                <th>Activity Title</th>
+
+                <th>Activity Date</th>
+
+              </tr>
+            </thead>
+            <tbody id="tbody_feedbacks">
+              <tr>
+                <td colspan="2" class="text-center"><i class='fa fa-spinner fa-spin'></i> <b>Loading Activity
+                    list...</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          Activity Title: <input type="text" class="custom-text" id="activityName">
+          Activity Date: <input type="text" class="custom-text" id="activityDate" placeholder="yyyy-mm-dd">
+
           <button class="button" onclick="onBarangayChange()">Search</button>
 
           <br><br>
@@ -222,28 +241,24 @@
             </div>
           </div>
         </div>
+        <!-- /.container-fluid -->
 
 
       </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Pasigueno Assistant 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
     </div>
-    <!-- /.container-fluid -->
-
-
-  </div>
-  <!-- End of Main Content -->
-
-  <!-- Footer -->
-  <footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-      <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Pasigueno Assistant 2019</span>
-      </div>
-    </div>
-  </footer>
-  <!-- End of Footer -->
-
-  </div>
-  <!-- End of Content Wrapper -->
+    <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
@@ -301,8 +316,9 @@
 
       var activityName = document.getElementById("activityName").value;
       var brgy = document.getElementById("Berengey").value;
-      if (activityName == "" || brgy == "---") {
-        alert("Both fields must be filled up");
+      var activityDate = document.getElementById("activityDate").value;
+      if (activityName == "" || brgy == "---" || activityDate == "") {
+        alert("All fields must be filled up");
       } else {
         var counter1 = 0;
         var counter2 = 0;
@@ -313,81 +329,99 @@
         var counter7 = 0;
         var counter8 = 0;
         var counter9 = 0;
-        var rootRef = firebase.database().ref("activityfeedback").orderByChild("Barangay").equalTo(brgy);
+        var rootRef = firebase.database().ref("activityfeedback/" + brgy);
         rootRef.on("value", snap => {
           if (snap.exists()) {
-
-            $("#tbody_feedback").html("");
             snap.forEach(snap => {
-              var Rate = snap.child("Rating").val();
-              var name = snap.child("Fullname").val();
-              var message = snap.child("Feedback").val();
-              var rating1 = snap.child("Rating").val();
-              var title = snap.child("AnnouncementTitle").val();
-              if (activityName.toLowerCase() == title.toLowerCase()) {
-                if (Rate == "1.0") {
-                  counter1++;
-                }
-                if (Rate == "1.5") {
-                  counter2++;
-                }
-                if (Rate == "2.0") {
-                  counter3++;
-                }
-                if (Rate == "2.5") {
-                  counter4++;
-                }
-                if (Rate == "3.0") {
-                  counter5++;
-                }
-                if (Rate == "3.5") {
-                  counter6++;
-                }
-                if (Rate == "4.0") {
-                  counter7++;
-                }
-                if (Rate == "4.5") {
-                  counter8++;
-                }
-                if (Rate == "5.0") {
-                  counter9++;
-                }
-                document.getElementById("activityTitle").innerHTML = title;
-                var ret = 1 * parseFloat(counter1) + 1.5 * parseFloat(counter2) + 2 * parseFloat(counter3) +
-                  2.5 * parseFloat(counter4) + 3 * parseFloat(counter5) + 3.5 * parseFloat(counter6) + 4 *
-                  parseFloat(counter7) + 4.5 * parseFloat(counter8) + 5 * parseFloat(counter9);
-                var ings = counter1 + counter2 + counter3 + counter4 + counter5 + counter6 + counter7 +
-                  counter8 + counter9;
-                var total = parseFloat(ret) / parseFloat(ings);
+              var key = snap.key;
+              var rootRef1 = firebase.database().ref("activityfeedback/" + brgy + "/" + key).orderByChild(
+                "AnnouncementTitle").equalTo(activityName);
+              rootRef1.on("value", snapsh => {
+                if (snapsh.exists()) {
+                  $("#tbody_feedback").html("");
+                  snapsh.forEach(snapsh => {
 
-                $("#tbody_feedback").append("<tr><td class='ky'>" + name + "</td><td>" + message + "</td><td>" +
-                  rating1 + "</td></tr>")
-                const ratings = {
-                  hotel_a: total,
-                };
-                // total number of stars
-                const starTotal = 5;
+                    var Rate = snapsh.child("Rating").val();
+                    var name = snapsh.child("Fullname").val();
+                    var message = snapsh.child("Feedback").val();
+                    var rating1 = snapsh.child("Rating").val();
+                    var title = snapsh.child("AnnouncementTitle").val();
 
-                for (const rating in ratings) {
-                  const starPercentage = (ratings[rating] / starTotal) * 100;
-                  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-                  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
-                }
+                    var date = snapsh.child("AnnouncementDate").val();
+                    var bar = snapsh.child("Barangay").val();
+                    if (activityDate == date && bar == brgy) {
+                      if (Rate == "1.0") {
+                        counter1++;
+                      }
+                      if (Rate == "1.5") {
+                        counter2++;
+                      }
+                      if (Rate == "2.0") {
+                        counter3++;
+                      }
+                      if (Rate == "2.5") {
+                        counter4++;
+                      }
+                      if (Rate == "3.0") {
+                        counter5++;
+                      }
+                      if (Rate == "3.5") {
+                        counter6++;
+                      }
+                      if (Rate == "4.0") {
+                        counter7++;
+                      }
+                      if (Rate == "4.5") {
+                        counter8++;
+                      }
+                      if (Rate == "5.0") {
+                        counter9++;
+                      }
+                      document.getElementById("activityTitle").innerHTML = title;
+                      var ret = 1 * parseFloat(counter1) + 1.5 * parseFloat(counter2) + 2 * parseFloat(
+                          counter3) +
+                        2.5 * parseFloat(counter4) + 3 * parseFloat(counter5) + 3.5 * parseFloat(
+                          counter6) + 4 *
+                        parseFloat(counter7) + 4.5 * parseFloat(counter8) + 5 * parseFloat(counter9);
+                      var ings = counter1 + counter2 + counter3 + counter4 + counter5 + counter6 +
+                        counter7 +
+                        counter8 + counter9;
+                      var total = parseFloat(ret) / parseFloat(ings);
 
-              } else {
-                const ratings = {
-                  hotel_a: 0,
-                };
-                const starTotal = 5;
-                for (const rating in ratings) {
-                  const starPercentage = (ratings[rating] / starTotal) * 100;
-                  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-                  document.querySelector(`.${rating} .stars-inner`).style.width = 0;
+                      $("#tbody_feedback").prepend("<tr><td class='ky'>" + name + "</td><td>" +
+                        message + "</td><td>" +
+                        rating1 + "</td></tr>")
+                      const ratings = {
+                        hotel_a: total,
+                      };
+                      // total number of stars
+                      const starTotal = 5;
+
+                      for (const rating in ratings) {
+                        const starPercentage = (ratings[rating] / starTotal) * 100;
+                        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+                        document.querySelector(`.${rating} .stars-inner`).style.width =
+                          starPercentageRounded;
+                      }
+
+                    } else {
+                      const ratings = {
+                        hotel_a: 0,
+                      };
+                      const starTotal = 5;
+                      for (const rating in ratings) {
+                        const starPercentage = (ratings[rating] / starTotal) * 100;
+                        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+                        document.querySelector(`.${rating} .stars-inner`).style.width = 0;
+                      }
+                      $("#tbody_feedback").empty();
+                      $("#tbody_feedback").append(
+                        "<td id='nullRecords' colspan=3 class='text-center'><b>No Feedback.</b></td>");
+                    }
+
+                  })
                 }
-                $("#tbody_feedback").empty();
-                $("#tbody_feedback").append(
-                  "<td id='nullRecords' colspan=3 class='text-center'><b>No Feedback.</b></td>");
-              }
+              })
             });
           } else {
             const ratings = {
@@ -410,6 +444,7 @@
     }
   </script>
   <script src="../js/notifsDist.js"></script>
+  <script src="../js/listactivity.js"></script>
 </body>
 
 </html>

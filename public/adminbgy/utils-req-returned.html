@@ -96,8 +96,8 @@
                         <h6 class="collapse-header">Services/Utilities:</h6>
                         <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
                         <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
-                        <a class="collapse-item active" href="utils-req-denied.html">Denied Requests</a>
-                        <a class="collapse-item" href="utils-req-returned.html">Returned Utilities</a>
+                        <a class="collapse-item" href="utils-req-denied.html">Denied Requests</a>
+                        <a class="collapse-item active" href="utils-req-returned.html">Returned Utilities</a>
                     </div>
                 </div>
             </li>
@@ -113,7 +113,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reports:</h6>
-                        <a class="collapse-item" href="view-feedback.html">View Feedbacks</a>
+                        <a class="collapse-item" href="view-feedback.html">View Community Feedbacks</a>
                         <a class="collapse-item" href="view-recommend.html">View Recommendations</a>
                         <a class="collapse-item" href="registration-req.html">Registration Requests</a>
                     </div>
@@ -129,21 +129,22 @@
             </div>
 
             <!-- Nav Item - Accounts Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
-          aria-expanded="true" aria-controls="collapseAccounts">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Accounts</span>
-        </a>
-        <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header ">Account Management:</h6>
-            <a class="collapse-item" href="account-reg.html">Account Registration</a>
-            <a class="collapse-item" href="account-mng.html">Manage Accounts</a>
-            <a class="collapse-item" href="security-question.html">Security Question</a>
-          </div>
-        </div>
-      </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccounts"
+                    aria-expanded="true" aria-controls="collapseAccounts">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Accounts</span>
+                </a>
+                <div id="collapseAccounts" class="collapse" aria-labelledby="headingRequests"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header ">Account Management:</h6>
+                        <a class="collapse-item" href="account-reg.html">Account Registration</a>
+                        <a class="collapse-item" href="account-mng.html">Manage Accounts</a>
+                        <a class="collapse-item" href="security-question.html">Security Question</a>
+                    </div>
+                </div>
+            </li>
 
 
             <!-- Divider -->
@@ -209,6 +210,7 @@
                                 <span id="msg-counter" class="badge badge-danger badge-counter"></span>
                             </a>
                         </li>
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -242,7 +244,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>Utilities Requests</h1>
                     <div class="float-right">
                             <table>
                                 <tr>
@@ -258,53 +259,50 @@
                                 </tr>
                             </table>
                         </div>
-                    <hr>
-                    <p id="message1"></p>
-                    <!-- DataTables Example -->
-
-                    <div class="card mb-3">
-                        <div class="card-header text-white bg-primary">
-                            <i class="fas fa-table"></i>
-                            Approved Services Requests
-                            <div class="float-right">
-
-                                Search by ID: <input type="text" id="myInput" onkeyup="myFunction()"
-                                    title="Type in a name">
-                                Category: <select id="utilApproved" onchange="onChangeFormsUtilsApproved()">
-                            </div>
-                            <option value="--">--</option>
-                            <option value="Tent">Tent</option>
-                            <option value="Multipurpose Hall">Multipurpose Hall</option>
-                            </select>
+                <h1>Services Requests</h1>
+               
+                <hr>
+                <p id="message1"></p>
+                <!-- DataTables Example -->
+                <div class="card mb-3">
+                    <div class="card-header text-white bg-primary">
+                        <i class="fas fa-table"></i>
+                        Returned Services Requests
+                        <div class="float-right">
+                            Search by date: <input type="text" id="myInput" onkeyup="myFunction()"
+                            placeholder="yyy-mm-dd">
                         </div>
-
+                     
                     </div>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Request ID</th>
-                                        <th>Category</th>
-                                        <th>Date</th>
-                                        <th>Location</th>
-                                        <th>Start Date & Time</th>
-                                        <th>Return Date & Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table_body1">
-                                    <tr>
-                                        <td colspan="7" class="text-center"><i class='fa fa-spinner fa-spin'></i>
-                                            <b>Loading Requests...</b></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                    <th>Start Date & Time</th>
+                                    <th>Return Date & Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_body13">
+                                <tr>
+                                    <td colspan="7" class="text-center"><i class='fa fa-spinner fa-spin'></i> <b>Loading Requests...</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+          
             </div>
             <!-- /.container-fluid -->
+
         </div>
         <!-- End of Main Content -->
 
@@ -368,7 +366,7 @@
     <!-- Page level custom scripts -->
     <script src="../js/notificationsHandler.js"></script>
     <script src="../js/requestFunctions.js"></script>
-    <script src="../js/requestTableDeclined.js"></script>
+    <script src="../js/requestTableReturned.js"></script>
     <script src="../js/requestsModal.js"></script>
     <script src="../js/toggle.js"></script>
     <script src="../js/toggleFunction.js"></script>

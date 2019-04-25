@@ -95,6 +95,7 @@
             <a class="collapse-item" href="utils-req-pending.html">Pending Requests</a>
             <a class="collapse-item" href="utils-req-approved.html">Approved Requests</a>
             <a class="collapse-item" href="utils-req-denied.html">Denied Requests</a>
+            <a class="collapse-item" href="utils-req-returned.html">Returned Utilities</a>
           </div>
         </div>
       </li>
@@ -168,6 +169,15 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
+            <!-- Nav Item - Announcement Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-info fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span id="ann-counter" class="badge badge-danger badge-counter"></span>
+                </a>
+              </li>
+
             <!-- Nav Item - Reports Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link" href="#">
@@ -231,7 +241,7 @@
           <hr>
           <div class="card mb-3 float-left" id="dash">
             <div class="card-header text-white bg-primary">
-              <i class="fas fa-fw fa-info-circle"></i>
+              <i class="fas fa-fw fa-info"></i>
               District Office Announcements</div>
             <div class="container-fluid" id="posts-body">
               <br>

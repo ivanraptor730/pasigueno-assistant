@@ -67,8 +67,18 @@ function requests() {
 
 }
 
+function announcement() {
+    var announcementsRef = firebase.database().ref("newsfeed").orderByChild("Category").equalTo("District"); //fetch chat list from barangay
+    announcementsRef.on('child_changed', function (snapshot) {
+        document.getElementById('ann-counter').innerHTML = "!";
+        console.log(snapshot.val());
+    })
+
+}
+
 
 
 window.onload = messages();
 reports();
 requests();
+announcement();
