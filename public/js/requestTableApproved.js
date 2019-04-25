@@ -24,7 +24,7 @@ function requestFormsTableApproved() {
                                 var UserID = snap.child("UserID").val();
                                 var Barangay = snap.child("Barangay").val();
                                 var BirthDate = snap.child("Birthplace").val();
-                                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
+                                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td id='usky'>" + FullName + "</td><td>" + Purpose + "</td>")
                             })
                         } else {
                             $("#table_body").empty();
@@ -74,7 +74,7 @@ window.onload = requestFormsTableApproved();
                 var BirthDate = snap.child("Birthplace").val();
                 var status = snap.child("Status").val();
                 if(status=="Approved"){
-                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td>" + FullName + "</td><td>" + Purpose + "</td>")
+                $("#table_body").prepend("<tr><td class='ky'>" + key + "</td><td>" + Forms + "</td><td>" + Barangay + "</td><td id='usky'>" + FullName + "</td><td>" + Purpose + "</td>")
                 }
             })
             } else {
